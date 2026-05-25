@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A. Safo | Cybersecurity Portfolio</title>
+  <meta name="description" content="Cybersecurity portfolio for A. Safo — security labs, detection engineering, incident response, and client security audits." />
+  <style>
+    :root {
+      --bg: #07090d;
+      --panel: #0e131b;
+      --panel-2: #111827;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --line: rgba(148, 163, 184, 0.18);
+      --accent: #38bdf8;
+      --accent-2: #22c55e;
+      --danger: #fb7185;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 34rem),
+        radial-gradient(circle at top right, rgba(34, 197, 94, 0.12), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 9, 13, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #020617;
+      font-weight: 900;
+      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.28);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(56, 189, 248, 0.55);
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.12);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #020617;
+      border: 0;
+    }
+
+    .hero {
+      padding: 92px 0 48px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      background: rgba(56, 189, 248, 0.08);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 0.95;
+      margin: 0 0 20px;
+      letter-spacing: -0.07em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #f8fafc 0%, #38bdf8 46%, #22c55e 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 720px;
+      margin: 0 0 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 720px;
+    }
+
+    .stat, .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat { padding: 18px; }
+    .stat strong { display: block; font-size: 28px; letter-spacing: -0.04em; }
+    .stat span { color: var(--muted); font-size: 13px; }
+
+    .terminal-card {
+      padding: 22px;
+      min-height: 420px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .terminal-card::before {
+      content: "";
+      position: absolute;
+      inset: -80px -80px auto auto;
+      width: 220px;
+      height: 220px;
+      background: rgba(34, 197, 94, 0.13);
+      filter: blur(28px);
+      border-radius: 999px;
+    }
+
+    .terminal-top {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .dot { width: 11px; height: 11px; border-radius: 50%; background: var(--danger); }
+    .dot:nth-child(2) { background: #facc15; }
+    .dot:nth-child(3) { background: var(--accent-2); }
+
+    code, pre {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      color: #cbd5e1;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .green { color: #86efac; }
+    .blue { color: #7dd3fc; }
+    .muted { color: var(--muted); }
+
+    section { padding: 56px 0; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      margin: 0;
+      letter-spacing: -0.055em;
+      line-height: 1.05;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .card { padding: 22px; }
+    .card h3 { margin: 0 0 10px; font-size: 20px; letter-spacing: -0.03em; }
+    .card p { color: var(--muted); margin: 0 0 16px; }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      color: #cbd5e1;
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .project {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project::after {
+      content: "";
+      position: absolute;
+      right: -60px;
+      top: -60px;
+      width: 150px;
+      height: 150px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.08);
+      filter: blur(18px);
+    }
+
+    .project-status {
+      display: inline-flex;
+      margin-bottom: 14px;
+      color: #bbf7d0;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.24);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .step-num {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(56, 189, 248, 0.11);
+      color: var(--accent);
+      font-weight: 900;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+
+    .step h3 { margin: 0 0 4px; font-size: 17px; }
+    .step p { margin: 0; color: var(--muted); }
+
+    .cta {
+      text-align: center;
+      padding: 54px 24px;
+      border-radius: 32px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at center, rgba(56, 189, 248, 0.13), transparent 34rem),
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025));
+      box-shadow: var(--shadow);
+    }
+
+    .cta p { color: var(--muted); max-width: 680px; margin: 12px auto 24px; }
+
+    footer {
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding: 26px 0;
+      font-size: 14px;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .section-head { align-items: start; flex-direction: column; }
+      .terminal-card { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark">AS</span>
+        <span>A. Safo</span>
+      </a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Cybersecurity • Detection • Incident Response</div>
+          <h1>Building security labs that prove I can <span class="gradient-text">detect, analyze, and respond.</span></h1>
+          <p>
+            I’m A. Safo, a cybersecurity-focused builder developing practical security projects, client audit skills, and incident-response workflows. My work is built around one standard: show evidence, explain risk, and produce professional remediation steps.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://www.linkedin.com/in/a-safo-7154b33a0" target="_blank" rel="noopener">View LinkedIn</a>
+            <a class="btn" href="#projects">See Projects</a>
+            <a class="btn" href="mailto:alexksafo@gmail.com">Email Me</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>3+</strong><span>Security projects in progress</span></div>
+            <div class="stat"><strong>1</strong><span>Flagship detection lab</span></div>
+            <div class="stat"><strong>100%</strong><span>Evidence-first reporting</span></div>
+          </div>
+        </div>
+
+        <div class="card terminal-card">
+          <div class="terminal-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          <pre><span class="green">safo@security-lab</span>:<span class="blue">~</span>$ whoami
+Cybersecurity student, builder, and operator
+
+<span class="green">safo@security-lab</span>:<span class="blue">~</span>$ focus
+[+] SSH brute-force detection
+[+] Linux authentication logs
+[+] SIEM-style analysis
+[+] MITRE ATT&CK mapping
+[+] Client website security reviews
+
+<span class="green">safo@security-lab</span>:<span class="blue">~</span>$ standard
+No fake expertise.
+No copy-paste projects.
+Proof > talk.</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <h2>What I’m Building</h2>
+          <p>Projects designed to look good on LinkedIn, but more importantly to prove real security thinking.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card project">
+            <span class="project-status">FLAGSHIP LAB</span>
+            <h3>SSH Brute-Force Attack Simulation & Detection Lab</h3>
+            <p>
+              A controlled lab where Kali Linux simulates brute-force activity against an Ubuntu SSH server, then logs are collected, analyzed, mapped to MITRE ATT&CK, and turned into a professional incident report.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Kali Linux</span><span class="pill">Ubuntu</span><span class="pill">SSH</span><span class="pill">Auth Logs</span><span class="pill">MITRE ATT&CK</span><span class="pill">Incident Response</span>
+            </div>
+          </article>
+
+          <article class="card project">
+            <span class="project-status">CLIENT SERVICE</span>
+            <h3>Passive Website Security Review</h3>
+            <p>
+              A non-invasive audit workflow for small businesses: website exposure review, visible misconfigurations, trust signals, basic security posture, and client-friendly remediation recommendations.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Recon</span><span class="pill">Security Headers</span><span class="pill">HTTPS</span><span class="pill">Risk Report</span><span class="pill">Client Presentation</span>
+            </div>
+          </article>
+
+          <article class="card project">
+            <span class="project-status">PORTFOLIO SYSTEM</span>
+            <h3>AI SIEM Log Analyzer</h3>
+            <p>
+              A practical log analysis concept built to help classify suspicious events, explain what happened, and summarize defensive actions in clear language for technical and non-technical audiences.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Python</span><span class="pill">Log Parsing</span><span class="pill">Detection Logic</span><span class="pill">Reporting</span>
+            </div>
+          </article>
+
+          <article class="card project">
+            <span class="project-status">CAREER ASSET</span>
+            <h3>Security Audit Reports</h3>
+            <p>
+              Clean, professional reports that turn technical findings into business language: impact, evidence, severity, remediation, and next steps.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Risk</span><span class="pill">Evidence</span><span class="pill">Remediation</span><span class="pill">Executive Summary</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head">
+          <h2>Technical Stack</h2>
+          <p>The stack is focused on employability: defensive security, Linux, logs, reporting, and business communication.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Security</h3>
+            <p>Attack simulation, detection logic, incident reports, passive audits, and risk communication.</p>
+            <div class="pill-row"><span class="pill">Detection</span><span class="pill">IR</span><span class="pill">Recon</span><span class="pill">Hardening</span></div>
+          </div>
+          <div class="card">
+            <h3>Systems</h3>
+            <p>Linux environments, authentication logs, virtual labs, and controlled security testing.</p>
+            <div class="pill-row"><span class="pill">Linux</span><span class="pill">VirtualBox</span><span class="pill">SSH</span><span class="pill">Logs</span></div>
+          </div>
+          <div class="card">
+            <h3>Business</h3>
+            <p>Cold outreach, free audits, client reporting, LinkedIn presence, and monthly security plans.</p>
+            <div class="pill-row"><span class="pill">Sales</span><span class="pill">Audits</span><span class="pill">Reports</span><span class="pill">LinkedIn</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container grid-2">
+        <div>
+          <h2>How I Work</h2>
+          <p class="muted">The point is not to look technical. The point is to prove useful security judgment.</p>
+        </div>
+        <div class="card timeline">
+          <div class="step"><div class="step-num">1</div><div><h3>Simulate or review</h3><p>Create a controlled scenario or passive client review with clear boundaries.</p></div></div>
+          <div class="step"><div class="step-num">2</div><div><h3>Collect evidence</h3><p>Use logs, screenshots, headers, configurations, and observable findings.</p></div></div>
+          <div class="step"><div class="step-num">3</div><div><h3>Analyze risk</h3><p>Explain what happened, why it matters, and what could go wrong.</p></div></div>
+          <div class="step"><div class="step-num">4</div><div><h3>Report cleanly</h3><p>Deliver severity, impact, remediation, and next steps like a professional.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta">
+          <h2>Looking for cybersecurity opportunities and audit clients.</h2>
+          <p>
+            I’m building practical projects, documenting the work publicly, and looking to connect with recruiters, SOC analysts, IT managers, founders, and small-business owners who care about security.
+          </p>
+          <div class="hero-actions" style="justify-content:center; margin-bottom:0;">
+            <a class="btn btn-primary" href="https://www.linkedin.com/in/a-safo-7154b33a0" target="_blank" rel="noopener">Connect on LinkedIn</a>
+            <a class="btn" href="mailto:alexksafo@gmail.com">alexksafo@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 A. Safo. Built to prove the work, not just talk about it.</div>
+  </footer>
+</body>
+</html>
