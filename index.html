@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Safo Security | Cybersecurity Portfolio</title>
-  <meta name="description" content="Safo Security — cybersecurity portfolio, AI SIEM dashboard, SSH brute-force detection, passive website audits, client reports, and recommendations." />
+  <meta name="description" content="Safo Security — cybersecurity portfolio, AI SIEM dashboard, SSH brute-force detection, passive website audits, client reports, recommendations, and starter security services." />
 
   <style>
     :root {
@@ -159,9 +159,7 @@
       border: 0;
     }
 
-    .hero {
-      padding: 88px 0 52px;
-    }
+    .hero { padding: 88px 0 52px; }
 
     .hero-grid {
       display: grid;
@@ -453,9 +451,13 @@
     .role { color: var(--faint); font-size: 12px; margin: 2px 0 10px; }
     .quote { color: var(--muted); font-size: 14px; margin: 0; }
 
-    .price {
-      position: relative;
-      overflow: hidden;
+    .price { position: relative; overflow: hidden; }
+
+    .price.featured {
+      border-color: rgba(216,180,81,.44);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(216,180,81,.11), transparent 16rem),
+        linear-gradient(180deg, rgba(255,255,255,.052), rgba(255,255,255,.018));
     }
 
     .price strong {
@@ -464,6 +466,13 @@
       font-size: 35px;
       letter-spacing: -.055em;
       margin: 10px 0 8px;
+    }
+
+    .price small {
+      display: block;
+      color: var(--faint);
+      margin-bottom: 12px;
+      font-size: 12px;
     }
 
     .price ul {
@@ -665,7 +674,7 @@
       <div class="wrap">
         <div class="section-head reveal">
           <h2 class="serif">Pricing</h2>
-          <p>Simple starter pricing. Serious businesses can request a custom monthly plan.</p>
+          <p>Transparent starter pricing. Monthly security care is available for clients who want consistent review and improvement.</p>
         </div>
 
         <div class="grid-3 reveal d1">
@@ -673,38 +682,41 @@
             <span class="tag">Starter</span>
             <h3>Passive Website Review</h3>
             <strong>$75</strong>
-            <p>Best for small businesses that need a clean first security check.</p>
+            <small>One-time review</small>
+            <p>Best for small businesses that need a first look at visible website security and trust issues.</p>
             <ul>
               <li>Visible website risk review</li>
               <li>Security header check</li>
               <li>HTTPS and trust signal review</li>
-              <li>Short written report</li>
+              <li>Short written summary</li>
             </ul>
           </article>
 
-          <article class="card price">
-            <span class="tag">Most Useful</span>
+          <article class="card price featured">
+            <span class="tag">Best First Offer</span>
             <h3>Full Audit Report</h3>
             <strong>$150</strong>
-            <p>Best for clients who want findings, impact, screenshots, and clear fixes.</p>
+            <small>One-time report</small>
+            <p>Best for clients who want evidence, screenshots, impact, and clear remediation steps.</p>
             <ul>
               <li>Evidence-based findings</li>
               <li>Severity and business impact</li>
               <li>Remediation steps</li>
-              <li>PDF-style professional report</li>
+              <li>Professional PDF-style report</li>
             </ul>
           </article>
 
           <article class="card price">
             <span class="tag">Monthly</span>
-            <h3>Security Monitoring Plan</h3>
-            <strong>From $300/mo</strong>
-            <p>Best for businesses that want ongoing review and security improvements.</p>
+            <h3>Website Security Care</h3>
+            <strong>$250/mo</strong>
+            <small>Cancel anytime · limited availability</small>
+            <p>Best for clients who want ongoing website security review without hiring a full-time security person.</p>
             <ul>
-              <li>Monthly website review</li>
+              <li>Monthly passive website review</li>
               <li>Security improvement tracking</li>
-              <li>Report and recommendations</li>
-              <li>Priority support</li>
+              <li>Priority recommendations</li>
+              <li>Monthly report summary</li>
             </ul>
           </article>
         </div>
