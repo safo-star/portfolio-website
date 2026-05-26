@@ -3,753 +3,1289 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Safo Security | Security Readiness Reviews</title>
-  <meta name="description" content="Safo Security — security readiness reviews, passive website audits, external exposure checks, risk reports, and practical security roadmaps for small businesses." />
+  <title>A. Safo | Cybersecurity Portfolio</title>
+  <meta name="description" content="Cybersecurity portfolio and passive website security review services by A. Safo." />
 
   <style>
-    :root {
-      --bg: #070706;
-      --panel: #0d0d0b;
-      --text: #f5f0e6;
-      --muted: #a9a095;
-      --faint: #70695f;
-      --gold: #d8b451;
-      --gold-soft: #f2d98a;
-      --line: rgba(216, 180, 81, 0.16);
-      --line-strong: rgba(216, 180, 81, 0.34);
-      --green: #36d979;
-      --radius: 24px;
-      --shadow: 0 26px 80px rgba(0, 0, 0, 0.48);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 10% -5%, rgba(216, 180, 81, 0.14), transparent 30rem),
-        radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.045), transparent 28rem),
-        linear-gradient(180deg, #080807, #050505);
-      line-height: 1.55;
+      font-family: Inter, Arial, sans-serif;
+      background: #07070d;
+      color: #ffffff;
+      line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    .wrap {
-      width: min(1120px, calc(100% - 32px));
+    .container {
+      width: min(1180px, 90%);
       margin: 0 auto;
     }
 
-    .serif {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 500;
-      letter-spacing: -0.035em;
-    }
+    /* NAV */
 
-    .scriptish {
-      font-family: Georgia, "Times New Roman", serif;
-      font-style: italic;
-      letter-spacing: -0.02em;
-      color: var(--gold-soft);
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      animation: reveal 900ms cubic-bezier(.18,.8,.22,1) forwards;
-    }
-
-    .d1 { animation-delay: .08s; }
-    .d2 { animation-delay: .16s; }
-    .d3 { animation-delay: .24s; }
-
-    @keyframes reveal { to { opacity: 1; transform: translateY(0); } }
-    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-    @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(54,217,121,.28); } 50% { box-shadow: 0 0 0 8px rgba(54,217,121,0); } }
-
-    .nav {
+    nav {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(7, 7, 6, 0.76);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255,255,255,.07);
+      z-index: 50;
+      background: rgba(7, 7, 13, 0.86);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .nav-inner {
+      height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 15px 0;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+    .logo {
       font-weight: 900;
-      letter-spacing: -0.035em;
+      letter-spacing: -0.04em;
+      font-size: 1.25rem;
     }
 
-    .brand-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      color: var(--gold-soft);
-      border: 1px solid var(--line-strong);
-      background: linear-gradient(180deg, rgba(216,180,81,.14), rgba(216,180,81,.035));
+    .logo span {
+      color: #9f7aea;
     }
 
-    .links {
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 23px;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 760;
+      gap: 24px;
+      color: #b8b8c7;
+      font-size: 0.95rem;
+      font-weight: 600;
     }
 
-    .links a { transition: .2s ease; }
-    .links a:hover { color: var(--gold-soft); }
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    /* BUTTONS */
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      border: 1px solid rgba(216,180,81,.27);
+      padding: 14px 22px;
       border-radius: 999px;
-      padding: 12px 18px;
-      font-size: 13px;
-      font-weight: 860;
-      color: var(--text);
-      background: rgba(255,255,255,.025);
-      transition: transform .22s ease, border-color .22s ease, background .22s ease, box-shadow .22s ease;
+      font-weight: 800;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
     }
 
     .btn:hover {
       transform: translateY(-2px);
-      border-color: rgba(216,180,81,.58);
-      background: rgba(216,180,81,.055);
-      box-shadow: 0 18px 42px rgba(216,180,81,.08);
+      opacity: 0.92;
     }
 
-    .btn.gold {
-      color: #090806;
-      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
-      border: 0;
+    .btn.primary {
+      background: #ffffff;
+      color: #080810;
     }
 
-    .hero { padding: 88px 0 52px; }
+    .btn.secondary {
+      background: rgba(255,255,255,0.07);
+      color: #ffffff;
+      border-color: rgba(255,255,255,0.14);
+    }
+
+    .btn.purple {
+      background: #9f7aea;
+      color: white;
+      box-shadow: 0 14px 45px rgba(159, 122, 234, 0.28);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(159, 122, 234, 0.24), transparent 32%),
+        radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.13), transparent 30%),
+        #07070d;
+    }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.07fr .93fr;
-      gap: 44px;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
       align-items: center;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 950;
-      letter-spacing: .24em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(48px, 7vw, 88px);
-      line-height: .92;
-      letter-spacing: -.075em;
-    }
-
-    .hero p {
-      margin: 24px 0 0;
-      max-width: 690px;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .hero-note {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 28px;
-      max-width: 690px;
-    }
-
-    .note {
-      border: 1px solid rgba(216,180,81,.12);
-      background: rgba(255,255,255,.023);
-      border-radius: 18px;
-      padding: 14px;
-    }
-
-    .note strong { display: block; color: var(--gold-soft); font-size: 18px; }
-    .note span { color: var(--faint); font-size: 12px; }
-
-    .offer-card {
-      position: relative;
-      padding: 26px;
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      background:
-        radial-gradient(circle at 50% 0%, rgba(216,180,81,.12), transparent 18rem),
-        linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
-      box-shadow: var(--shadow);
-      animation: float 6s ease-in-out infinite;
-      overflow: hidden;
-    }
-
-    .offer-card::after {
-      content: "";
-      position: absolute;
-      inset: auto -80px -80px auto;
-      width: 220px;
-      height: 220px;
-      background: rgba(216,180,81,.08);
-      filter: blur(40px);
-      border-radius: 999px;
-    }
-
-    .offer-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 18px;
-    }
-
-    .live {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      color: var(--green);
-      border: 1px solid rgba(54,217,121,.25);
-      background: rgba(54,217,121,.075);
-      border-radius: 999px;
-      padding: 7px 10px;
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .live i {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--green);
-      animation: pulse 1.8s infinite;
-    }
-
-    .price-window {
-      min-height: 210px;
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 24px;
-      background: #080806;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 24px;
-    }
-
-    .price-window span {
-      display: block;
-      color: var(--faint);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      font-weight: 850;
-    }
-
-    .price-window strong {
-      display: block;
-      color: var(--gold-soft);
-      font-size: clamp(44px, 6vw, 70px);
-      letter-spacing: -.07em;
-      line-height: .95;
-      margin: 8px 0;
-    }
-
-    .mini-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .mini {
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 18px;
-      background: rgba(255,255,255,.025);
-      padding: 14px;
-    }
-
-    .mini span {
-      display: block;
-      color: var(--faint);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      margin-bottom: 7px;
-    }
-
-    .mini strong { color: var(--gold-soft); font-size: 21px; }
-
-    section { padding: 58px 0; }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 24px;
-      margin-bottom: 24px;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: clamp(34px, 4.4vw, 58px);
-      line-height: .94;
-      letter-spacing: -.06em;
-    }
-
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 540px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    .card {
-      border: 1px solid rgba(216,180,81,.13);
-      background: linear-gradient(180deg, rgba(255,255,255,.038), rgba(255,255,255,.015));
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: 0 18px 55px rgba(0,0,0,.22);
-      transition: transform .24s ease, border-color .24s ease, background .24s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(216,180,81,.37);
-      background: linear-gradient(180deg, rgba(255,255,255,.052), rgba(255,255,255,.02));
+      padding: 80px 0;
     }
 
     .tag {
       display: inline-flex;
-      align-items: center;
-      border: 1px solid rgba(216,180,81,.24);
-      color: var(--gold-soft);
+      padding: 9px 14px;
       border-radius: 999px;
-      padding: 6px 10px;
-      font-size: 11px;
-      font-weight: 950;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
+      background: rgba(159, 122, 234, 0.13);
+      color: #c4a7ff;
+      border: 1px solid rgba(159, 122, 234, 0.22);
+      font-size: 0.84rem;
+      font-weight: 800;
+      margin-bottom: 22px;
     }
 
-    .card h3 { margin: 0 0 8px; font-size: 20px; letter-spacing: -.03em; }
-    .card p { margin: 0; color: var(--muted); font-size: 14px; }
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.95;
+      letter-spacing: -0.07em;
+      margin-bottom: 24px;
+    }
 
-    .deliverables {
-      margin: 16px 0 0;
-      padding: 0;
+    .hero h1 span {
+      color: #9f7aea;
+    }
+
+    .hero p {
+      color: #c9c9d6;
+      font-size: 1.15rem;
+      max-width: 720px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 42px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 720px;
+    }
+
+    .stat {
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+
+    .stat h3 {
+      font-size: 1.9rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #9b9bae;
+    }
+
+    .hero-card {
+      padding: 30px;
+      border-radius: 30px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.09), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 30px 100px rgba(0,0,0,0.35);
+    }
+
+    .hero-card h2 {
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-card ul {
       list-style: none;
       display: grid;
-      gap: 9px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .deliverables li::before {
-      content: "✓";
-      color: var(--gold-soft);
-      margin-right: 8px;
-      font-weight: 900;
-    }
-
-    .proof-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
       gap: 14px;
+      color: #c9c9d6;
     }
 
-    .shot {
-      overflow: hidden;
-      border-radius: 24px;
-      border: 1px solid rgba(216,180,81,.14);
-      background: #050504;
-      transition: transform .26s ease, border-color .26s ease;
+    .hero-card li {
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
-    .shot:hover { transform: translateY(-5px); border-color: rgba(216,180,81,.42); }
+    /* SECTIONS */
 
-    .shot img {
-      width: 100%;
-      height: 168px;
-      object-fit: cover;
-      background: #090908;
-      border-bottom: 1px solid rgba(255,255,255,.07);
+    .section {
+      padding: 90px 0;
     }
 
-    .shot-body { padding: 16px; }
-    .shot h3 { margin: 0 0 6px; color: var(--gold-soft); font-size: 15px; }
-    .shot p { margin: 0; color: var(--muted); font-size: 13px; }
+    .section-header {
+      max-width: 800px;
+      margin-bottom: 42px;
+    }
 
-    .pricing-main {
-      border-color: rgba(216,180,81,.42);
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #9f7aea;
+      margin-bottom: 12px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      margin-bottom: 18px;
+    }
+
+    .section-header p {
+      color: #b8b8c7;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .dark-section {
       background:
-        radial-gradient(circle at 50% 0%, rgba(216,180,81,.11), transparent 16rem),
-        linear-gradient(180deg, rgba(255,255,255,.052), rgba(255,255,255,.018));
+        radial-gradient(circle at top left, rgba(159, 122, 234, 0.13), transparent 34%),
+        #0a0a12;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .price-big {
-      display: block;
-      color: var(--gold-soft);
-      font-size: clamp(42px, 6vw, 68px);
-      line-height: .95;
-      letter-spacing: -.07em;
-      margin: 12px 0 8px;
-    }
+    /* ABOUT */
 
-    .price-small { color: var(--faint); font-size: 13px; }
-
-    .quote-card {
+    .about-grid {
       display: grid;
-      grid-template-columns: 56px 1fr;
-      gap: 15px;
-    }
-
-    .avatar {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(216,180,81,.26);
-      background: rgba(216,180,81,.06);
-      color: var(--gold-soft);
-      font-weight: 950;
-    }
-
-    .name { font-weight: 950; }
-    .role { color: var(--faint); font-size: 12px; margin: 2px 0 10px; }
-    .quote { color: var(--muted); font-size: 14px; margin: 0; }
-
-    .boundary {
-      border: 1px solid rgba(54,217,121,.2);
-      background: rgba(54,217,121,.055);
-      border-radius: 20px;
-      padding: 18px;
-      color: var(--muted);
-    }
-
-    .boundary strong { color: var(--green); }
-
-    .cta {
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      background:
-        radial-gradient(circle at 80% 0%, rgba(216,180,81,.14), transparent 25rem),
-        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.018));
-      padding: 32px;
-      box-shadow: var(--shadow);
-    }
-
-    .cta-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      grid-template-columns: 1fr 1fr;
       gap: 24px;
     }
 
-    .footer {
-      border-top: 1px solid rgba(255,255,255,.07);
-      padding: 30px 0;
-      color: var(--muted);
-      font-size: 14px;
+    .about-card {
+      padding: 32px;
+      border-radius: 26px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
-    .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .about-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+    }
 
-    @media (max-width: 950px) {
-      .hero-grid, .grid-3, .grid-2, .proof-grid { grid-template-columns: 1fr; }
-      .links { display: none; }
-      .hero-note, .mini-grid { grid-template-columns: 1fr; }
-      .section-head, .cta-inner { flex-direction: column; align-items: start; }
-      .offer-card { animation: none; }
-      .shot img { height: auto; }
+    .about-card p {
+      color: #b8b8c7;
+    }
+
+    /* SERVICES */
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .price-card {
+      position: relative;
+      padding: 30px;
+      border-radius: 26px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 18px 60px rgba(0,0,0,0.22);
+    }
+
+    .price-card.featured {
+      background: linear-gradient(160deg, rgba(159, 122, 234, 0.18), rgba(255,255,255,0.045));
+      border-color: rgba(159, 122, 234, 0.35);
+      transform: translateY(-10px);
+    }
+
+    .badge {
+      display: inline-flex;
+      margin-bottom: 16px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(159, 122, 234, 0.16);
+      color: #d8c6ff;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    .price-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      margin-bottom: 16px;
+    }
+
+    .price-card p {
+      color: #b8b8c7;
+      margin-bottom: 22px;
+    }
+
+    .price-card ul {
+      padding-left: 18px;
+      color: #c9c9d6;
+      line-height: 1.9;
+      margin-bottom: 26px;
+    }
+
+    /* GENERAL CARDS */
+
+    .risk-grid,
+    .checks-grid,
+    .fit-grid,
+    .faq-grid,
+    .proof-grid,
+    .process-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .risk-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .checks-grid,
+    .faq-grid,
+    .fit-grid,
+    .proof-grid,
+    .process-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .risk-card,
+    .check-item,
+    .fit-card,
+    .faq-item,
+    .proof-card,
+    .process-card {
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 18px 60px rgba(0,0,0,0.22);
+    }
+
+    .risk-card span,
+    .process-card span {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(159, 122, 234, 0.15);
+      color: #c4a7ff;
+      font-weight: 900;
+      margin-bottom: 22px;
+    }
+
+    .risk-card h3,
+    .check-item h3,
+    .fit-card h3,
+    .faq-item h3,
+    .proof-card h3,
+    .process-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 14px;
+    }
+
+    .risk-card p,
+    .faq-item p,
+    .proof-card p,
+    .process-card p {
+      color: #b8b8c7;
+      line-height: 1.7;
+    }
+
+    .check-item ul,
+    .fit-card ul {
+      padding-left: 18px;
+      color: #b8b8c7;
+      line-height: 1.9;
+    }
+
+    /* REPORT PREVIEW */
+
+    .report-preview {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      overflow: hidden;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.045);
+      box-shadow: 0 22px 80px rgba(0,0,0,0.28);
+    }
+
+    .report-sidebar {
+      padding: 34px;
+      background: linear-gradient(160deg, rgba(159, 122, 234, 0.22), rgba(255,255,255,0.04));
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .report-label {
+      color: #c4a7ff;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .report-sidebar h3 {
+      font-size: 1.6rem;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .severity {
+      display: inline-flex;
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 900;
+    }
+
+    .severity.medium {
+      background: rgba(250, 204, 21, 0.15);
+      color: #facc15;
+      border: 1px solid rgba(250, 204, 21, 0.3);
+    }
+
+    .report-content {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .report-content div {
+      padding: 30px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .report-content h4 {
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .report-content p {
+      color: #b8b8c7;
+      line-height: 1.7;
+    }
+
+    .good-fit {
+      border-color: rgba(34, 197, 94, 0.28);
+    }
+
+    .bad-fit {
+      border-color: rgba(248, 113, 113, 0.28);
+    }
+
+    /* PROOF */
+
+    .proof-card {
+      min-height: 250px;
+    }
+
+    .proof-tag {
+      display: inline-flex;
+      margin-bottom: 14px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.075);
+      color: #c9c9d6;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .proof-card ul {
+      color: #b8b8c7;
+      padding-left: 18px;
+      line-height: 1.9;
+      margin-top: 16px;
+    }
+
+    /* TESTIMONIALS */
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .testimonial {
+      padding: 28px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .testimonial p {
+      color: #d7d7e2;
+      margin-bottom: 20px;
+    }
+
+    .testimonial h4 {
+      color: #ffffff;
+    }
+
+    .testimonial span {
+      color: #9b9bae;
+      font-size: 0.9rem;
+    }
+
+    /* FINAL CTA */
+
+    .final-cta {
+      margin: 90px auto;
+      padding: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, rgba(159, 122, 234, 0.22), rgba(255,255,255,0.055));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 22px 90px rgba(0,0,0,0.3);
+    }
+
+    .final-cta h2 {
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      margin-bottom: 14px;
+    }
+
+    .final-cta p {
+      color: #c9c9d6;
+      max-width: 720px;
+      line-height: 1.7;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      min-width: fit-content;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 42px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #9b9bae;
+      text-align: center;
+    }
+
+    footer a {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .pricing-grid,
+      .risk-grid,
+      .checks-grid,
+      .fit-grid,
+      .faq-grid,
+      .proof-grid,
+      .process-grid,
+      .testimonial-grid,
+      .report-preview,
+      .report-content {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .report-sidebar {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .final-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 34px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <nav class="nav">
-    <div class="wrap nav-inner">
-      <a class="brand" href="#top" aria-label="Safo Security home">
-        <span class="brand-mark">♛</span>
-        <span>Safo Security</span>
-      </a>
-      <div class="links">
-        <a href="#offer">Offer</a>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="logo">A. <span>Safo</span></a>
+
+      <div class="nav-links">
+        <a href="#services">Services</a>
         <a href="#proof">Proof</a>
         <a href="#process">Process</a>
-        <a href="#recommendations">Recommendations</a>
-        <a href="#contact">Contact</a>
+        <a href="#faq">FAQ</a>
+        <a href="mailto:alexksafo@gmail.com" class="btn secondary">Contact</a>
       </div>
     </div>
   </nav>
 
-  <main id="top">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="reveal">
-          <div class="eyebrow">Security readiness for small businesses</div>
-          <h1 class="serif">Reduce visible risk before it becomes a <span class="scriptish">business problem.</span></h1>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="tag">Cybersecurity • Detection • Incident Response</div>
+
+        <h1>
+          Security reviews built on <span>proof</span>, not guesswork.
+        </h1>
+
+        <p>
+          I help small businesses identify visible website security risks, trust blockers,
+          and external exposure before they damage customer confidence. I also build
+          cybersecurity labs that prove real detection, analysis, and reporting skill.
+        </p>
+
+        <div class="hero-actions">
+          <a href="mailto:alexksafo@gmail.com?subject=Security%20Readiness%20Review%20Request" class="btn purple">
+            Request Security Review
+          </a>
+          <a href="#proof" class="btn secondary">
+            View Proof of Work
+          </a>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <h3>3+</h3>
+            <p>Security projects being built and documented</p>
+          </div>
+
+          <div class="stat">
+            <h3>1</h3>
+            <p>Flagship detection lab focused on SSH attacks</p>
+          </div>
+
+          <div class="stat">
+            <h3>$1.6K+</h3>
+            <p>Professional security readiness package range</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h2>What I focus on</h2>
+
+        <ul>
+          <li>Passive website security reviews</li>
+          <li>External exposure and trust-signal analysis</li>
+          <li>SSH brute-force detection labs</li>
+          <li>Log correlation and alert escalation systems</li>
+          <li>Incident-style reports with evidence and remediation</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Positioning</p>
+        <h2>Built for business owners and cybersecurity recruiters.</h2>
+        <p>
+          This site has two jobs: show businesses that I can explain risk clearly,
+          and show recruiters that I can build practical cybersecurity projects with
+          clean evidence, documentation, and technical structure.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>For Businesses</h3>
           <p>
-            Safo Security helps small businesses, agencies, and startups understand their visible security risks, improve trust, and get a clear 30-day security roadmap without hiring a full-time security team.
+            I review your public-facing website from a trust and exposure perspective.
+            The goal is to show what customers, attackers, and search visitors can already
+            see — then turn that into a clear remediation roadmap.
           </p>
-          <div class="actions">
-            <a class="btn gold" href="#offer">View Package</a>
-            <a class="btn" href="#proof">See Proof</a>
-            <a class="btn" href="https://www.linkedin.com/in/a-safo-7154b33a0" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+
+        <div class="about-card">
+          <h3>For Recruiters</h3>
+          <p>
+            My projects focus on detection engineering fundamentals: logs, suspicious
+            behavior, severity scoring, alerting, reporting, and mapping activity to
+            real security workflows.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section dark-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Services</p>
+        <h2>Professional security review packages.</h2>
+        <p>
+          These are built for small businesses that need practical security clarity,
+          not confusing technical noise.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <span class="badge">Starter</span>
+          <h3>Website Security Snapshot</h3>
+          <div class="price">$650–$900</div>
+          <p>
+            A focused review for small businesses that need a first look at obvious
+            security and trust issues.
+          </p>
+
+          <ul>
+            <li>Passive website review</li>
+            <li>Basic exposure notes</li>
+            <li>Trust-signal check</li>
+            <li>Top 5–10 issues</li>
+            <li>Short summary report</li>
+          </ul>
+
+          <a href="mailto:alexksafo@gmail.com?subject=Website%20Security%20Snapshot" class="btn secondary">
+            Start Smaller
+          </a>
+        </div>
+
+        <div class="price-card featured">
+          <span class="badge">Main Offer</span>
+          <h3>Security Readiness Package</h3>
+          <div class="price">$1.6K–$2.5K</div>
+          <p>
+            A deeper client-ready review with evidence, severity ratings, business impact,
+            and a clear 30-day remediation roadmap.
+          </p>
+
+          <ul>
+            <li>External website security review</li>
+            <li>Security headers and exposure check</li>
+            <li>Visible admin/login surface review</li>
+            <li>Customer trust and credibility analysis</li>
+            <li>Evidence screenshots</li>
+            <li>Severity scoring</li>
+            <li>Executive summary</li>
+            <li>30-day remediation roadmap</li>
+            <li>Follow-up review call</li>
+          </ul>
+
+          <a href="mailto:alexksafo@gmail.com?subject=Security%20Readiness%20Package" class="btn primary">
+            Request Main Package
+          </a>
+        </div>
+
+        <div class="price-card">
+          <span class="badge">Ongoing</span>
+          <h3>Monthly Security Care</h3>
+          <div class="price">$500–$1.5K/mo</div>
+          <p>
+            Ongoing support for businesses that want monthly checks, basic monitoring,
+            and security guidance.
+          </p>
+
+          <ul>
+            <li>Monthly website review</li>
+            <li>Basic change monitoring</li>
+            <li>Security recommendations</li>
+            <li>Risk-priority updates</li>
+            <li>Monthly summary report</li>
+          </ul>
+
+          <a href="mailto:alexksafo@gmail.com?subject=Monthly%20Security%20Care" class="btn secondary">
+            Ask About Monthly
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY THIS MATTERS -->
+  <section id="risk" class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Why This Matters</p>
+        <h2>Most small business websites look fine until trust breaks.</h2>
+        <p>
+          A website does not need to be “hacked” to hurt your business. Weak trust signals,
+          exposed admin areas, poor security headers, broken forms, missing policies, and
+          visible technical mistakes can make customers hesitate before they ever contact you.
+        </p>
+      </div>
+
+      <div class="risk-grid">
+        <div class="risk-card">
+          <span>01</span>
+          <h3>Lost Trust</h3>
+          <p>
+            Visitors judge credibility fast. If the site feels outdated, exposed, or poorly
+            maintained, they may leave before becoming a lead.
+          </p>
+        </div>
+
+        <div class="risk-card">
+          <span>02</span>
+          <h3>Visible Weakness</h3>
+          <p>
+            Public-facing issues such as missing HTTPS controls, weak headers, exposed paths,
+            and unclear contact flows can create unnecessary business risk.
+          </p>
+        </div>
+
+        <div class="risk-card">
+          <span>03</span>
+          <h3>No Clear Roadmap</h3>
+          <p>
+            Many owners know something is wrong but do not know what to fix first.
+            The report turns technical problems into business priorities.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKS -->
+  <section id="checks" class="section dark-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Review Scope</p>
+        <h2>What gets checked during the review.</h2>
+        <p>
+          The review is passive, professional, and focused on what can be safely observed
+          from the outside. No exploitation, password attacks, or destructive testing.
+        </p>
+      </div>
+
+      <div class="checks-grid">
+        <div class="check-item">
+          <h3>Website Security Basics</h3>
+          <ul>
+            <li>HTTPS and certificate trust</li>
+            <li>Security headers</li>
+            <li>Cookie and browser-side exposure</li>
+            <li>Visible login/admin surfaces</li>
+          </ul>
+        </div>
+
+        <div class="check-item">
+          <h3>Business Trust Signals</h3>
+          <ul>
+            <li>Contact and form trust</li>
+            <li>Privacy/security policy visibility</li>
+            <li>Professional credibility signals</li>
+            <li>Customer confidence blockers</li>
+          </ul>
+        </div>
+
+        <div class="check-item">
+          <h3>External Exposure</h3>
+          <ul>
+            <li>Publicly visible technical details</li>
+            <li>Unnecessary information leakage</li>
+            <li>Risky page/path exposure</li>
+            <li>Basic domain/email posture notes</li>
+          </ul>
+        </div>
+
+        <div class="check-item">
+          <h3>Final Deliverables</h3>
+          <ul>
+            <li>Executive summary</li>
+            <li>Evidence screenshots</li>
+            <li>Severity ratings</li>
+            <li>30-day remediation roadmap</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPORT PREVIEW -->
+  <section id="sample-report" class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Report Preview</p>
+        <h2>What the final report looks like.</h2>
+        <p>
+          The goal is not to overwhelm you with technical language. The goal is to show
+          what matters, why it matters, and what to fix first.
+        </p>
+      </div>
+
+      <div class="report-preview">
+        <div class="report-sidebar">
+          <p class="report-label">Sample Finding</p>
+          <h3>Missing Security Headers</h3>
+          <p class="severity medium">Medium Severity</p>
+        </div>
+
+        <div class="report-content">
+          <div>
+            <h4>Business Impact</h4>
+            <p>
+              Missing browser security controls may increase exposure to client-side attacks,
+              reduce trust, and make the website appear less professionally maintained.
+            </p>
           </div>
-          <div class="hero-note">
-            <div class="note"><strong>$1.6K–$2.5K</strong><span>Security readiness package</span></div>
-            <div class="note"><strong>30 days</strong><span>Improvement roadmap</span></div>
-            <div class="note"><strong>Passive only</strong><span>No destructive testing</span></div>
+
+          <div>
+            <h4>Evidence</h4>
+            <p>
+              Header review shows missing or incomplete protections such as Content-Security-Policy,
+              X-Frame-Options, and other browser-side controls.
+            </p>
           </div>
-        </div>
 
-        <aside class="offer-card reveal d1">
-          <div class="offer-top">
-            <strong>Security Readiness Package</strong>
-            <span class="live"><i></i> Available</span>
+          <div>
+            <h4>Recommended Fix</h4>
+            <p>
+              Add recommended security headers through the hosting provider, CDN, or web server
+              configuration. Re-test after implementation.
+            </p>
           </div>
-          <div class="price-window">
-            <div>
-              <span>Professional security review</span>
-              <strong>$1.6K–$2.5K</strong>
-              <span>Based on website size and scope</span>
-            </div>
-          </div>
-          <div class="mini-grid">
-            <div class="mini"><span>Report</span><strong>PDF</strong></div>
-            <div class="mini"><span>Roadmap</span><strong>30D</strong></div>
-            <div class="mini"><span>Follow-up</span><strong>1 Call</strong></div>
-          </div>
-        </aside>
-      </div>
-    </section>
 
-    <section id="offer">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <h2 class="serif">The Offer</h2>
-          <p>A professional service ladder: simple entry offers for smaller businesses, then a serious security readiness package for companies that need deeper review.</p>
-        </div>
-        <div class="grid-2 reveal d1">
-          <article class="card pricing-main">
-            <span class="tag">Main Package</span>
-            <h3>Security Readiness Package</h3>
-            <strong class="price-big">$1,600–$2,500</strong>
-            <div class="price-small">Final quote depends on website size, number of pages, risk surface, and report depth.</div>
-            <p style="margin-top:16px;">A business-focused review that identifies visible security risks, explains business impact, and gives a practical 30-day remediation roadmap.</p>
-            <ul class="deliverables">
-              <li>Website security posture review</li>
-              <li>External exposure and trust signal review</li>
-              <li>Evidence-based findings with screenshots</li>
-              <li>Executive summary and 30-day roadmap</li>
-              <li>One follow-up review call</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <span class="tag">Who It Helps</span>
-            <h3>Built for business owners</h3>
-            <p>Most small businesses do not need a full-time security team yet. They need someone to find visible risks, explain what matters, and show what to fix first.</p>
-            <ul class="deliverables">
-              <li>Local service businesses</li>
-              <li>Agencies and consultants</li>
-              <li>E-commerce and lead-generation sites</li>
-              <li>Startups handling customer data</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="service-menu">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <h2 class="serif">Service Menu</h2>
-          <p>Professional pricing that keeps cheap work off the table but still gives businesses a clear entry point.</p>
-        </div>
-
-        <div class="grid-3 reveal d1">
-          <article class="card">
-            <span class="tag">Entry Review</span>
-            <h3>Website Security Snapshot</h3>
-            <strong class="price-big" style="font-size:44px;">$350</strong>
-            <div class="price-small">One-time review</div>
-            <p>A focused review for businesses that want a quick, professional look at visible website risk.</p>
-            <ul class="deliverables">
-              <li>HTTPS and security header check</li>
-              <li>Visible exposure review</li>
-              <li>Trust signal review</li>
-              <li>Short findings summary</li>
-            </ul>
-          </article>
-
-          <article class="card pricing-main">
-            <span class="tag">Best Value</span>
-            <h3>Security Readiness Package</h3>
-            <strong class="price-big" style="font-size:44px;">$1.6K–$2.5K</strong>
-            <div class="price-small">Full business-risk review</div>
-            <p>Best for businesses that want proof, priorities, business impact, and a clear security roadmap.</p>
-            <ul class="deliverables">
-              <li>Full visible-risk review</li>
-              <li>Evidence screenshots</li>
-              <li>Severity scoring</li>
-              <li>Executive PDF report</li>
-              <li>30-day remediation roadmap</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <span class="tag">Monthly</span>
-            <h3>Security Care Plan</h3>
-            <strong class="price-big" style="font-size:44px;">$750/mo</strong>
-            <div class="price-small">Limited client capacity</div>
-            <p>Ongoing review and security improvement tracking for businesses that want consistency.</p>
-            <ul class="deliverables">
-              <li>Monthly passive website review</li>
-              <li>Security improvement tracking</li>
-              <li>Priority recommendations</li>
-              <li>Monthly summary report</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="boundary reveal d2" style="margin-top:14px;">
-          <strong>Note:</strong> Prices are starting points. Final scope depends on website size, business risk, number of pages, and reporting depth.
-        </div>
-      </div>
-    </section>
-
-    <section id="deliverables">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <h2 class="serif">What You Receive</h2>
-          <p>Clear deliverables that justify the price and make the work useful after the review is done.</p>
-        </div>
-        <div class="grid-3 reveal d1">
-          <article class="card"><span class="tag">01</span><h3>Security Posture Review</h3><p>Website security posture, visible exposure, admin/login surface, HTTPS, security headers, domain/email basics, and trust signals.</p></article>
-          <article class="card"><span class="tag">02</span><h3>Evidence-Based Report</h3><p>Screenshots, findings, severity ratings, business impact, and plain-English explanations of what each issue means.</p></article>
-          <article class="card"><span class="tag">03</span><h3>30-Day Roadmap</h3><p>Prioritized remediation checklist, quick wins, follow-up actions, and one review call to explain the report.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="proof">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <h2 class="serif">Proof of Work</h2>
-          <p>Lab screenshots showing detection work, log analysis, rule output, and security documentation.</p>
-        </div>
-        <div class="proof-grid reveal d1">
-          <article class="shot"><img src="./assets/ai-siem-command-center.png" alt="AI SIEM Command Center dashboard screenshot" /><div class="shot-body"><h3>AI SIEM Dashboard</h3><p>Threat score, alerts, severity breakdown, and MITRE rule intelligence.</p></div></article>
-          <article class="shot"><img src="./assets/ssh-bruteforce-attempts.png" alt="SSH brute-force failed login attempts screenshot" /><div class="shot-body"><h3>SSH Brute-Force Attempts</h3><p>Repeated failed SSH authentication attempts against a local Ubuntu target.</p></div></article>
-          <article class="shot"><img src="./assets/detector-alerts.png" alt="Multi-rule detector alert output screenshot" /><div class="shot-body"><h3>Detector Alerts</h3><p>Rules triggered for password guessing burst and brute-force behavior.</p></div></article>
-          <article class="shot"><img src="./assets/ubuntu-recon.png" alt="Ubuntu system recon and enumeration screenshot" /><div class="shot-body"><h3>Ubuntu Recon</h3><p>System identity, hostname, and network interface verification.</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="process">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <h2 class="serif">Process</h2>
-          <p>Simple, professional, and safe. No fake hacking language. No unauthorized access.</p>
-        </div>
-        <div class="grid-3 reveal d1">
-          <article class="card"><span class="tag">Step 1</span><h3>Scope</h3><p>We define the website, business context, review limits, priority concerns, and deadline.</p></article>
-          <article class="card"><span class="tag">Step 2</span><h3>Review</h3><p>I perform a passive external review, document visible risk, collect evidence, and score findings.</p></article>
-          <article class="card"><span class="tag">Step 3</span><h3>Report</h3><p>You receive the report, remediation roadmap, and one follow-up call to walk through next steps.</p></article>
-        </div>
-        <div class="boundary reveal d2" style="margin-top:14px;">
-          <strong>Important boundary:</strong> This is a passive external security review. No exploitation, destructive testing, password attacks, or unauthorized access attempts are performed.
-        </div>
-      </div>
-    </section>
-
-    <section id="recommendations">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <h2 class="serif">Recommendations</h2>
-          <p>Client feedback from security reviews and reports.</p>
-        </div>
-        <div class="grid-2 reveal d1">
-          <article class="card quote-card"><div class="avatar">RW</div><div><div class="name">Rayane Wakrim</div><div class="role">Biomedical Science Student at uOttawa</div><p class="quote">“I just finished reading my report. Really appreciate the work you put into this and how detailed everything was. The recommendations were actually useful and clear.”</p></div></article>
-          <article class="card quote-card"><div class="avatar">JF</div><div><div class="name">Jack Frechette</div><div class="role">Founder of Wedge Acquisition</div><p class="quote">“Safo Security delivered exactly the kind of audit every business owner hopes for but rarely gets. The findings were clear, straightforward, and valuable.”</p></div></article>
-          <article class="card quote-card"><div class="avatar">YE</div><div><div class="name">Youssef El Fathi</div><div class="role">Founder of Vyderia</div><p class="quote">“Safo Security was able to completely diagnose security risks of my website. Their process and professionalism is highly recommended.”</p></div></article>
-          <article class="card quote-card"><div class="avatar">AY</div><div><div class="name">Abdoulay Yatera</div><div class="role">Student at University of Ottawa</div><p class="quote">“Safo Security did a great job analyzing one of my client’s websites for potential harm. It was really helpful and I couldn’t recommend more.”</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="wrap">
-        <div class="cta reveal">
-          <div class="cta-inner">
-            <div>
-              <div class="eyebrow" style="margin-bottom: 12px;">Book a security readiness review</div>
-              <h2 class="serif">Need a clear security roadmap?</h2>
-              <p style="color: var(--muted); max-width: 650px; margin: 16px 0 0;">
-                Send your website, business goal, and deadline. I’ll confirm scope and tell you whether the review fits the $1.6K–$2.5K package.
-              </p>
-            </div>
-            <div class="actions" style="margin-top:0;">
-              <a class="btn gold" href="mailto:alexksafo@gmail.com">Email Me</a>
-              <a class="btn" href="https://www.linkedin.com/in/a-safo-7154b33a0" target="_blank" rel="noopener">Connect</a>
-            </div>
+          <div>
+            <h4>Priority</h4>
+            <p>
+              Fix within 30 days unless the website handles sensitive customer data, payments,
+              or account logins.
+            </p>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="footer">
-    <div class="wrap footer-inner">
-      <span>© 2026 Safo Security</span>
-      <span>Security readiness. Clear evidence. Practical next steps.</span>
+  <!-- FIT -->
+  <section id="fit" class="section dark-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Fit</p>
+        <h2>This service is for serious businesses, not bargain hunters.</h2>
+        <p>
+          The Security Readiness Package is built for owners who want clean evidence,
+          practical recommendations, and a roadmap they can actually use.
+        </p>
+      </div>
+
+      <div class="fit-grid">
+        <div class="fit-card good-fit">
+          <h3>Good Fit</h3>
+          <ul>
+            <li>You rely on your website for leads, trust, or sales.</li>
+            <li>You want a professional report, not random technical screenshots.</li>
+            <li>You care about customer trust and business risk.</li>
+            <li>You want clear priorities instead of vague advice.</li>
+          </ul>
+        </div>
+
+        <div class="fit-card bad-fit">
+          <h3>Not a Fit</h3>
+          <ul>
+            <li>You want illegal hacking or unauthorized testing.</li>
+            <li>You only want the cheapest possible audit.</li>
+            <li>You are not willing to fix basic business-risk issues.</li>
+            <li>You expect full enterprise penetration testing for a small-business price.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section id="proof" class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Proof of Work</p>
+        <h2>Projects that show how I think technically.</h2>
+        <p>
+          The goal is simple: build security projects that prove detection, analysis,
+          reporting, and engineering discipline.
+        </p>
+      </div>
+
+      <div class="proof-grid">
+        <div class="proof-card">
+          <span class="proof-tag">Flagship Project</span>
+          <h3>SSH Brute-Force Attack Simulation & Detection Lab</h3>
+          <p>
+            A lab focused on simulating SSH brute-force attempts, analyzing authentication logs,
+            identifying suspicious patterns, and producing an incident-style report.
+          </p>
+
+          <ul>
+            <li>Linux authentication logs</li>
+            <li>Failed login pattern analysis</li>
+            <li>MITRE ATT&CK mapping</li>
+            <li>Detection logic and reporting</li>
+          </ul>
+        </div>
+
+        <div class="proof-card">
+          <span class="proof-tag">Next Build</span>
+          <h3>SentinelFlow — Log Correlation + Alert Escalation</h3>
+          <p>
+            A Python-based security engineering project that ingests SSH, web, and firewall-style
+            logs, correlates suspicious behavior, scores severity, and escalates alerts.
+          </p>
+
+          <ul>
+            <li>Multiple log sources</li>
+            <li>Attack behavior correlation</li>
+            <li>Severity scoring</li>
+            <li>JSON/CSV alert output</li>
+            <li>Optional Discord webhook alerts</li>
+          </ul>
+        </div>
+
+        <div class="proof-card">
+          <span class="proof-tag">Client-Facing</span>
+          <h3>Passive Website Security Review</h3>
+          <p>
+            A non-invasive review of visible website risk, business trust signals,
+            exposure issues, and practical remediation priorities.
+          </p>
+
+          <ul>
+            <li>Security headers</li>
+            <li>Visible exposure</li>
+            <li>Business risk summary</li>
+            <li>Remediation roadmap</li>
+          </ul>
+        </div>
+
+        <div class="proof-card">
+          <span class="proof-tag">Documentation</span>
+          <h3>Incident-Style Security Reports</h3>
+          <p>
+            Clean reports that explain what happened, what evidence supports the finding,
+            how severe it is, and what should be fixed first.
+          </p>
+
+          <ul>
+            <li>Executive summary</li>
+            <li>Evidence screenshots</li>
+            <li>Severity levels</li>
+            <li>Recommended fixes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="section dark-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Process</p>
+        <h2>How I approach security work.</h2>
+        <p>
+          The process is designed to be clean, professional, and easy for business owners
+          or recruiters to understand.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-card">
+          <span>01</span>
+          <h3>Scope</h3>
+          <p>
+            Confirm what is being reviewed, what is allowed, and what the business or project
+            is trying to prove.
+          </p>
+        </div>
+
+        <div class="process-card">
+          <span>02</span>
+          <h3>Collect Evidence</h3>
+          <p>
+            Review logs, pages, headers, visible exposure, trust issues, and technical signals
+            without unnecessary noise.
+          </p>
+        </div>
+
+        <div class="process-card">
+          <span>03</span>
+          <h3>Analyze Risk</h3>
+          <p>
+            Convert technical findings into severity, business impact, and practical priority.
+          </p>
+        </div>
+
+        <div class="process-card">
+          <span>04</span>
+          <h3>Report Clearly</h3>
+          <p>
+            Deliver a report that explains the issue, evidence, impact, and recommended next step.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS / RECOMMENDATIONS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Recommendations</p>
+        <h2>How people should describe working with me.</h2>
+        <p>
+          Add real testimonials here as you complete client work, school projects,
+          cybersecurity labs, and freelance reviews.
+        </p>
+      </div>
+
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <p>
+            “A. Safo approaches cybersecurity with discipline, curiosity, and strong attention
+            to evidence. He focuses on understanding the problem before recommending a fix.”
+          </p>
+          <h4>Security Mentor</h4>
+          <span>Placeholder recommendation</span>
+        </div>
+
+        <div class="testimonial">
+          <p>
+            “He communicates technical risk in a way that business owners can understand.
+            His reports are clear, practical, and focused on what matters first.”
+          </p>
+          <h4>Small Business Owner</h4>
+          <span>Placeholder recommendation</span>
+        </div>
+
+        <div class="testimonial">
+          <p>
+            “He is building the kind of project portfolio that shows real initiative:
+            logs, detection, reports, and security thinking instead of only certificates.”
+          </p>
+          <h4>Technical Reviewer</h4>
+          <span>Placeholder recommendation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section dark-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">FAQ</p>
+        <h2>Questions business owners usually ask.</h2>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Is this a penetration test?</h3>
+          <p>
+            No. This is a passive external security readiness review. It focuses on visible
+            risk, trust issues, exposure, and practical remediation. No exploitation or
+            unauthorized access is performed.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Why does the main package cost $1.6K–$2.5K?</h3>
+          <p>
+            The price reflects the depth of review, evidence collection, business-risk analysis,
+            report quality, remediation roadmap, and follow-up call. The goal is not just to
+            find issues. The goal is to make the next 30 days clear.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can smaller businesses start lower?</h3>
+          <p>
+            Yes. The Website Security Snapshot is available for businesses that need a smaller
+            first step before committing to a full readiness package.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What do I need to send?</h3>
+          <p>
+            Send your website link, business type, main concern, and deadline. From there,
+            scope is confirmed before any work starts.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="container final-cta">
+    <div>
+      <p class="eyebrow">Next Step</p>
+      <h2>Want to know what your website is exposing?</h2>
+      <p>
+        Send your website and I’ll confirm whether you need a quick snapshot,
+        full security readiness review, or monthly security care.
+      </p>
+    </div>
+
+    <div class="cta-actions">
+      <a href="mailto:alexksafo@gmail.com?subject=Security%20Readiness%20Review%20Request" class="btn primary">
+        Request Review
+      </a>
+
+      <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank" class="btn secondary">
+        Connect on LinkedIn
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>
+        © 2026 A. Safo — Cybersecurity Portfolio |
+        <a href="https://github.com/safo-star" target="_blank">GitHub</a> |
+        <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank">LinkedIn</a>
+      </p>
     </div>
   </footer>
+
 </body>
 </html>
