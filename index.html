@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -54,16 +54,15 @@
       text-decoration: none;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     .container {
       width: min(1180px, 90%);
       margin: 0 auto;
     }
-
-    .serif {
-      font-family: "Playfair Display", serif;
-    }
-
-    /* ANIMATIONS */
 
     @keyframes fadeUp {
       from {
@@ -118,8 +117,6 @@
     .delay-4 {
       animation-delay: 0.42s;
     }
-
-    /* NAV */
 
     nav {
       position: sticky;
@@ -181,7 +178,13 @@
       width: 100%;
     }
 
-    /* BUTTONS */
+    .nav-btn {
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--text) !important;
+      background: rgba(214, 168, 79, 0.06);
+    }
 
     .btn {
       display: inline-flex;
@@ -218,16 +221,6 @@
       border-color: rgba(214, 168, 79, 0.45);
       background: rgba(214, 168, 79, 0.07);
     }
-
-    .nav-btn {
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      color: var(--text) !important;
-      background: rgba(214, 168, 79, 0.06);
-    }
-
-    /* HERO */
 
     .hero {
       min-height: 92vh;
@@ -411,8 +404,6 @@
       border-bottom: none;
     }
 
-    /* SECTIONS */
-
     .section {
       padding: 96px 0;
     }
@@ -460,39 +451,16 @@
       animation: lineGrow 1.1s ease both;
     }
 
-    /* ABOUT */
-
-    .about-grid {
+    .about-grid,
+    .fit-grid,
+    .proof-grid,
+    .process-grid,
+    .faq-grid,
+    .checks-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 22px;
     }
-
-    .glass-card {
-      padding: 30px;
-      border-radius: 28px;
-      background: var(--card);
-      border: 1px solid var(--border-soft);
-      transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
-    }
-
-    .glass-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--border);
-      background: rgba(214, 168, 79, 0.045);
-    }
-
-    .glass-card h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 1.55rem;
-      margin-bottom: 12px;
-    }
-
-    .glass-card p {
-      color: var(--muted);
-    }
-
-    /* SERVICES */
 
     .pricing-grid {
       display: grid;
@@ -500,21 +468,71 @@
       gap: 22px;
     }
 
-    .price-card {
-      position: relative;
-      padding: 32px;
-      border-radius: 30px;
-      background: var(--card);
-      border: 1px solid var(--border-soft);
-      box-shadow: 0 20px 70px rgba(0,0,0,0.25);
-      transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
-      overflow: hidden;
+    .risk-grid,
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
+    .glass-card,
+    .number-card,
+    .check-item,
+    .fit-card,
+    .faq-item,
+    .proof-card,
+    .process-card,
+    .testimonial,
+    .price-card {
+      padding: 30px;
+      border-radius: 28px;
+      background: var(--card);
+      border: 1px solid var(--border-soft);
+      transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+    }
+
+    .glass-card:hover,
+    .number-card:hover,
+    .check-item:hover,
+    .fit-card:hover,
+    .faq-item:hover,
+    .proof-card:hover,
+    .process-card:hover,
+    .testimonial:hover,
     .price-card:hover {
-      transform: translateY(-7px);
+      transform: translateY(-6px);
       border-color: var(--border);
       background: rgba(214, 168, 79, 0.045);
+    }
+
+    .glass-card h3,
+    .number-card h3,
+    .check-item h3,
+    .fit-card h3,
+    .faq-item h3,
+    .proof-card h3,
+    .process-card h3,
+    .price-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.45rem;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .glass-card p,
+    .number-card p,
+    .faq-item p,
+    .proof-card p,
+    .process-card p,
+    .price-card p,
+    .testimonial p {
+      color: var(--muted);
+    }
+
+    .price-card {
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 70px rgba(0,0,0,0.25);
     }
 
     .price-card.featured {
@@ -529,7 +547,8 @@
       transform: translateY(-18px);
     }
 
-    .badge {
+    .badge,
+    .proof-tag {
       display: inline-flex;
       padding: 7px 12px;
       border-radius: 999px;
@@ -543,13 +562,6 @@
       margin-bottom: 18px;
     }
 
-    .price-card h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 1.65rem;
-      line-height: 1.05;
-      margin-bottom: 14px;
-    }
-
     .price {
       font-family: "Playfair Display", serif;
       font-size: 2.2rem;
@@ -558,71 +570,15 @@
       letter-spacing: -0.04em;
     }
 
-    .price-card p {
-      color: var(--muted);
-      margin-bottom: 22px;
-    }
-
-    .price-card ul {
+    .price-card ul,
+    .check-item ul,
+    .fit-card ul,
+    .proof-card ul {
       padding-left: 18px;
       color: var(--muted);
       line-height: 1.9;
-      margin-bottom: 28px;
-    }
-
-    /* GRIDS */
-
-    .risk-grid,
-    .checks-grid,
-    .fit-grid,
-    .faq-grid,
-    .proof-grid,
-    .process-grid,
-    .testimonial-grid {
-      display: grid;
-      gap: 22px;
-    }
-
-    .risk-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .checks-grid,
-    .fit-grid,
-    .faq-grid,
-    .proof-grid,
-    .process-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .testimonial-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .number-card,
-    .check-item,
-    .fit-card,
-    .faq-item,
-    .proof-card,
-    .process-card,
-    .testimonial {
-      padding: 30px;
-      border-radius: 28px;
-      background: var(--card);
-      border: 1px solid var(--border-soft);
-      transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
-    }
-
-    .number-card:hover,
-    .check-item:hover,
-    .fit-card:hover,
-    .faq-item:hover,
-    .proof-card:hover,
-    .process-card:hover,
-    .testimonial:hover {
-      transform: translateY(-6px);
-      border-color: var(--border);
-      background: rgba(214, 168, 79, 0.045);
+      margin-top: 12px;
+      margin-bottom: 26px;
     }
 
     .num {
@@ -639,36 +595,34 @@
       margin-bottom: 22px;
     }
 
-    .number-card h3,
-    .check-item h3,
-    .fit-card h3,
-    .faq-item h3,
-    .proof-card h3,
-    .process-card h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 1.45rem;
-      line-height: 1.15;
-      margin-bottom: 12px;
+    .proof-card {
+      overflow: hidden;
+      padding: 0;
     }
 
-    .number-card p,
-    .faq-item p,
-    .proof-card p,
-    .process-card p,
-    .testimonial p {
-      color: var(--muted);
+    .proof-image {
+      height: 230px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-soft);
+      background: #080705;
     }
 
-    .check-item ul,
-    .fit-card ul,
-    .proof-card ul {
-      padding-left: 18px;
-      color: var(--muted);
-      line-height: 1.9;
-      margin-top: 12px;
+    .proof-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.88;
+      transition: transform 0.5s ease, opacity 0.5s ease;
     }
 
-    /* REPORT PREVIEW */
+    .proof-card:hover .proof-image img {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+
+    .proof-content {
+      padding: 30px;
+    }
 
     .report-preview {
       display: grid;
@@ -747,29 +701,37 @@
       border-color: rgba(255, 255, 255, 0.11);
     }
 
-    .proof-tag {
-      display: inline-flex;
-      margin-bottom: 14px;
-      padding: 7px 11px;
-      border-radius: 999px;
-      background: rgba(214, 168, 79, 0.08);
-      border: 1px solid var(--border);
-      color: var(--gold-soft);
-      font-size: 0.72rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .testimonial {
+      padding: 18px;
+      overflow: hidden;
     }
 
-    .testimonial p {
-      margin-bottom: 22px;
-      color: #d6cfc2;
+    .testimonial-image {
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--border-soft);
+      background: #080705;
+      margin-bottom: 18px;
+    }
+
+    .testimonial-image img {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      opacity: 0.94;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    .testimonial:hover .testimonial-image img {
+      transform: scale(1.035);
+      opacity: 1;
     }
 
     .testimonial h4 {
       font-family: "Playfair Display", serif;
-      font-size: 1.2rem;
+      font-size: 1.18rem;
       color: var(--text);
+      margin-bottom: 4px;
     }
 
     .testimonial span {
@@ -777,7 +739,11 @@
       font-size: 0.88rem;
     }
 
-    /* FINAL CTA */
+    .testimonial-note {
+      color: var(--muted);
+      font-size: 0.94rem;
+      margin-bottom: 14px;
+    }
 
     .final-cta {
       margin: 96px auto;
@@ -834,8 +800,6 @@
       z-index: 2;
     }
 
-    /* FOOTER */
-
     footer {
       padding: 42px 0;
       border-top: 1px solid var(--border-soft);
@@ -848,8 +812,6 @@
       color: var(--gold-soft);
       font-weight: 800;
     }
-
-    /* MOBILE */
 
     @media (max-width: 980px) {
       .hero-grid,
@@ -902,13 +864,16 @@
         align-items: flex-start;
         padding: 34px;
       }
+
+      .testimonial-image img {
+        height: auto;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
   <nav>
     <div class="container nav-inner">
       <a href="#" class="logo">A. <span>Safo</span></a>
@@ -916,6 +881,7 @@
       <div class="nav-links">
         <a href="#services">Services</a>
         <a href="#proof">Proof</a>
+        <a href="#recommendations">Recommendations</a>
         <a href="#process">Process</a>
         <a href="#faq">FAQ</a>
         <a href="mailto:alexksafo@gmail.com" class="nav-btn">Contact</a>
@@ -923,7 +889,6 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <header class="hero">
     <div class="container hero-grid">
       <div class="reveal">
@@ -982,16 +947,15 @@
     </div>
   </header>
 
-  <!-- ABOUT -->
   <section class="section">
     <div class="container">
       <div class="section-header reveal">
         <p class="eyebrow">Positioning</p>
         <h2>Built for business owners and cybersecurity recruiters.</h2>
         <p>
-          This site has two jobs: show businesses that I can explain risk clearly,
-          and show recruiters that I can build practical cybersecurity projects with
-          evidence, documentation, and technical structure.
+          This site has two jobs. Show businesses that I can explain risk clearly.
+          Show recruiters that I can build practical cybersecurity projects with evidence,
+          documentation, and technical structure.
         </p>
         <div class="gold-line"></div>
       </div>
@@ -1002,14 +966,14 @@
           <p>
             I review your public-facing website from a trust and exposure perspective.
             The goal is to show what customers, attackers, and search visitors can already
-            see — then turn that into a clear remediation roadmap.
+            see, then turn that into a clear remediation roadmap.
           </p>
         </div>
 
         <div class="glass-card reveal delay-2">
           <h3>For Recruiters</h3>
           <p>
-            My projects focus on detection engineering fundamentals: logs, suspicious
+            My projects focus on detection engineering fundamentals. Logs, suspicious
             behavior, severity scoring, alerting, reporting, and mapping activity to
             real security workflows.
           </p>
@@ -1018,7 +982,6 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
   <section id="services" class="section dark-section">
     <div class="container">
       <div class="section-header reveal">
@@ -1046,7 +1009,7 @@
             <li>Passive website review</li>
             <li>Basic exposure notes</li>
             <li>Trust-signal check</li>
-            <li>Top 5–10 issues</li>
+            <li>Top 5 to 10 issues</li>
             <li>Short summary report</li>
           </ul>
 
@@ -1108,14 +1071,13 @@
     </div>
   </section>
 
-  <!-- WHY THIS MATTERS -->
   <section id="risk" class="section">
     <div class="container">
       <div class="section-header reveal">
         <p class="eyebrow">Why This Matters</p>
         <h2>Most websites look fine until trust breaks.</h2>
         <p>
-          A website does not need to be “hacked” to hurt your business. Weak trust signals,
+          A website does not need to be hacked to hurt your business. Weak trust signals,
           exposed admin areas, poor security headers, broken forms, missing policies, and
           visible technical mistakes can make customers hesitate before they ever contact you.
         </p>
@@ -1153,7 +1115,6 @@
     </div>
   </section>
 
-  <!-- CHECKS -->
   <section id="checks" class="section dark-section">
     <div class="container">
       <div class="section-header reveal">
@@ -1210,7 +1171,6 @@
     </div>
   </section>
 
-  <!-- REPORT PREVIEW -->
   <section id="sample-report" class="section">
     <div class="container">
       <div class="section-header reveal">
@@ -1267,7 +1227,6 @@
     </div>
   </section>
 
-  <!-- FIT -->
   <section id="fit" class="section dark-section">
     <div class="container">
       <div class="section-header reveal">
@@ -1304,89 +1263,111 @@
     </div>
   </section>
 
-  <!-- PROOF -->
   <section id="proof" class="section">
     <div class="container">
       <div class="section-header reveal">
         <p class="eyebrow">Proof of Work</p>
         <h2>Projects that show how I think technically.</h2>
         <p>
-          The goal is simple: build security projects that prove detection, analysis,
-          reporting, and engineering discipline.
+          Real proof matters more than claims. These projects show detection, analysis,
+          reporting, and security engineering discipline.
         </p>
         <div class="gold-line"></div>
       </div>
 
       <div class="proof-grid">
         <div class="proof-card reveal delay-1">
-          <span class="proof-tag">Flagship Project</span>
-          <h3>SSH Brute-Force Attack Simulation & Detection Lab</h3>
-          <p>
-            A lab focused on simulating SSH brute-force attempts, analyzing authentication logs,
-            identifying suspicious patterns, and producing an incident-style report.
-          </p>
+          <div class="proof-image">
+            <img src="assets/proof-ssh-lab.jpg" alt="SSH brute-force detection lab screenshot">
+          </div>
 
-          <ul>
-            <li>Linux authentication logs</li>
-            <li>Failed login pattern analysis</li>
-            <li>MITRE ATT&CK mapping</li>
-            <li>Detection logic and reporting</li>
-          </ul>
+          <div class="proof-content">
+            <span class="proof-tag">Flagship Project</span>
+            <h3>SSH Brute-Force Attack Simulation & Detection Lab</h3>
+            <p>
+              A lab focused on simulating SSH brute-force attempts, analyzing authentication logs,
+              identifying suspicious patterns, and producing an incident-style report.
+            </p>
+
+            <ul>
+              <li>Linux authentication logs</li>
+              <li>Failed login pattern analysis</li>
+              <li>MITRE ATT&CK mapping</li>
+              <li>Detection logic and reporting</li>
+            </ul>
+          </div>
         </div>
 
         <div class="proof-card reveal delay-2">
-          <span class="proof-tag">Next Build</span>
-          <h3>SentinelFlow — Log Correlation + Alert Escalation</h3>
-          <p>
-            A Python-based security engineering project that ingests SSH, web, and firewall-style
-            logs, correlates suspicious behavior, scores severity, and escalates alerts.
-          </p>
+          <div class="proof-image">
+            <img src="assets/proof-sentinelflow.jpg" alt="SentinelFlow log correlation project screenshot">
+          </div>
 
-          <ul>
-            <li>Multiple log sources</li>
-            <li>Attack behavior correlation</li>
-            <li>Severity scoring</li>
-            <li>JSON/CSV alert output</li>
-            <li>Optional Discord webhook alerts</li>
-          </ul>
+          <div class="proof-content">
+            <span class="proof-tag">Next Build</span>
+            <h3>SentinelFlow Log Correlation + Alert Escalation</h3>
+            <p>
+              A Python-based security engineering project that ingests SSH, web, and firewall-style
+              logs, correlates suspicious behavior, scores severity, and escalates alerts.
+            </p>
+
+            <ul>
+              <li>Multiple log sources</li>
+              <li>Attack behavior correlation</li>
+              <li>Severity scoring</li>
+              <li>JSON/CSV alert output</li>
+              <li>Optional Discord webhook alerts</li>
+            </ul>
+          </div>
         </div>
 
         <div class="proof-card reveal delay-3">
-          <span class="proof-tag">Client-Facing</span>
-          <h3>Passive Website Security Review</h3>
-          <p>
-            A non-invasive review of visible website risk, business trust signals,
-            exposure issues, and practical remediation priorities.
-          </p>
+          <div class="proof-image">
+            <img src="assets/proof-website-review.jpg" alt="Passive website security review screenshot">
+          </div>
 
-          <ul>
-            <li>Security headers</li>
-            <li>Visible exposure</li>
-            <li>Business risk summary</li>
-            <li>Remediation roadmap</li>
-          </ul>
+          <div class="proof-content">
+            <span class="proof-tag">Client-Facing</span>
+            <h3>Passive Website Security Review</h3>
+            <p>
+              A non-invasive review of visible website risk, business trust signals,
+              exposure issues, and practical remediation priorities.
+            </p>
+
+            <ul>
+              <li>Security headers</li>
+              <li>Visible exposure</li>
+              <li>Business risk summary</li>
+              <li>Remediation roadmap</li>
+            </ul>
+          </div>
         </div>
 
         <div class="proof-card reveal delay-4">
-          <span class="proof-tag">Documentation</span>
-          <h3>Incident-Style Security Reports</h3>
-          <p>
-            Clean reports that explain what happened, what evidence supports the finding,
-            how severe it is, and what should be fixed first.
-          </p>
+          <div class="proof-image">
+            <img src="assets/proof-report.jpg" alt="Incident-style security report preview">
+          </div>
 
-          <ul>
-            <li>Executive summary</li>
-            <li>Evidence screenshots</li>
-            <li>Severity levels</li>
-            <li>Recommended fixes</li>
-          </ul>
+          <div class="proof-content">
+            <span class="proof-tag">Documentation</span>
+            <h3>Incident-Style Security Reports</h3>
+            <p>
+              Clean reports that explain what happened, what evidence supports the finding,
+              how severe it is, and what should be fixed first.
+            </p>
+
+            <ul>
+              <li>Executive summary</li>
+              <li>Evidence screenshots</li>
+              <li>Severity levels</li>
+              <li>Recommended fixes</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROCESS -->
   <section id="process" class="section dark-section">
     <div class="container">
       <div class="section-header reveal">
@@ -1437,54 +1418,55 @@
     </div>
   </section>
 
-  <!-- RECOMMENDATIONS -->
-  <section class="section">
+  <section id="recommendations" class="section">
     <div class="container">
       <div class="section-header reveal">
         <p class="eyebrow">Recommendations</p>
-        <h2>How people should describe working with me.</h2>
+        <h2>Real words from people who have seen the work.</h2>
         <p>
-          Add real testimonials here as you complete client work, school projects,
-          cybersecurity labs, and freelance reviews.
+          Screenshots create more trust than fake-looking quote blocks. Use this section
+          to show the testimonials and messages you already have.
         </p>
         <div class="gold-line"></div>
       </div>
 
       <div class="testimonial-grid">
         <div class="testimonial reveal delay-1">
-          <p>
-            “A. Safo approaches cybersecurity with discipline, curiosity, and strong attention
-            to evidence. He focuses on understanding the problem before recommending a fix.”
+          <div class="testimonial-image">
+            <img src="assets/testimonial-1.jpg" alt="Client or mentor testimonial screenshot">
+          </div>
+          <p class="testimonial-note">
+            Feedback connected to discipline, communication, and cybersecurity growth.
           </p>
-
-          <h4>Security Mentor</h4>
-          <span>Placeholder recommendation</span>
+          <h4>Recommendation 01</h4>
+          <span>Screenshot proof</span>
         </div>
 
         <div class="testimonial reveal delay-2">
-          <p>
-            “He communicates technical risk in a way that business owners can understand.
-            His reports are clear, practical, and focused on what matters first.”
+          <div class="testimonial-image">
+            <img src="assets/testimonial-2.jpg" alt="Client or mentor testimonial screenshot">
+          </div>
+          <p class="testimonial-note">
+            Feedback connected to professionalism, trust, and ability to explain clearly.
           </p>
-
-          <h4>Small Business Owner</h4>
-          <span>Placeholder recommendation</span>
+          <h4>Recommendation 02</h4>
+          <span>Screenshot proof</span>
         </div>
 
         <div class="testimonial reveal delay-3">
-          <p>
-            “He is building the kind of project portfolio that shows real initiative:
-            logs, detection, reports, and security thinking instead of only certificates.”
+          <div class="testimonial-image">
+            <img src="assets/testimonial-3.jpg" alt="Client or mentor testimonial screenshot">
+          </div>
+          <p class="testimonial-note">
+            Feedback connected to work ethic, execution, and technical seriousness.
           </p>
-
-          <h4>Technical Reviewer</h4>
-          <span>Placeholder recommendation</span>
+          <h4>Recommendation 03</h4>
+          <span>Screenshot proof</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
   <section id="faq" class="section dark-section">
     <div class="container">
       <div class="section-header reveal">
@@ -1504,7 +1486,7 @@
         </div>
 
         <div class="faq-item reveal delay-2">
-          <h3>Why does the main package cost $1.6K–$2.5K?</h3>
+          <h3>Why does the main package cost $1.6K to $2.5K?</h3>
           <p>
             The price reflects the depth of review, evidence collection, business-risk analysis,
             report quality, remediation roadmap, and follow-up call. The goal is not just to
@@ -1531,7 +1513,6 @@
     </div>
   </section>
 
-  <!-- FINAL CTA -->
   <section class="container final-cta reveal">
     <div>
       <p class="eyebrow">Next Step</p>
@@ -1553,11 +1534,10 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
       <p>
-        © 2026 A. Safo — Cybersecurity Portfolio |
+        © 2026 A. Safo | Cybersecurity Portfolio |
         <a href="https://github.com/safo-star" target="_blank">GitHub</a> |
         <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank">LinkedIn</a>
       </p>
