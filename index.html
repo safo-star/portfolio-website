@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>A. Safo | Safo Security</title>
-  <meta name="description" content="Safo Security provides passive website security reviews, external exposure analysis, and client-friendly cybersecurity reports." />
+  <meta name="description" content="Safo Security provides passive website security reviews, log review add-ons, external exposure analysis, and client-friendly cybersecurity reports." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,9 @@
       --muted: #b0a391;
       --muted-dark: #7d7264;
       --border: rgba(201, 154, 69, 0.25);
+      --border-strong: rgba(201, 154, 69, 0.55);
       --border-soft: rgba(255, 255, 255, 0.08);
+      --danger: #ff6b6b;
       --shadow: 0 30px 110px rgba(0, 0, 0, 0.55);
     }
 
@@ -144,9 +146,9 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 26px;
+      gap: 24px;
       color: var(--muted);
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -385,7 +387,7 @@
     }
 
     .section-header {
-      max-width: 820px;
+      max-width: 850px;
       margin-bottom: 44px;
     }
 
@@ -408,7 +410,7 @@
     .section-header p {
       color: var(--muted);
       font-size: 1.03rem;
-      max-width: 780px;
+      max-width: 820px;
     }
 
     .gold-line {
@@ -428,6 +430,12 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
     }
 
     .card {
@@ -526,6 +534,26 @@
       color: var(--muted);
       line-height: 1.9;
       margin-bottom: 28px;
+    }
+
+    .service-note {
+      margin-top: 30px;
+      padding: 26px;
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(135deg, rgba(201, 154, 69, 0.1), rgba(255,255,255,0.025)),
+        rgba(255,255,255,0.025);
+    }
+
+    .service-note h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .service-note p {
+      color: var(--muted);
+      max-width: 900px;
     }
 
     .testimonial-card {
@@ -800,6 +828,7 @@
       .hero-grid,
       .grid-2,
       .grid-3,
+      .grid-4,
       .report-preview,
       .report-content {
         grid-template-columns: 1fr;
@@ -876,16 +905,17 @@
 
         <p class="hero-copy">
           I help small businesses find visible website security risks, trust issues,
-          and exposed weaknesses before they damage credibility or cost money.
+          exposed weaknesses, and suspicious log activity before they damage credibility,
+          lose customers, or become bigger problems.
         </p>
 
         <div class="hero-actions">
-          <a href="mailto:alexksafo@gmail.com?subject=Security%20Readiness%20Review%20Request" class="btn gold">
+          <a href="mailto:alexksafo@gmail.com?subject=Security%20Review%20Request" class="btn gold">
             Request Security Review
           </a>
 
-          <a href="#recommendations" class="btn dark">
-            View Client Feedback
+          <a href="#services" class="btn dark">
+            View Packages
           </a>
         </div>
 
@@ -896,27 +926,27 @@
           </div>
 
           <div class="stat reveal delay-2">
-            <h3>3+</h3>
-            <p>Security projects being built and documented</p>
+            <h3>4+</h3>
+            <p>Security projects built and documented</p>
           </div>
 
           <div class="stat reveal delay-3">
-            <h3>$1.6K+</h3>
-            <p>Professional security readiness package range</p>
+            <h3>$150+</h3>
+            <p>Low-friction starter offer for small businesses</p>
           </div>
         </div>
       </div>
 
       <div class="hero-card reveal delay-2">
         <p class="card-label">Primary Focus</p>
-        <h2>Clear reports. Real risk. Practical fixes.</h2>
+        <h2>Clear reports. Real evidence. Practical fixes.</h2>
 
         <ul>
           <li>Passive website security reviews</li>
           <li>External exposure and trust-signal analysis</li>
           <li>Security headers and visible risk checks</li>
-          <li>Client-friendly reports with evidence</li>
-          <li>Simple remediation roadmaps business owners can follow</li>
+          <li>Log review and alert readiness add-ons</li>
+          <li>Client-friendly reports with screenshots and next steps</li>
         </ul>
       </div>
     </div>
@@ -928,9 +958,10 @@
         <p class="eyebrow">Positioning</p>
         <h2>Built for business owners and cybersecurity recruiters.</h2>
         <p>
-          Safo Security exists to make technical risk clear. Business owners get a clean
-          explanation of what is exposed, why it matters, and what to fix first. Recruiters
-          see practical cybersecurity work backed by evidence, reporting, and technical structure.
+          Safo Security turns technical security risk into clear business language.
+          Business owners get simple explanations, evidence, and action steps.
+          Recruiters see hands-on cybersecurity projects backed by logs, detection logic,
+          reporting, and real technical structure.
         </p>
         <div class="gold-line"></div>
       </div>
@@ -939,17 +970,17 @@
         <div class="card reveal delay-1">
           <h3>For Businesses</h3>
           <p>
-            I review your public-facing website from a trust and exposure perspective.
-            The goal is to show what customers, attackers, and search visitors can already
-            see, then turn that into a clear remediation roadmap.
+            I review your public-facing website from a trust, exposure, and security-readiness
+            perspective. You get a clear report showing what is visible, what could hurt trust,
+            and what to fix first.
           </p>
         </div>
 
         <div class="card reveal delay-2">
           <h3>For Recruiters</h3>
           <p>
-            My projects focus on detection engineering fundamentals. Logs, suspicious behavior,
-            severity scoring, reporting, and mapping activity to real security workflows.
+            My projects focus on SOC analyst fundamentals: logs, suspicious behavior,
+            severity scoring, MITRE ATT&CK mapping, alert escalation, and reporting.
           </p>
         </div>
       </div>
@@ -960,39 +991,62 @@
     <div class="container">
       <div class="section-header reveal">
         <p class="eyebrow">Services</p>
-        <h2>Professional security review packages.</h2>
+        <h2>Security packages built for real businesses.</h2>
         <p>
-          Built for small businesses that need practical security clarity,
-          not confusing technical noise.
+          Simple security clarity for small businesses, agencies, founders, and local brands
+          that need to know what their website is exposing.
         </p>
         <div class="gold-line"></div>
       </div>
 
-      <div class="grid-3">
+      <div class="grid-4">
         <div class="price-card reveal delay-1">
-          <span class="badge">Starter</span>
-          <h3>Website Security Snapshot</h3>
-          <div class="price">$650 to $900</div>
+          <span class="badge">Mini Offer</span>
+          <h3>Mini Website Risk Snapshot</h3>
+          <div class="price">$150 to $250</div>
 
           <p>
-            A focused review for small businesses that need a first look at obvious
-            website security and trust issues.
+            A quick first look for small businesses that want to know if their website has
+            obvious trust or security issues.
+          </p>
+
+          <ul>
+            <li>Passive website check</li>
+            <li>Top visible issues</li>
+            <li>Basic trust-signal review</li>
+            <li>Short written summary</li>
+            <li>Simple fix recommendations</li>
+          </ul>
+
+          <a href="mailto:alexksafo@gmail.com?subject=Mini%20Website%20Risk%20Snapshot" class="btn dark">
+            Start Here
+          </a>
+        </div>
+
+        <div class="price-card reveal delay-2">
+          <span class="badge">Starter</span>
+          <h3>Website Security Snapshot</h3>
+          <div class="price">$350 to $650</div>
+
+          <p>
+            A focused website review for businesses that need a stronger look at visible
+            security, trust, and exposure issues.
           </p>
 
           <ul>
             <li>Passive website review</li>
-            <li>Basic exposure notes</li>
-            <li>Trust-signal check</li>
+            <li>Security header check</li>
+            <li>Visible exposure notes</li>
             <li>Top 5 to 10 issues</li>
-            <li>Short summary report</li>
+            <li>Short client-ready report</li>
           </ul>
 
           <a href="mailto:alexksafo@gmail.com?subject=Website%20Security%20Snapshot" class="btn dark">
-            Start Smaller
+            Request Snapshot
           </a>
         </div>
 
-        <div class="price-card featured reveal delay-2">
+        <div class="price-card featured reveal delay-3">
           <span class="badge">Main Offer</span>
           <h3>Security Readiness Package</h3>
           <div class="price">$1.6K to $2.5K</div>
@@ -1019,28 +1073,39 @@
           </a>
         </div>
 
-        <div class="price-card reveal delay-3">
-          <span class="badge">Ongoing</span>
-          <h3>Monthly Security Care</h3>
-          <div class="price">$500 to $1.5K/mo</div>
+        <div class="price-card reveal delay-4">
+          <span class="badge">Add-On</span>
+          <h3>Log Review & Alert Readiness</h3>
+          <div class="price">$350 to $750</div>
 
           <p>
-            Ongoing support for businesses that want monthly checks, basic monitoring,
-            and security guidance.
+            For businesses that have website logs, hosting logs, firewall logs, or login records
+            and want to know if suspicious activity is showing up.
           </p>
 
           <ul>
-            <li>Monthly website review</li>
-            <li>Basic change monitoring</li>
-            <li>Security recommendations</li>
-            <li>Risk-priority updates</li>
-            <li>Monthly summary report</li>
+            <li>Review provided logs</li>
+            <li>Find suspicious IPs or repeated activity</li>
+            <li>Simple severity rating</li>
+            <li>Plain-English explanation</li>
+            <li>Alert summary in report format</li>
+            <li>Monitoring recommendations</li>
           </ul>
 
-          <a href="mailto:alexksafo@gmail.com?subject=Monthly%20Security%20Care" class="btn dark">
-            Ask About Monthly
+          <a href="mailto:alexksafo@gmail.com?subject=Log%20Review%20and%20Alert%20Readiness" class="btn dark">
+            Add Log Review
           </a>
         </div>
+      </div>
+
+      <div class="service-note reveal delay-5">
+        <h3>What the log review means in simple terms</h3>
+        <p>
+          If your website or hosting account keeps records of visits, login attempts, blocked traffic,
+          or suspicious requests, I can review those records and explain what looks normal, what looks
+          suspicious, and what you should monitor going forward. This is not a full enterprise SIEM.
+          It is a practical alert-readiness review for small businesses that want clearer visibility.
+        </p>
       </div>
     </div>
   </section>
@@ -1058,7 +1123,6 @@
       </div>
 
       <div class="grid-3">
-
         <div class="testimonial-card reveal delay-1">
           <p>
             “Safo Security did a great job analyzing one of my client’s websites for potential harm.
@@ -1146,7 +1210,6 @@
           <h3>Safo Security</h3>
           <span>Client Trust Pattern</span>
         </div>
-
       </div>
     </div>
   </section>
@@ -1158,8 +1221,9 @@
         <h2>Most websites look fine until trust breaks.</h2>
         <p>
           A website does not need to be hacked to hurt your business. Weak trust signals,
-          exposed admin areas, poor security headers, broken forms, missing policies, and
-          visible technical mistakes can make customers hesitate before they ever contact you.
+          exposed admin areas, poor security headers, suspicious login activity, broken forms,
+          missing policies, and visible technical mistakes can make customers hesitate before
+          they ever contact you.
         </p>
         <div class="gold-line"></div>
       </div>
@@ -1202,26 +1266,27 @@
         <h2>Projects that show how I think technically.</h2>
         <p>
           Real proof matters more than claims. These projects show detection, analysis,
-          reporting, and security engineering discipline.
+          reporting, security engineering discipline, and client-ready communication.
         </p>
         <div class="gold-line"></div>
       </div>
 
       <div class="grid-2">
         <div class="proof-card reveal delay-1">
-          <div class="proof-visual">SSH Brute Force Detection Lab</div>
+          <div class="proof-visual">AI SIEM Log Analyzer</div>
           <div class="proof-content">
-            <span class="proof-tag">Flagship Project</span>
-            <h3>SSH Brute-Force Attack Simulation and Detection Lab</h3>
+            <span class="proof-tag">SOC Project</span>
+            <h3>AI SIEM Log Analyzer</h3>
             <p>
-              A lab focused on simulating SSH brute-force attempts, analyzing authentication logs,
-              identifying suspicious patterns, and producing an incident-style report.
+              A Python-based mini-SIEM project that monitors Linux SSH authentication logs,
+              detects brute-force behavior, maps findings to MITRE ATT&CK, and presents
+              alerts through a dashboard-style interface.
             </p>
             <ul>
-              <li>Linux authentication logs</li>
+              <li>Linux SSH authentication logs</li>
               <li>Failed login pattern analysis</li>
               <li>MITRE ATT&CK mapping</li>
-              <li>Detection logic and reporting</li>
+              <li>Dashboard-style security reporting</li>
             </ul>
           </div>
         </div>
@@ -1229,34 +1294,38 @@
         <div class="proof-card reveal delay-2">
           <div class="proof-visual">SentinelFlow</div>
           <div class="proof-content">
-            <span class="proof-tag">Next Build</span>
-            <h3>Log Correlation and Alert Escalation</h3>
+            <span class="proof-tag">Flagship Build</span>
+            <h3>SentinelFlow — Log Correlation and Alert Escalation</h3>
             <p>
-              A Python-based security engineering project that ingests SSH, web, and firewall-style
-              logs, correlates suspicious behavior, scores severity, and escalates alerts.
+              A Python-based log correlation system that ingests SSH, web, and firewall-style
+              logs, detects suspicious activity, scores severity, and escalates multi-attack
+              activity from the same source IP.
             </p>
             <ul>
-              <li>Multiple log sources</li>
-              <li>Attack behavior correlation</li>
-              <li>Severity scoring</li>
+              <li>SSH, web, and firewall log ingestion</li>
+              <li>SSH brute force detection</li>
+              <li>Web directory scanning detection</li>
+              <li>Firewall denied burst detection</li>
+              <li>Critical alert correlation</li>
               <li>JSON and CSV alert output</li>
-              <li>Optional Discord webhook alerts</li>
             </ul>
           </div>
         </div>
 
         <div class="proof-card reveal delay-3">
-          <div class="proof-visual">Website Security Review</div>
+          <div class="proof-visual">Passive Website Security Review</div>
           <div class="proof-content">
             <span class="proof-tag">Client-Facing</span>
-            <h3>Passive Website Security Review</h3>
+            <h3>Passive Website Security Review Toolkit</h3>
             <p>
-              A non-invasive review of visible website risk, business trust signals,
-              exposure issues, and practical remediation priorities.
+              A repeatable process for reviewing visible website risk without logging in,
+              exploiting, or touching private systems. Built for business owners who need
+              clear security guidance.
             </p>
             <ul>
               <li>Security headers</li>
               <li>Visible exposure</li>
+              <li>Admin/login surface review</li>
               <li>Business risk summary</li>
               <li>Remediation roadmap</li>
             </ul>
@@ -1264,7 +1333,43 @@
         </div>
 
         <div class="proof-card reveal delay-4">
-          <div class="proof-visual">Security Report</div>
+          <div class="proof-visual">Virtual SOC Lab</div>
+          <div class="proof-content">
+            <span class="proof-tag">Linux Security</span>
+            <h3>SSH Threat Detection and Automated Response</h3>
+            <p>
+              A virtual SOC-style lab using Linux logs, SSH brute-force simulation,
+              Fail2Ban-style response logic, and firewall blocking concepts.
+            </p>
+            <ul>
+              <li>Ubuntu lab environment</li>
+              <li>SSH attack simulation</li>
+              <li>Log analysis workflow</li>
+              <li>Automated blocking concepts</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="proof-card reveal delay-5">
+          <div class="proof-visual">DNS Investigation</div>
+          <div class="proof-content">
+            <span class="proof-tag">Network Analysis</span>
+            <h3>DNS Network Traffic Analysis Investigation</h3>
+            <p>
+              A cybersecurity investigation focused on DNS service failure, network traffic
+              behavior, response timing, and incident-style documentation.
+            </p>
+            <ul>
+              <li>DNS traffic analysis</li>
+              <li>Network behavior review</li>
+              <li>Incident report writing</li>
+              <li>Technical evidence interpretation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="proof-card reveal delay-5">
+          <div class="proof-visual">Security Reports</div>
           <div class="proof-content">
             <span class="proof-tag">Documentation</span>
             <h3>Incident-Style Security Reports</h3>
@@ -1337,6 +1442,50 @@
           </div>
         </div>
       </div>
+
+      <div style="height: 28px;"></div>
+
+      <div class="report-preview reveal delay-2">
+        <div class="report-sidebar">
+          <p class="report-label">Sample Log Finding</p>
+          <h3>Repeated Suspicious Activity</h3>
+          <p class="severity">High Severity</p>
+        </div>
+
+        <div class="report-content">
+          <div>
+            <h4>Business Impact</h4>
+            <p>
+              Repeated suspicious activity from the same source may indicate scanning,
+              login probing, or automated attempts to find weak areas.
+            </p>
+          </div>
+
+          <div>
+            <h4>Evidence</h4>
+            <p>
+              Log records show repeated requests, denied connections, or failed login attempts
+              from the same IP address or time window.
+            </p>
+          </div>
+
+          <div>
+            <h4>Recommended Fix</h4>
+            <p>
+              Review hosting, firewall, Cloudflare, or access control settings. Add alerting,
+              rate limiting, or blocking rules where appropriate.
+            </p>
+          </div>
+
+          <div>
+            <h4>Priority</h4>
+            <p>
+              Review immediately if activity involves admin pages, login pages, payment systems,
+              or customer data.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1357,8 +1506,8 @@
           <span class="num">01</span>
           <h3>Scope</h3>
           <p>
-            Confirm what is being reviewed, what is allowed, and what the business or project
-            is trying to prove.
+            Confirm what is being reviewed, what is allowed, what is not allowed,
+            and what the business or project is trying to prove.
           </p>
         </div>
 
@@ -1366,8 +1515,8 @@
           <span class="num">02</span>
           <h3>Collect Evidence</h3>
           <p>
-            Review logs, pages, headers, visible exposure, trust issues, and technical signals
-            without unnecessary noise.
+            Review pages, headers, visible exposure, trust issues, logs if provided,
+            and technical signals without unnecessary noise.
           </p>
         </div>
 
@@ -1409,6 +1558,31 @@
         </div>
 
         <div class="card reveal delay-2">
+          <h3>What is the mini-offer for?</h3>
+          <p>
+            The Mini Website Risk Snapshot is for businesses that want a low-cost first look
+            before paying for a deeper security review.
+          </p>
+        </div>
+
+        <div class="card reveal delay-3">
+          <h3>What is log review in simple terms?</h3>
+          <p>
+            Logs are records of what happened on a website, server, firewall, or hosting account.
+            I review those records to look for repeated suspicious activity, unusual IPs,
+            failed login patterns, or signs that something needs more attention.
+          </p>
+        </div>
+
+        <div class="card reveal delay-4">
+          <h3>Do I need to be technical?</h3>
+          <p>
+            No. The report is written for business owners. You will get plain-English explanations,
+            screenshots where useful, severity ratings, and practical next steps.
+          </p>
+        </div>
+
+        <div class="card reveal delay-5">
           <h3>Why does the main package cost $1.6K to $2.5K?</h3>
           <p>
             The price reflects the depth of review, evidence collection, business-risk analysis,
@@ -1416,19 +1590,12 @@
           </p>
         </div>
 
-        <div class="card reveal delay-3">
-          <h3>Can smaller businesses start lower?</h3>
-          <p>
-            Yes. The Website Security Snapshot is available for businesses that need a smaller
-            first step before committing to a full readiness package.
-          </p>
-        </div>
-
-        <div class="card reveal delay-4">
+        <div class="card reveal delay-5">
           <h3>What do I need to send?</h3>
           <p>
-            Send your website link, business type, main concern, and deadline. From there,
-            scope is confirmed before any work starts.
+            Send your website link, business type, main concern, and deadline.
+            If requesting log review, you can also send exported logs from your hosting provider,
+            firewall, Cloudflare, WordPress security plugin, or server dashboard.
           </p>
         </div>
       </div>
@@ -1440,13 +1607,13 @@
       <p class="eyebrow">Next Step</p>
       <h2>Want to know what your website is exposing?</h2>
       <p>
-        Send your website and I’ll confirm whether you need a quick snapshot,
-        full security readiness review, or monthly security care.
+        Send your website and I’ll confirm whether you need a mini snapshot,
+        full security readiness review, log review add-on, or monthly security care.
       </p>
     </div>
 
     <div class="cta-actions">
-      <a href="mailto:alexksafo@gmail.com?subject=Security%20Readiness%20Review%20Request" class="btn gold">
+      <a href="mailto:alexksafo@gmail.com?subject=Security%20Review%20Request" class="btn gold">
         Request Review
       </a>
 
