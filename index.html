@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>A. Safo | Safo Security</title>
-  <meta name="description" content="Safo Security provides passive website security reviews, external exposure analysis, and cybersecurity project documentation." />
+  <meta name="description" content="Safo Security provides passive website security reviews, external exposure analysis, and client-friendly cybersecurity reports." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,6 +56,13 @@
     .container {
       width: min(1180px, 90%);
       margin: 0 auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Cinzel", serif;
     }
 
     @keyframes fadeUp {
@@ -146,7 +153,6 @@
     }
 
     .nav-links a {
-      position: relative;
       transition: color 0.25s ease;
     }
 
@@ -253,13 +259,6 @@
       width: 42px;
       height: 1px;
       background: var(--gold);
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: "Cinzel", serif;
     }
 
     .hero h1 {
@@ -529,6 +528,61 @@
       margin-bottom: 28px;
     }
 
+    .testimonial-card {
+      position: relative;
+      padding: 34px;
+      border-radius: 30px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018)),
+        rgba(5, 4, 3, 0.88);
+      border: 1px solid var(--border);
+      box-shadow: 0 22px 90px rgba(0,0,0,0.32);
+      transition: 0.28s ease;
+      overflow: hidden;
+      min-height: 340px;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-7px);
+      background: rgba(201, 154, 69, 0.045);
+    }
+
+    .testimonial-card::before {
+      content: "“";
+      position: absolute;
+      top: 12px;
+      right: 26px;
+      font-family: "Cinzel", serif;
+      color: rgba(201, 154, 69, 0.32);
+      font-size: 5rem;
+      line-height: 1;
+    }
+
+    .testimonial-card p {
+      position: relative;
+      z-index: 2;
+      color: #ddd2c0;
+      font-size: 0.98rem;
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .testimonial-card h3 {
+      color: var(--gold-soft);
+      font-size: 1.1rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .testimonial-card span {
+      color: var(--muted-dark);
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 800;
+    }
+
     .num {
       display: inline-flex;
       width: 44px;
@@ -541,70 +595,6 @@
       color: var(--gold-soft);
       font-weight: 900;
       margin-bottom: 22px;
-    }
-
-    .report-preview {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      overflow: hidden;
-      border-radius: 32px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-    }
-
-    .report-sidebar {
-      padding: 36px;
-      background:
-        linear-gradient(160deg, rgba(201, 154, 69, 0.14), rgba(255,255,255,0.02)),
-        #070604;
-      border-right: 1px solid var(--border);
-    }
-
-    .report-label {
-      color: var(--gold);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-weight: 900;
-      margin-bottom: 18px;
-    }
-
-    .report-sidebar h3 {
-      font-size: 1.65rem;
-      line-height: 1.08;
-      margin-bottom: 18px;
-    }
-
-    .severity {
-      display: inline-flex;
-      padding: 8px 13px;
-      border-radius: 999px;
-      font-size: 0.82rem;
-      font-weight: 900;
-      background: rgba(201, 154, 69, 0.12);
-      color: var(--gold-soft);
-      border: 1px solid var(--border);
-    }
-
-    .report-content {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .report-content div {
-      padding: 30px;
-      border-bottom: 1px solid var(--border-soft);
-      border-right: 1px solid var(--border-soft);
-    }
-
-    .report-content h4 {
-      font-size: 1.08rem;
-      margin-bottom: 10px;
-    }
-
-    .report-content p {
-      color: var(--muted);
     }
 
     .proof-card {
@@ -675,58 +665,68 @@
       margin-top: 12px;
     }
 
-    .testimonial-card {
-      position: relative;
-      padding: 34px;
-      border-radius: 30px;
-      background:
-        linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018)),
-        rgba(5, 4, 3, 0.88);
-      border: 1px solid var(--border);
-      box-shadow: 0 22px 90px rgba(0,0,0,0.32);
-      transition: 0.28s ease;
+    .report-preview {
+      display: grid;
+      grid-template-columns: 320px 1fr;
       overflow: hidden;
+      border-radius: 32px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
     }
 
-    .testimonial-card:hover {
-      transform: translateY(-7px);
-      background: rgba(201, 154, 69, 0.045);
+    .report-sidebar {
+      padding: 36px;
+      background:
+        linear-gradient(160deg, rgba(201, 154, 69, 0.14), rgba(255,255,255,0.02)),
+        #070604;
+      border-right: 1px solid var(--border);
     }
 
-    .testimonial-card::before {
-      content: "“";
-      position: absolute;
-      top: 12px;
-      right: 26px;
-      font-family: "Cinzel", serif;
-      color: rgba(201, 154, 69, 0.32);
-      font-size: 5rem;
-      line-height: 1;
+    .report-label {
+      color: var(--gold);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 900;
+      margin-bottom: 18px;
     }
 
-    .testimonial-card p {
-      position: relative;
-      z-index: 2;
-      color: #ddd2c0;
-      font-size: 0.98rem;
-      line-height: 1.75;
-      margin-bottom: 24px;
+    .report-sidebar h3 {
+      font-size: 1.65rem;
+      line-height: 1.08;
+      margin-bottom: 18px;
     }
 
-    .testimonial-card h3 {
+    .severity {
+      display: inline-flex;
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 900;
+      background: rgba(201, 154, 69, 0.12);
       color: var(--gold-soft);
-      font-size: 1.1rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
+      border: 1px solid var(--border);
     }
 
-    .testimonial-card span {
-      color: var(--muted-dark);
-      font-size: 0.86rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 800;
+    .report-content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .report-content div {
+      padding: 30px;
+      border-bottom: 1px solid var(--border-soft);
+      border-right: 1px solid var(--border-soft);
+    }
+
+    .report-content h4 {
+      font-size: 1.08rem;
+      margin-bottom: 10px;
+    }
+
+    .report-content p {
+      color: var(--muted);
     }
 
     .final-cta {
@@ -840,6 +840,10 @@
         align-items: flex-start;
         padding: 34px;
       }
+
+      .testimonial-card {
+        min-height: auto;
+      }
     }
   </style>
 </head>
@@ -852,8 +856,8 @@
 
       <div class="nav-links">
         <a href="#services">Services</a>
+        <a href="#recommendations">Feedback</a>
         <a href="#proof">Proof</a>
-        <a href="#recommendations">Recommendations</a>
         <a href="#process">Process</a>
         <a href="#faq">FAQ</a>
         <a href="mailto:alexksafo@gmail.com" class="nav-btn">Contact</a>
@@ -871,9 +875,8 @@
         </h1>
 
         <p class="hero-copy">
-          I help small businesses identify visible website security risks, trust blockers,
-          and external exposure before they damage credibility. I also build cybersecurity
-          labs that prove detection, analysis, and incident-response thinking.
+          I help small businesses find visible website security risks, trust issues,
+          and exposed weaknesses before they damage credibility or cost money.
         </p>
 
         <div class="hero-actions">
@@ -888,8 +891,8 @@
 
         <div class="stats">
           <div class="stat reveal delay-1">
-            <h3>5</h3>
-            <p>People and businesses reviewed or supported</p>
+            <h3>5+</h3>
+            <p>Clients, founders, and business pages reviewed</p>
           </div>
 
           <div class="stat reveal delay-2">
@@ -906,14 +909,14 @@
 
       <div class="hero-card reveal delay-2">
         <p class="card-label">Primary Focus</p>
-        <h2>Clean security work. Clear business risk.</h2>
+        <h2>Clear reports. Real risk. Practical fixes.</h2>
 
         <ul>
           <li>Passive website security reviews</li>
           <li>External exposure and trust-signal analysis</li>
           <li>Security headers and visible risk checks</li>
-          <li>Incident-style reports with evidence</li>
-          <li>Client-friendly remediation roadmaps</li>
+          <li>Client-friendly reports with evidence</li>
+          <li>Simple remediation roadmaps business owners can follow</li>
         </ul>
       </div>
     </div>
@@ -925,9 +928,9 @@
         <p class="eyebrow">Positioning</p>
         <h2>Built for business owners and cybersecurity recruiters.</h2>
         <p>
-          This site has two jobs. Show businesses that I can explain risk clearly.
-          Show recruiters that I can build practical cybersecurity projects with evidence,
-          documentation, and technical structure.
+          Safo Security exists to make technical risk clear. Business owners get a clean
+          explanation of what is exposed, why it matters, and what to fix first. Recruiters
+          see practical cybersecurity work backed by evidence, reporting, and technical structure.
         </p>
         <div class="gold-line"></div>
       </div>
@@ -945,9 +948,8 @@
         <div class="card reveal delay-2">
           <h3>For Recruiters</h3>
           <p>
-            My projects focus on detection engineering fundamentals. Logs, suspicious
-            behavior, severity scoring, alerting, reporting, and mapping activity to
-            real security workflows.
+            My projects focus on detection engineering fundamentals. Logs, suspicious behavior,
+            severity scoring, reporting, and mapping activity to real security workflows.
           </p>
         </div>
       </div>
@@ -974,7 +976,7 @@
 
           <p>
             A focused review for small businesses that need a first look at obvious
-            security and trust issues.
+            website security and trust issues.
           </p>
 
           <ul>
@@ -1049,17 +1051,18 @@
         <p class="eyebrow">Client Feedback</p>
         <h2>People I have worked with.</h2>
         <p>
-          Real feedback from people and businesses who have seen the work, the reports,
-          the explanations, and the results.
+          Real feedback from business owners, agency founders, and clients who have seen
+          the reports, the explanations, and the value delivered.
         </p>
         <div class="gold-line"></div>
       </div>
 
       <div class="grid-3">
+
         <div class="testimonial-card reveal delay-1">
           <p>
-            Safo Security did a great job analyzing one of my client’s websites for potential harm.
-            It was really helpful and I couldn’t recommend him more.
+            “Safo Security did a great job analyzing one of my client’s websites for potential harm.
+            It was really helpful and I couldn’t recommend him more.”
           </p>
           <h3>Yater Agency Inc</h3>
           <span>Web Agency Owner</span>
@@ -1067,9 +1070,9 @@
 
         <div class="testimonial-card reveal delay-2">
           <p>
-            Safo Security was able to completely diagnose security risks of my website.
-            Their process and professionalism is highly recommended for anyone who wants
-            to secure their digital assets.
+            “Safo Security was able to completely diagnose security risks on my website.
+            Their process and professionalism are highly recommended for anyone who wants
+            to secure their digital assets.”
           </p>
           <h3>Vyderia</h3>
           <span>AI Automation Agency</span>
@@ -1077,10 +1080,9 @@
 
         <div class="testimonial-card reveal delay-3">
           <p>
-            Safo Security did an excellent job reviewing the full report and explaining everything clearly.
-            The work was detailed, professional, organized, and easy to understand. The review gave me
-            confidence that the booking page already has a solid security foundation, while also clearly
-            showing what still needs improvement.
+            “Safo Security did an excellent job reviewing the full report and explaining
+            everything clearly. The work was detailed, professional, organized, and easy
+            to understand.”
           </p>
           <h3>Rayane Cutz</h3>
           <span>Barber / Client</span>
@@ -1088,10 +1090,9 @@
 
         <div class="testimonial-card reveal delay-4">
           <p>
-            I especially appreciated the recommendations around missing security headers, account hardening,
-            and the ethical passive public approach. The document was clean, client-friendly, and the next
-            steps were practical and easy to follow. Thank you again for the effort, fast delivery, and
-            quality of the review. Great work overall.
+            “The review gave me confidence that the booking page had a solid security
+            foundation, while clearly showing what still needed improvement. The next
+            steps were practical and easy to follow.”
           </p>
           <h3>Rayane Cutz</h3>
           <span>Report Review Feedback</span>
@@ -1099,29 +1100,29 @@
 
         <div class="testimonial-card reveal delay-5">
           <p>
-            Safo Security delivered exactly the kind of audit every business owner hopes for but rarely gets.
-            They uncovered exposed content on my website along with a vulnerable API endpoint, issues that
-            could have cost me thousands if discovered by the wrong party first.
+            “Safo Security delivered exactly the kind of audit every business owner hopes for.
+            They uncovered exposed content on my website and a vulnerable API endpoint
+            that could have cost me thousands.”
           </p>
           <h3>Jack Frechette</h3>
-          <span>Founder of Wedge Acquisition</span>
+          <span>Founder, Wedge Acquisition</span>
         </div>
 
         <div class="testimonial-card reveal delay-5">
           <p>
-            Their findings were clear, straightforward, and the value delivered exceeded what I’ve seen from
-            engagements elsewhere. If you’re serious about protecting your business, Safo Security is the team
-            I’d recommend without hesitation.
+            “Their findings were clear, straightforward, and the value delivered exceeded
+            what I’ve seen from engagements elsewhere. If you’re serious about protecting
+            your business, I’d recommend Safo Security.”
           </p>
           <h3>Jack Frechette</h3>
-          <span>Founder of Wedge Acquisition</span>
+          <span>Founder, Wedge Acquisition</span>
         </div>
 
         <div class="testimonial-card reveal delay-1">
           <p>
-            Safo Security did a really strong job reviewing my page and Royal Clean. The report was clear,
-            direct, and professionally structured. Each section had its own explanation, everything made sense,
-            and it never felt like random information.
+            “Safo Security did a really strong job reviewing my page and Royal Clean.
+            The report was clear, direct, and professionally structured. Everything made
+            sense and never felt like random information.”
           </p>
           <h3>Joatham</h3>
           <span>Founder, Royal Clean</span>
@@ -1129,9 +1130,9 @@
 
         <div class="testimonial-card reveal delay-2">
           <p>
-            I also liked that the feedback was practical and made me think more seriously about things like
-            payments, email exposure, and how my business is presented. Overall, the review was organized,
-            valuable, and easy to understand.
+            “The feedback was practical and made me think more seriously about payments,
+            email exposure, and how my business is presented. The review was organized,
+            valuable, and easy to understand.”
           </p>
           <h3>Joatham</h3>
           <span>Founder, Royal Clean</span>
@@ -1139,12 +1140,13 @@
 
         <div class="testimonial-card reveal delay-3">
           <p>
-            The strongest pattern across the feedback is simple. Clients value clear explanations, practical
-            fixes, professional structure, and reports that help them understand what actually matters.
+            “The pattern is simple. Clients value clear explanations, practical fixes,
+            professional structure, and reports that help them understand what actually matters.”
           </p>
           <h3>Safo Security</h3>
           <span>Client Trust Pattern</span>
         </div>
+
       </div>
     </div>
   </section>
