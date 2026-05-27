@@ -4,28 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>A. Safo | Cybersecurity Security Reviews</title>
-  <meta name="description" content="Cybersecurity portfolio and passive website security review services by A. Safo." />
+  <title>A. Safo | Safo Security</title>
+  <meta name="description" content="Safo Security provides passive website security reviews, external exposure analysis, and cybersecurity project documentation." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #050505;
-      --bg-soft: #0b0a08;
+      --bg: #050403;
+      --bg-soft: #0b0906;
       --card: rgba(255, 255, 255, 0.035);
-      --card-strong: rgba(255, 255, 255, 0.06);
-      --gold: #d6a84f;
-      --gold-soft: #f2d28a;
-      --gold-dark: #8f6825;
-      --text: #f8f3e8;
-      --muted: #a9a094;
-      --muted-2: #7d756a;
-      --border: rgba(214, 168, 79, 0.18);
+      --gold: #c99a45;
+      --gold-soft: #f1d08a;
+      --gold-dark: #7a5620;
+      --text: #f7efe2;
+      --muted: #b0a391;
+      --muted-dark: #7d7264;
+      --border: rgba(201, 154, 69, 0.25);
       --border-soft: rgba(255, 255, 255, 0.08);
-      --shadow: 0 30px 100px rgba(0, 0, 0, 0.5);
+      --shadow: 0 30px 110px rgba(0, 0, 0, 0.55);
     }
 
     * {
@@ -41,8 +40,8 @@
     body {
       font-family: "Inter", sans-serif;
       background:
-        radial-gradient(circle at 20% 0%, rgba(214, 168, 79, 0.12), transparent 30%),
-        radial-gradient(circle at 80% 20%, rgba(214, 168, 79, 0.07), transparent 26%),
+        radial-gradient(circle at 20% 0%, rgba(201, 154, 69, 0.12), transparent 32%),
+        radial-gradient(circle at 80% 15%, rgba(201, 154, 69, 0.08), transparent 28%),
         var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -52,11 +51,6 @@
     a {
       color: inherit;
       text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
     }
 
     .container {
@@ -76,25 +70,15 @@
       }
     }
 
-    @keyframes slowGlow {
+    @keyframes glow {
       0%, 100% {
-        opacity: 0.55;
+        opacity: 0.5;
         transform: scale(1);
       }
 
       50% {
-        opacity: 0.9;
+        opacity: 0.85;
         transform: scale(1.04);
-      }
-    }
-
-    @keyframes lineGrow {
-      from {
-        width: 0;
-      }
-
-      to {
-        width: 100%;
       }
     }
 
@@ -118,11 +102,15 @@
       animation-delay: 0.42s;
     }
 
+    .delay-5 {
+      animation-delay: 0.52s;
+    }
+
     nav {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(5, 5, 5, 0.76);
+      background: rgba(5, 4, 3, 0.78);
       backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--border-soft);
     }
@@ -135,14 +123,15 @@
     }
 
     .logo {
-      font-family: "Playfair Display", serif;
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
+      font-family: "Cinzel", serif;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      font-size: 1rem;
+      text-transform: uppercase;
     }
 
     .logo span {
-      color: var(--gold);
+      color: var(--gold-soft);
     }
 
     .nav-links {
@@ -150,8 +139,10 @@
       align-items: center;
       gap: 26px;
       color: var(--muted);
-      font-size: 0.88rem;
-      font-weight: 700;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
     .nav-links a {
@@ -160,73 +151,52 @@
     }
 
     .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .nav-links a:not(.nav-btn)::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -7px;
-      width: 0;
-      height: 1px;
-      background: var(--gold);
-      transition: width 0.25s ease;
-    }
-
-    .nav-links a:not(.nav-btn):hover::after {
-      width: 100%;
+      color: var(--gold-soft);
     }
 
     .nav-btn {
       padding: 10px 16px;
       border-radius: 999px;
       border: 1px solid var(--border);
+      background: rgba(201, 154, 69, 0.06);
       color: var(--text) !important;
-      background: rgba(214, 168, 79, 0.06);
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
       padding: 14px 22px;
       border-radius: 999px;
-      font-weight: 800;
-      font-size: 0.92rem;
-      transition: transform 0.25s ease, opacity 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+      font-size: 0.9rem;
+      font-weight: 900;
       border: 1px solid transparent;
+      transition: 0.25s ease;
       white-space: nowrap;
     }
 
     .btn:hover {
       transform: translateY(-3px);
-      opacity: 0.95;
+      opacity: 0.94;
     }
 
     .btn.gold {
+      color: #080604;
       background: linear-gradient(135deg, var(--gold-soft), var(--gold), var(--gold-dark));
-      color: #0b0905;
-      box-shadow: 0 18px 55px rgba(214, 168, 79, 0.22);
+      box-shadow: 0 18px 55px rgba(201, 154, 69, 0.24);
     }
 
     .btn.dark {
-      background: rgba(255, 255, 255, 0.035);
       color: var(--text);
+      background: rgba(255, 255, 255, 0.035);
       border-color: var(--border);
-    }
-
-    .btn.dark:hover {
-      border-color: rgba(214, 168, 79, 0.45);
-      background: rgba(214, 168, 79, 0.07);
     }
 
     .hero {
       min-height: 92vh;
+      position: relative;
       display: flex;
       align-items: center;
-      position: relative;
       overflow: hidden;
       border-bottom: 1px solid var(--border-soft);
     }
@@ -237,10 +207,10 @@
       width: 520px;
       height: 520px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(214, 168, 79, 0.18), transparent 68%);
-      top: 12%;
+      top: 10%;
       right: -180px;
-      animation: slowGlow 8s ease-in-out infinite;
+      background: radial-gradient(circle, rgba(201, 154, 69, 0.18), transparent 68%);
+      animation: glow 8s ease-in-out infinite;
       pointer-events: none;
     }
 
@@ -251,8 +221,8 @@
       background-image:
         linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 80px 80px;
-      mask-image: linear-gradient(to bottom, black, transparent 85%);
+      background-size: 82px 82px;
+      mask-image: linear-gradient(to bottom, black, transparent 86%);
       pointer-events: none;
     }
 
@@ -260,7 +230,7 @@
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: 1.18fr 0.82fr;
+      grid-template-columns: 1.16fr 0.84fr;
       gap: 52px;
       align-items: center;
       padding: 92px 0;
@@ -269,48 +239,52 @@
     .kicker {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 13px;
       color: var(--gold-soft);
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       font-weight: 900;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
     .kicker::before {
       content: "";
-      width: 38px;
+      width: 42px;
       height: 1px;
       background: var(--gold);
     }
 
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Cinzel", serif;
+    }
+
     .hero h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(3.45rem, 7vw, 7.4rem);
+      font-size: clamp(3.3rem, 7vw, 7.2rem);
       line-height: 0.88;
-      letter-spacing: -0.07em;
+      letter-spacing: -0.045em;
       margin-bottom: 28px;
-      max-width: 860px;
+      max-width: 900px;
     }
 
     .hero h1 span {
-      color: var(--gold);
-      font-style: italic;
-      font-weight: 600;
+      color: var(--gold-soft);
     }
 
     .hero-copy {
       color: var(--muted);
-      font-size: 1.08rem;
       max-width: 720px;
+      font-size: 1.08rem;
       margin-bottom: 34px;
     }
 
     .hero-actions {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
+      gap: 14px;
       margin-bottom: 44px;
     }
 
@@ -326,36 +300,34 @@
       border-radius: 22px;
       background: rgba(255,255,255,0.03);
       border: 1px solid var(--border-soft);
-      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+      transition: 0.25s ease;
     }
 
     .stat:hover {
       transform: translateY(-5px);
       border-color: var(--border);
-      background: rgba(214, 168, 79, 0.045);
+      background: rgba(201, 154, 69, 0.045);
     }
 
     .stat h3 {
-      font-family: "Playfair Display", serif;
       font-size: 2rem;
       color: var(--gold-soft);
-      line-height: 1;
       margin-bottom: 8px;
     }
 
     .stat p {
-      color: var(--muted-2);
+      color: var(--muted-dark);
       font-size: 0.86rem;
       line-height: 1.5;
     }
 
     .hero-card {
       position: relative;
-      padding: 32px;
+      padding: 34px;
       border-radius: 34px;
       background:
         linear-gradient(145deg, rgba(255,255,255,0.065), rgba(255,255,255,0.02)),
-        rgba(5,5,5,0.65);
+        rgba(5,5,5,0.68);
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
       overflow: hidden;
@@ -365,7 +337,7 @@
       content: "";
       position: absolute;
       inset: 16px;
-      border: 1px solid rgba(214, 168, 79, 0.12);
+      border: 1px solid rgba(201, 154, 69, 0.14);
       border-radius: 24px;
       pointer-events: none;
     }
@@ -380,16 +352,13 @@
     }
 
     .hero-card h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 2rem;
-      line-height: 1.05;
+      font-size: 1.8rem;
+      line-height: 1.08;
       margin-bottom: 22px;
     }
 
     .hero-card ul {
       list-style: none;
-      display: grid;
-      gap: 12px;
       color: var(--muted);
       position: relative;
       z-index: 2;
@@ -410,14 +379,14 @@
 
     .dark-section {
       background:
-        radial-gradient(circle at 15% 20%, rgba(214, 168, 79, 0.07), transparent 30%),
+        radial-gradient(circle at 15% 20%, rgba(201, 154, 69, 0.07), transparent 30%),
         var(--bg-soft);
       border-top: 1px solid var(--border-soft);
       border-bottom: 1px solid var(--border-soft);
     }
 
     .section-header {
-      max-width: 810px;
+      max-width: 820px;
       margin-bottom: 44px;
     }
 
@@ -425,121 +394,95 @@
       color: var(--gold);
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       font-weight: 900;
       margin-bottom: 14px;
     }
 
     .section-header h2 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(2.35rem, 4.5vw, 4.2rem);
+      font-size: clamp(2.2rem, 4.5vw, 4.1rem);
       line-height: 0.98;
-      letter-spacing: -0.055em;
+      letter-spacing: -0.04em;
       margin-bottom: 20px;
     }
 
     .section-header p {
       color: var(--muted);
       font-size: 1.03rem;
-      max-width: 760px;
+      max-width: 780px;
     }
 
     .gold-line {
+      width: 100%;
       height: 1px;
       background: linear-gradient(90deg, var(--gold), transparent);
       margin-top: 26px;
-      animation: lineGrow 1.1s ease both;
     }
 
-    .about-grid,
-    .fit-grid,
-    .proof-grid,
-    .process-grid,
-    .faq-grid,
-    .checks-grid {
+    .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 22px;
     }
 
-    .pricing-grid {
+    .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
 
-    .risk-grid,
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .glass-card,
-    .number-card,
-    .check-item,
-    .fit-card,
-    .faq-item,
-    .proof-card,
-    .process-card,
-    .testimonial,
-    .price-card {
+    .card {
       padding: 30px;
       border-radius: 28px;
       background: var(--card);
       border: 1px solid var(--border-soft);
-      transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+      transition: 0.28s ease;
     }
 
-    .glass-card:hover,
-    .number-card:hover,
-    .check-item:hover,
-    .fit-card:hover,
-    .faq-item:hover,
-    .proof-card:hover,
-    .process-card:hover,
-    .testimonial:hover,
-    .price-card:hover {
+    .card:hover {
       transform: translateY(-6px);
       border-color: var(--border);
-      background: rgba(214, 168, 79, 0.045);
+      background: rgba(201, 154, 69, 0.045);
     }
 
-    .glass-card h3,
-    .number-card h3,
-    .check-item h3,
-    .fit-card h3,
-    .faq-item h3,
-    .proof-card h3,
-    .process-card h3,
-    .price-card h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 1.45rem;
-      line-height: 1.15;
+    .card h3 {
+      font-size: 1.35rem;
+      line-height: 1.16;
       margin-bottom: 12px;
     }
 
-    .glass-card p,
-    .number-card p,
-    .faq-item p,
-    .proof-card p,
-    .process-card p,
-    .price-card p,
-    .testimonial p {
+    .card p {
       color: var(--muted);
+    }
+
+    .card ul {
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-top: 12px;
     }
 
     .price-card {
       position: relative;
-      overflow: hidden;
+      padding: 32px;
+      border-radius: 30px;
+      background: var(--card);
+      border: 1px solid var(--border-soft);
       box-shadow: 0 20px 70px rgba(0,0,0,0.25);
+      transition: 0.28s ease;
+    }
+
+    .price-card:hover {
+      transform: translateY(-7px);
+      border-color: var(--border);
+      background: rgba(201, 154, 69, 0.045);
     }
 
     .price-card.featured {
       background:
-        linear-gradient(155deg, rgba(214, 168, 79, 0.12), rgba(255,255,255,0.035)),
+        linear-gradient(155deg, rgba(201, 154, 69, 0.13), rgba(255,255,255,0.035)),
         rgba(255,255,255,0.035);
-      border-color: rgba(214, 168, 79, 0.38);
+      border-color: rgba(201, 154, 69, 0.42);
       transform: translateY(-12px);
     }
 
@@ -547,12 +490,11 @@
       transform: translateY(-18px);
     }
 
-    .badge,
-    .proof-tag {
+    .badge {
       display: inline-flex;
       padding: 7px 12px;
       border-radius: 999px;
-      background: rgba(214, 168, 79, 0.1);
+      background: rgba(201, 154, 69, 0.1);
       color: var(--gold-soft);
       border: 1px solid var(--border);
       font-size: 0.72rem;
@@ -562,23 +504,29 @@
       margin-bottom: 18px;
     }
 
-    .price {
-      font-family: "Playfair Display", serif;
-      font-size: 2.2rem;
-      color: var(--gold-soft);
-      margin-bottom: 16px;
-      letter-spacing: -0.04em;
+    .price-card h3 {
+      font-size: 1.5rem;
+      line-height: 1.1;
+      margin-bottom: 14px;
     }
 
-    .price-card ul,
-    .check-item ul,
-    .fit-card ul,
-    .proof-card ul {
+    .price {
+      font-family: "Cinzel", serif;
+      font-size: 2rem;
+      color: var(--gold-soft);
+      margin-bottom: 16px;
+    }
+
+    .price-card p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .price-card ul {
       padding-left: 18px;
       color: var(--muted);
       line-height: 1.9;
-      margin-top: 12px;
-      margin-bottom: 26px;
+      margin-bottom: 28px;
     }
 
     .num {
@@ -588,40 +536,11 @@
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      background: rgba(214, 168, 79, 0.09);
+      background: rgba(201, 154, 69, 0.09);
       border: 1px solid var(--border);
       color: var(--gold-soft);
       font-weight: 900;
       margin-bottom: 22px;
-    }
-
-    .proof-card {
-      overflow: hidden;
-      padding: 0;
-    }
-
-    .proof-image {
-      height: 230px;
-      overflow: hidden;
-      border-bottom: 1px solid var(--border-soft);
-      background: #080705;
-    }
-
-    .proof-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.88;
-      transition: transform 0.5s ease, opacity 0.5s ease;
-    }
-
-    .proof-card:hover .proof-image img {
-      transform: scale(1.05);
-      opacity: 1;
-    }
-
-    .proof-content {
-      padding: 30px;
     }
 
     .report-preview {
@@ -637,7 +556,7 @@
     .report-sidebar {
       padding: 36px;
       background:
-        linear-gradient(160deg, rgba(214, 168, 79, 0.14), rgba(255,255,255,0.02)),
+        linear-gradient(160deg, rgba(201, 154, 69, 0.14), rgba(255,255,255,0.02)),
         #070604;
       border-right: 1px solid var(--border);
     }
@@ -652,9 +571,8 @@
     }
 
     .report-sidebar h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 1.9rem;
-      line-height: 1.05;
+      font-size: 1.65rem;
+      line-height: 1.08;
       margin-bottom: 18px;
     }
 
@@ -664,10 +582,7 @@
       border-radius: 999px;
       font-size: 0.82rem;
       font-weight: 900;
-    }
-
-    .severity.medium {
-      background: rgba(214, 168, 79, 0.12);
+      background: rgba(201, 154, 69, 0.12);
       color: var(--gold-soft);
       border: 1px solid var(--border);
     }
@@ -684,8 +599,7 @@
     }
 
     .report-content h4 {
-      font-family: "Playfair Display", serif;
-      font-size: 1.22rem;
+      font-size: 1.08rem;
       margin-bottom: 10px;
     }
 
@@ -693,56 +607,126 @@
       color: var(--muted);
     }
 
-    .good-fit {
-      border-color: rgba(214, 168, 79, 0.28);
-    }
-
-    .bad-fit {
-      border-color: rgba(255, 255, 255, 0.11);
-    }
-
-    .testimonial {
-      padding: 18px;
+    .proof-card {
       overflow: hidden;
-    }
-
-    .testimonial-image {
-      border-radius: 22px;
-      overflow: hidden;
+      padding: 0;
+      border-radius: 28px;
+      background: var(--card);
       border: 1px solid var(--border-soft);
-      background: #080705;
+      transition: 0.28s ease;
+    }
+
+    .proof-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border);
+      background: rgba(201, 154, 69, 0.045);
+    }
+
+    .proof-visual {
+      height: 220px;
+      background:
+        radial-gradient(circle at 50% 10%, rgba(201, 154, 69, 0.18), transparent 55%),
+        linear-gradient(145deg, #120f0a, #050403);
+      border-bottom: 1px solid var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-soft);
+      font-family: "Cinzel", serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .proof-content {
+      padding: 30px;
+    }
+
+    .proof-tag {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(201, 154, 69, 0.1);
+      color: var(--gold-soft);
+      border: 1px solid var(--border);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       margin-bottom: 18px;
     }
 
-    .testimonial-image img {
-      width: 100%;
-      height: 290px;
-      object-fit: cover;
-      opacity: 0.94;
-      transition: transform 0.5s ease, opacity 0.5s ease;
+    .proof-content h3 {
+      font-size: 1.25rem;
+      line-height: 1.16;
+      margin-bottom: 12px;
     }
 
-    .testimonial:hover .testimonial-image img {
-      transform: scale(1.035);
-      opacity: 1;
-    }
-
-    .testimonial h4 {
-      font-family: "Playfair Display", serif;
-      font-size: 1.18rem;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-
-    .testimonial span {
-      color: var(--muted-2);
-      font-size: 0.88rem;
-    }
-
-    .testimonial-note {
+    .proof-content p {
       color: var(--muted);
-      font-size: 0.94rem;
-      margin-bottom: 14px;
+    }
+
+    .proof-content ul {
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-top: 12px;
+    }
+
+    .testimonial-card {
+      position: relative;
+      padding: 34px;
+      border-radius: 30px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018)),
+        rgba(5, 4, 3, 0.88);
+      border: 1px solid var(--border);
+      box-shadow: 0 22px 90px rgba(0,0,0,0.32);
+      transition: 0.28s ease;
+      overflow: hidden;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-7px);
+      background: rgba(201, 154, 69, 0.045);
+    }
+
+    .testimonial-card::before {
+      content: "“";
+      position: absolute;
+      top: 12px;
+      right: 26px;
+      font-family: "Cinzel", serif;
+      color: rgba(201, 154, 69, 0.32);
+      font-size: 5rem;
+      line-height: 1;
+    }
+
+    .testimonial-card p {
+      position: relative;
+      z-index: 2;
+      color: #ddd2c0;
+      font-size: 0.98rem;
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .testimonial-card h3 {
+      color: var(--gold-soft);
+      font-size: 1.1rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .testimonial-card span {
+      color: var(--muted-dark);
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 800;
     }
 
     .final-cta {
@@ -754,7 +738,7 @@
       gap: 34px;
       border-radius: 36px;
       background:
-        linear-gradient(135deg, rgba(214, 168, 79, 0.13), rgba(255,255,255,0.035)),
+        linear-gradient(135deg, rgba(201, 154, 69, 0.13), rgba(255,255,255,0.035)),
         #080705;
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
@@ -770,60 +754,52 @@
       border-radius: 50%;
       right: -120px;
       top: -120px;
-      background: radial-gradient(circle, rgba(214, 168, 79, 0.2), transparent 68%);
+      background: radial-gradient(circle, rgba(201, 154, 69, 0.2), transparent 68%);
       pointer-events: none;
     }
 
     .final-cta h2 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(2.2rem, 4vw, 4rem);
-      line-height: 0.98;
-      letter-spacing: -0.05em;
-      margin-bottom: 16px;
       position: relative;
       z-index: 2;
+      font-size: clamp(2.1rem, 4vw, 3.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      margin-bottom: 16px;
     }
 
     .final-cta p {
-      color: var(--muted);
-      max-width: 720px;
       position: relative;
       z-index: 2;
+      color: var(--muted);
+      max-width: 720px;
     }
 
     .cta-actions {
+      position: relative;
+      z-index: 2;
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
       min-width: fit-content;
-      position: relative;
-      z-index: 2;
     }
 
     footer {
       padding: 42px 0;
       border-top: 1px solid var(--border-soft);
-      color: var(--muted-2);
+      color: var(--muted-dark);
       text-align: center;
       font-size: 0.9rem;
     }
 
     footer a {
       color: var(--gold-soft);
-      font-weight: 800;
+      font-weight: 900;
     }
 
     @media (max-width: 980px) {
       .hero-grid,
-      .about-grid,
-      .pricing-grid,
-      .risk-grid,
-      .checks-grid,
-      .fit-grid,
-      .faq-grid,
-      .proof-grid,
-      .process-grid,
-      .testimonial-grid,
+      .grid-2,
+      .grid-3,
       .report-preview,
       .report-content {
         grid-template-columns: 1fr;
@@ -838,7 +814,7 @@
       }
 
       .hero h1 {
-        font-size: clamp(3.1rem, 16vw, 5.2rem);
+        font-size: clamp(3rem, 15vw, 5.2rem);
       }
 
       .nav-links {
@@ -864,10 +840,6 @@
         align-items: flex-start;
         padding: 34px;
       }
-
-      .testimonial-image img {
-        height: auto;
-      }
     }
   </style>
 </head>
@@ -876,7 +848,7 @@
 
   <nav>
     <div class="container nav-inner">
-      <a href="#" class="logo">A. <span>Safo</span></a>
+      <a href="#" class="logo">Safo.<span>Security</span></a>
 
       <div class="nav-links">
         <a href="#services">Services</a>
@@ -909,20 +881,20 @@
             Request Security Review
           </a>
 
-          <a href="#proof" class="btn dark">
-            View Proof of Work
+          <a href="#recommendations" class="btn dark">
+            View Client Feedback
           </a>
         </div>
 
         <div class="stats">
           <div class="stat reveal delay-1">
-            <h3>3+</h3>
-            <p>Security projects being built and documented</p>
+            <h3>5</h3>
+            <p>People and businesses reviewed or supported</p>
           </div>
 
           <div class="stat reveal delay-2">
-            <h3>1</h3>
-            <p>Flagship detection lab focused on SSH attacks</p>
+            <h3>3+</h3>
+            <p>Security projects being built and documented</p>
           </div>
 
           <div class="stat reveal delay-3">
@@ -939,9 +911,9 @@
         <ul>
           <li>Passive website security reviews</li>
           <li>External exposure and trust-signal analysis</li>
-          <li>SSH brute-force detection labs</li>
-          <li>Log correlation and alert escalation systems</li>
-          <li>Incident-style reports with evidence and remediation</li>
+          <li>Security headers and visible risk checks</li>
+          <li>Incident-style reports with evidence</li>
+          <li>Client-friendly remediation roadmaps</li>
         </ul>
       </div>
     </div>
@@ -960,8 +932,8 @@
         <div class="gold-line"></div>
       </div>
 
-      <div class="about-grid">
-        <div class="glass-card reveal delay-1">
+      <div class="grid-2">
+        <div class="card reveal delay-1">
           <h3>For Businesses</h3>
           <p>
             I review your public-facing website from a trust and exposure perspective.
@@ -970,7 +942,7 @@
           </p>
         </div>
 
-        <div class="glass-card reveal delay-2">
+        <div class="card reveal delay-2">
           <h3>For Recruiters</h3>
           <p>
             My projects focus on detection engineering fundamentals. Logs, suspicious
@@ -994,11 +966,11 @@
         <div class="gold-line"></div>
       </div>
 
-      <div class="pricing-grid">
+      <div class="grid-3">
         <div class="price-card reveal delay-1">
           <span class="badge">Starter</span>
           <h3>Website Security Snapshot</h3>
-          <div class="price">$650–$900</div>
+          <div class="price">$650 to $900</div>
 
           <p>
             A focused review for small businesses that need a first look at obvious
@@ -1021,7 +993,7 @@
         <div class="price-card featured reveal delay-2">
           <span class="badge">Main Offer</span>
           <h3>Security Readiness Package</h3>
-          <div class="price">$1.6K–$2.5K</div>
+          <div class="price">$1.6K to $2.5K</div>
 
           <p>
             A deeper client-ready review with evidence, severity ratings, business impact,
@@ -1048,7 +1020,7 @@
         <div class="price-card reveal delay-3">
           <span class="badge">Ongoing</span>
           <h3>Monthly Security Care</h3>
-          <div class="price">$500–$1.5K/mo</div>
+          <div class="price">$500 to $1.5K/mo</div>
 
           <p>
             Ongoing support for businesses that want monthly checks, basic monitoring,
@@ -1071,7 +1043,113 @@
     </div>
   </section>
 
-  <section id="risk" class="section">
+  <section id="recommendations" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="eyebrow">Client Feedback</p>
+        <h2>People I have worked with.</h2>
+        <p>
+          Real feedback from people and businesses who have seen the work, the reports,
+          the explanations, and the results.
+        </p>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="grid-3">
+        <div class="testimonial-card reveal delay-1">
+          <p>
+            Safo Security did a great job analyzing one of my client’s websites for potential harm.
+            It was really helpful and I couldn’t recommend him more.
+          </p>
+          <h3>Yater Agency Inc</h3>
+          <span>Web Agency Owner</span>
+        </div>
+
+        <div class="testimonial-card reveal delay-2">
+          <p>
+            Safo Security was able to completely diagnose security risks of my website.
+            Their process and professionalism is highly recommended for anyone who wants
+            to secure their digital assets.
+          </p>
+          <h3>Vyderia</h3>
+          <span>AI Automation Agency</span>
+        </div>
+
+        <div class="testimonial-card reveal delay-3">
+          <p>
+            Safo Security did an excellent job reviewing the full report and explaining everything clearly.
+            The work was detailed, professional, organized, and easy to understand. The review gave me
+            confidence that the booking page already has a solid security foundation, while also clearly
+            showing what still needs improvement.
+          </p>
+          <h3>Rayane Cutz</h3>
+          <span>Barber / Client</span>
+        </div>
+
+        <div class="testimonial-card reveal delay-4">
+          <p>
+            I especially appreciated the recommendations around missing security headers, account hardening,
+            and the ethical passive public approach. The document was clean, client-friendly, and the next
+            steps were practical and easy to follow. Thank you again for the effort, fast delivery, and
+            quality of the review. Great work overall.
+          </p>
+          <h3>Rayane Cutz</h3>
+          <span>Report Review Feedback</span>
+        </div>
+
+        <div class="testimonial-card reveal delay-5">
+          <p>
+            Safo Security delivered exactly the kind of audit every business owner hopes for but rarely gets.
+            They uncovered exposed content on my website along with a vulnerable API endpoint, issues that
+            could have cost me thousands if discovered by the wrong party first.
+          </p>
+          <h3>Jack Frechette</h3>
+          <span>Founder of Wedge Acquisition</span>
+        </div>
+
+        <div class="testimonial-card reveal delay-5">
+          <p>
+            Their findings were clear, straightforward, and the value delivered exceeded what I’ve seen from
+            engagements elsewhere. If you’re serious about protecting your business, Safo Security is the team
+            I’d recommend without hesitation.
+          </p>
+          <h3>Jack Frechette</h3>
+          <span>Founder of Wedge Acquisition</span>
+        </div>
+
+        <div class="testimonial-card reveal delay-1">
+          <p>
+            Safo Security did a really strong job reviewing my page and Royal Clean. The report was clear,
+            direct, and professionally structured. Each section had its own explanation, everything made sense,
+            and it never felt like random information.
+          </p>
+          <h3>Joatham</h3>
+          <span>Founder, Royal Clean</span>
+        </div>
+
+        <div class="testimonial-card reveal delay-2">
+          <p>
+            I also liked that the feedback was practical and made me think more seriously about things like
+            payments, email exposure, and how my business is presented. Overall, the review was organized,
+            valuable, and easy to understand.
+          </p>
+          <h3>Joatham</h3>
+          <span>Founder, Royal Clean</span>
+        </div>
+
+        <div class="testimonial-card reveal delay-3">
+          <p>
+            The strongest pattern across the feedback is simple. Clients value clear explanations, practical
+            fixes, professional structure, and reports that help them understand what actually matters.
+          </p>
+          <h3>Safo Security</h3>
+          <span>Client Trust Pattern</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="risk" class="section dark-section">
     <div class="container">
       <div class="section-header reveal">
         <p class="eyebrow">Why This Matters</p>
@@ -1084,8 +1162,8 @@
         <div class="gold-line"></div>
       </div>
 
-      <div class="risk-grid">
-        <div class="number-card reveal delay-1">
+      <div class="grid-3">
+        <div class="card reveal delay-1">
           <span class="num">01</span>
           <h3>Lost Trust</h3>
           <p>
@@ -1094,7 +1172,7 @@
           </p>
         </div>
 
-        <div class="number-card reveal delay-2">
+        <div class="card reveal delay-2">
           <span class="num">02</span>
           <h3>Visible Weakness</h3>
           <p>
@@ -1103,7 +1181,7 @@
           </p>
         </div>
 
-        <div class="number-card reveal delay-3">
+        <div class="card reveal delay-3">
           <span class="num">03</span>
           <h3>No Clear Roadmap</h3>
           <p>
@@ -1115,63 +1193,96 @@
     </div>
   </section>
 
-  <section id="checks" class="section dark-section">
+  <section id="proof" class="section">
     <div class="container">
       <div class="section-header reveal">
-        <p class="eyebrow">Review Scope</p>
-        <h2>What gets checked during the review.</h2>
+        <p class="eyebrow">Proof of Work</p>
+        <h2>Projects that show how I think technically.</h2>
         <p>
-          The review is passive, professional, and focused on what can be safely observed
-          from the outside. No exploitation, password attacks, or destructive testing.
+          Real proof matters more than claims. These projects show detection, analysis,
+          reporting, and security engineering discipline.
         </p>
         <div class="gold-line"></div>
       </div>
 
-      <div class="checks-grid">
-        <div class="check-item reveal delay-1">
-          <h3>Website Security Basics</h3>
-          <ul>
-            <li>HTTPS and certificate trust</li>
-            <li>Security headers</li>
-            <li>Cookie and browser-side exposure</li>
-            <li>Visible login/admin surfaces</li>
-          </ul>
+      <div class="grid-2">
+        <div class="proof-card reveal delay-1">
+          <div class="proof-visual">SSH Brute Force Detection Lab</div>
+          <div class="proof-content">
+            <span class="proof-tag">Flagship Project</span>
+            <h3>SSH Brute-Force Attack Simulation and Detection Lab</h3>
+            <p>
+              A lab focused on simulating SSH brute-force attempts, analyzing authentication logs,
+              identifying suspicious patterns, and producing an incident-style report.
+            </p>
+            <ul>
+              <li>Linux authentication logs</li>
+              <li>Failed login pattern analysis</li>
+              <li>MITRE ATT&CK mapping</li>
+              <li>Detection logic and reporting</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="check-item reveal delay-2">
-          <h3>Business Trust Signals</h3>
-          <ul>
-            <li>Contact and form trust</li>
-            <li>Privacy/security policy visibility</li>
-            <li>Professional credibility signals</li>
-            <li>Customer confidence blockers</li>
-          </ul>
+        <div class="proof-card reveal delay-2">
+          <div class="proof-visual">SentinelFlow</div>
+          <div class="proof-content">
+            <span class="proof-tag">Next Build</span>
+            <h3>Log Correlation and Alert Escalation</h3>
+            <p>
+              A Python-based security engineering project that ingests SSH, web, and firewall-style
+              logs, correlates suspicious behavior, scores severity, and escalates alerts.
+            </p>
+            <ul>
+              <li>Multiple log sources</li>
+              <li>Attack behavior correlation</li>
+              <li>Severity scoring</li>
+              <li>JSON and CSV alert output</li>
+              <li>Optional Discord webhook alerts</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="check-item reveal delay-3">
-          <h3>External Exposure</h3>
-          <ul>
-            <li>Publicly visible technical details</li>
-            <li>Unnecessary information leakage</li>
-            <li>Risky page/path exposure</li>
-            <li>Basic domain/email posture notes</li>
-          </ul>
+        <div class="proof-card reveal delay-3">
+          <div class="proof-visual">Website Security Review</div>
+          <div class="proof-content">
+            <span class="proof-tag">Client-Facing</span>
+            <h3>Passive Website Security Review</h3>
+            <p>
+              A non-invasive review of visible website risk, business trust signals,
+              exposure issues, and practical remediation priorities.
+            </p>
+            <ul>
+              <li>Security headers</li>
+              <li>Visible exposure</li>
+              <li>Business risk summary</li>
+              <li>Remediation roadmap</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="check-item reveal delay-4">
-          <h3>Final Deliverables</h3>
-          <ul>
-            <li>Executive summary</li>
-            <li>Evidence screenshots</li>
-            <li>Severity ratings</li>
-            <li>30-day remediation roadmap</li>
-          </ul>
+        <div class="proof-card reveal delay-4">
+          <div class="proof-visual">Security Report</div>
+          <div class="proof-content">
+            <span class="proof-tag">Documentation</span>
+            <h3>Incident-Style Security Reports</h3>
+            <p>
+              Clean reports that explain what happened, what evidence supports the finding,
+              how severe it is, and what should be fixed first.
+            </p>
+            <ul>
+              <li>Executive summary</li>
+              <li>Evidence screenshots</li>
+              <li>Severity levels</li>
+              <li>Recommended fixes</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="sample-report" class="section">
+  <section id="sample-report" class="section dark-section">
     <div class="container">
       <div class="section-header reveal">
         <p class="eyebrow">Report Preview</p>
@@ -1187,7 +1298,7 @@
         <div class="report-sidebar">
           <p class="report-label">Sample Finding</p>
           <h3>Missing Security Headers</h3>
-          <p class="severity medium">Medium Severity</p>
+          <p class="severity">Medium Severity</p>
         </div>
 
         <div class="report-content">
@@ -1227,148 +1338,7 @@
     </div>
   </section>
 
-  <section id="fit" class="section dark-section">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="eyebrow">Fit</p>
-        <h2>For serious businesses, not bargain hunters.</h2>
-        <p>
-          The Security Readiness Package is built for owners who want clean evidence,
-          practical recommendations, and a roadmap they can actually use.
-        </p>
-        <div class="gold-line"></div>
-      </div>
-
-      <div class="fit-grid">
-        <div class="fit-card good-fit reveal delay-1">
-          <h3>Good Fit</h3>
-          <ul>
-            <li>You rely on your website for leads, trust, or sales.</li>
-            <li>You want a professional report, not random technical screenshots.</li>
-            <li>You care about customer trust and business risk.</li>
-            <li>You want clear priorities instead of vague advice.</li>
-          </ul>
-        </div>
-
-        <div class="fit-card bad-fit reveal delay-2">
-          <h3>Not a Fit</h3>
-          <ul>
-            <li>You want illegal hacking or unauthorized testing.</li>
-            <li>You only want the cheapest possible audit.</li>
-            <li>You are not willing to fix basic business-risk issues.</li>
-            <li>You expect full enterprise penetration testing for a small-business price.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="proof" class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="eyebrow">Proof of Work</p>
-        <h2>Projects that show how I think technically.</h2>
-        <p>
-          Real proof matters more than claims. These projects show detection, analysis,
-          reporting, and security engineering discipline.
-        </p>
-        <div class="gold-line"></div>
-      </div>
-
-      <div class="proof-grid">
-        <div class="proof-card reveal delay-1">
-          <div class="proof-image">
-            <img src="assets/proof-ssh-lab.jpg" alt="SSH brute-force detection lab screenshot">
-          </div>
-
-          <div class="proof-content">
-            <span class="proof-tag">Flagship Project</span>
-            <h3>SSH Brute-Force Attack Simulation & Detection Lab</h3>
-            <p>
-              A lab focused on simulating SSH brute-force attempts, analyzing authentication logs,
-              identifying suspicious patterns, and producing an incident-style report.
-            </p>
-
-            <ul>
-              <li>Linux authentication logs</li>
-              <li>Failed login pattern analysis</li>
-              <li>MITRE ATT&CK mapping</li>
-              <li>Detection logic and reporting</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="proof-card reveal delay-2">
-          <div class="proof-image">
-            <img src="assets/proof-sentinelflow.jpg" alt="SentinelFlow log correlation project screenshot">
-          </div>
-
-          <div class="proof-content">
-            <span class="proof-tag">Next Build</span>
-            <h3>SentinelFlow Log Correlation + Alert Escalation</h3>
-            <p>
-              A Python-based security engineering project that ingests SSH, web, and firewall-style
-              logs, correlates suspicious behavior, scores severity, and escalates alerts.
-            </p>
-
-            <ul>
-              <li>Multiple log sources</li>
-              <li>Attack behavior correlation</li>
-              <li>Severity scoring</li>
-              <li>JSON/CSV alert output</li>
-              <li>Optional Discord webhook alerts</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="proof-card reveal delay-3">
-          <div class="proof-image">
-            <img src="assets/proof-website-review.jpg" alt="Passive website security review screenshot">
-          </div>
-
-          <div class="proof-content">
-            <span class="proof-tag">Client-Facing</span>
-            <h3>Passive Website Security Review</h3>
-            <p>
-              A non-invasive review of visible website risk, business trust signals,
-              exposure issues, and practical remediation priorities.
-            </p>
-
-            <ul>
-              <li>Security headers</li>
-              <li>Visible exposure</li>
-              <li>Business risk summary</li>
-              <li>Remediation roadmap</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="proof-card reveal delay-4">
-          <div class="proof-image">
-            <img src="assets/proof-report.jpg" alt="Incident-style security report preview">
-          </div>
-
-          <div class="proof-content">
-            <span class="proof-tag">Documentation</span>
-            <h3>Incident-Style Security Reports</h3>
-            <p>
-              Clean reports that explain what happened, what evidence supports the finding,
-              how severe it is, and what should be fixed first.
-            </p>
-
-            <ul>
-              <li>Executive summary</li>
-              <li>Evidence screenshots</li>
-              <li>Severity levels</li>
-              <li>Recommended fixes</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="process" class="section dark-section">
+  <section id="process" class="section">
     <div class="container">
       <div class="section-header reveal">
         <p class="eyebrow">Process</p>
@@ -1380,8 +1350,8 @@
         <div class="gold-line"></div>
       </div>
 
-      <div class="process-grid">
-        <div class="process-card reveal delay-1">
+      <div class="grid-2">
+        <div class="card reveal delay-1">
           <span class="num">01</span>
           <h3>Scope</h3>
           <p>
@@ -1390,7 +1360,7 @@
           </p>
         </div>
 
-        <div class="process-card reveal delay-2">
+        <div class="card reveal delay-2">
           <span class="num">02</span>
           <h3>Collect Evidence</h3>
           <p>
@@ -1399,7 +1369,7 @@
           </p>
         </div>
 
-        <div class="process-card reveal delay-3">
+        <div class="card reveal delay-3">
           <span class="num">03</span>
           <h3>Analyze Risk</h3>
           <p>
@@ -1407,61 +1377,12 @@
           </p>
         </div>
 
-        <div class="process-card reveal delay-4">
+        <div class="card reveal delay-4">
           <span class="num">04</span>
           <h3>Report Clearly</h3>
           <p>
             Deliver a report that explains the issue, evidence, impact, and recommended next step.
           </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="recommendations" class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="eyebrow">Recommendations</p>
-        <h2>Real words from people who have seen the work.</h2>
-        <p>
-          Screenshots create more trust than fake-looking quote blocks. Use this section
-          to show the testimonials and messages you already have.
-        </p>
-        <div class="gold-line"></div>
-      </div>
-
-      <div class="testimonial-grid">
-        <div class="testimonial reveal delay-1">
-          <div class="testimonial-image">
-            <img src="assets/testimonial-1.jpg" alt="Client or mentor testimonial screenshot">
-          </div>
-          <p class="testimonial-note">
-            Feedback connected to discipline, communication, and cybersecurity growth.
-          </p>
-          <h4>Recommendation 01</h4>
-          <span>Screenshot proof</span>
-        </div>
-
-        <div class="testimonial reveal delay-2">
-          <div class="testimonial-image">
-            <img src="assets/testimonial-2.jpg" alt="Client or mentor testimonial screenshot">
-          </div>
-          <p class="testimonial-note">
-            Feedback connected to professionalism, trust, and ability to explain clearly.
-          </p>
-          <h4>Recommendation 02</h4>
-          <span>Screenshot proof</span>
-        </div>
-
-        <div class="testimonial reveal delay-3">
-          <div class="testimonial-image">
-            <img src="assets/testimonial-3.jpg" alt="Client or mentor testimonial screenshot">
-          </div>
-          <p class="testimonial-note">
-            Feedback connected to work ethic, execution, and technical seriousness.
-          </p>
-          <h4>Recommendation 03</h4>
-          <span>Screenshot proof</span>
         </div>
       </div>
     </div>
@@ -1475,8 +1396,8 @@
         <div class="gold-line"></div>
       </div>
 
-      <div class="faq-grid">
-        <div class="faq-item reveal delay-1">
+      <div class="grid-2">
+        <div class="card reveal delay-1">
           <h3>Is this a penetration test?</h3>
           <p>
             No. This is a passive external security readiness review. It focuses on visible
@@ -1485,16 +1406,15 @@
           </p>
         </div>
 
-        <div class="faq-item reveal delay-2">
+        <div class="card reveal delay-2">
           <h3>Why does the main package cost $1.6K to $2.5K?</h3>
           <p>
             The price reflects the depth of review, evidence collection, business-risk analysis,
-            report quality, remediation roadmap, and follow-up call. The goal is not just to
-            find issues. The goal is to make the next 30 days clear.
+            report quality, remediation roadmap, and follow-up call.
           </p>
         </div>
 
-        <div class="faq-item reveal delay-3">
+        <div class="card reveal delay-3">
           <h3>Can smaller businesses start lower?</h3>
           <p>
             Yes. The Website Security Snapshot is available for businesses that need a smaller
@@ -1502,7 +1422,7 @@
           </p>
         </div>
 
-        <div class="faq-item reveal delay-4">
+        <div class="card reveal delay-4">
           <h3>What do I need to send?</h3>
           <p>
             Send your website link, business type, main concern, and deadline. From there,
@@ -1537,7 +1457,7 @@
   <footer>
     <div class="container">
       <p>
-        © 2026 A. Safo | Cybersecurity Portfolio |
+        © 2026 Safo Security |
         <a href="https://github.com/safo-star" target="_blank">GitHub</a> |
         <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank">LinkedIn</a>
       </p>
