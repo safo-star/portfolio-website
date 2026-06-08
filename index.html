@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>A. Safo | Safo Security</title>
-  <meta name="description" content="Safo Security provides small business security risk reviews, phishing and email risk reviews, vulnerability-style reports, network risk reviews, cloud security monitoring labs, alert monitoring setup, AI chatbot security reviews, cloud account security reviews, and recruiter-ready cybersecurity proof of work." />
+  <title>Safo Security | Client Trust & Security Growth Systems</title>
+  <meta name="description" content="Safo Security helps clinics and real estate teams find and fix website trust, email/domain credibility, contact form, social presence, and security signal gaps that make potential clients hesitate before booking." />
   <link rel="canonical" href="https://safosecurity.ca/" />
-  <meta property="og:title" content="Safo Security | Small Business Security Risk Reviews" />
-  <meta property="og:description" content="Website trust, phishing risk, account security, vulnerability-style, network, cloud security, alert monitoring, AI chatbot security, and cloud account security reviews for small businesses." />
+  <meta property="og:title" content="Safo Security | Client Trust & Security Growth Systems" />
+  <meta property="og:description" content="Website trust, client hesitation, email/domain credibility, security signal, and booking confidence reviews for clinics and real estate teams." />
   <meta property="og:url" content="https://safosecurity.ca/" />
   <meta property="og:type" content="website" />
 
@@ -440,6 +440,107 @@
     footer { padding: 42px 0; border-top: 1px solid var(--border-soft); color: var(--muted-2); text-align: center; font-size: 0.9rem; }
     footer a { color: var(--gold-soft); font-weight: 900; }
 
+
+    .trust-strip {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+      color: var(--muted);
+    }
+    .trust-pill {
+      padding: 9px 13px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(201,154,69,0.06);
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--gold-soft);
+    }
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 26px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.025);
+      margin-top: 28px;
+    }
+    .pricing-table th, .pricing-table td {
+      padding: 18px;
+      border-bottom: 1px solid var(--border-soft);
+      text-align: left;
+      color: var(--muted);
+      vertical-align: top;
+    }
+    .pricing-table th {
+      color: var(--gold-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      font-size: 0.76rem;
+      background: rgba(201,154,69,0.065);
+    }
+    .pricing-table td strong { color: var(--ink); }
+    .mini-form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .mini-form label {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+    }
+    .mini-form input, .mini-form select, .mini-form textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      background: rgba(255,255,255,0.045);
+      color: var(--ink);
+      outline: none;
+      font-family: "Inter", sans-serif;
+    }
+    .mini-form textarea { min-height: 118px; resize: vertical; }
+    .mini-form .full { grid-column: 1 / -1; }
+    .form-note {
+      color: var(--muted-2);
+      font-size: 0.86rem;
+      margin-top: 16px;
+    }
+    .market-card {
+      padding: 34px;
+      border-radius: 30px;
+      border: 1px solid var(--border);
+      background: linear-gradient(145deg, rgba(201,154,69,0.08), rgba(255,255,255,0.025));
+    }
+    .market-card h3 { font-size: 1.55rem; margin-bottom: 12px; }
+    .market-card p { color: var(--muted); }
+    .market-card ul { padding-left: 18px; color: var(--muted); line-height: 1.9; margin-top: 16px; }
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .impact {
+      padding: 22px;
+      border: 1px solid var(--border-soft);
+      background: rgba(255,255,255,0.026);
+      border-radius: 22px;
+    }
+    .impact h3 { color: var(--gold-soft); font-size: 1.1rem; margin-bottom: 8px; }
+    .impact p { color: var(--muted); font-size: 0.92rem; }
+    @media (max-width: 980px) {
+      .mini-form, .impact-grid { grid-template-columns: 1fr; }
+      .pricing-table { display: block; overflow-x: auto; }
+    }
+
     @media (max-width: 980px) {
       .hero-grid, .grid-2, .grid-3, .grid-4, .report-preview, .report-content { grid-template-columns: 1fr; }
       .hero { min-height: auto; }
@@ -460,13 +561,12 @@
     <div class="container nav-inner">
       <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank" class="logo">Safo.<span>Security</span></a>
       <div class="nav-links">
+        <a href="#review">What We Review</a>
+        <a href="#markets">Who We Help</a>
         <a href="#services">Services</a>
-        <a href="#proof">Projects</a>
-        <a href="#report">Reports</a>
-        <a href="#feedback">Feedback</a>
+        <a href="#proof">Proof</a>
         <a href="#process">Process</a>
-        <a href="https://safosecurity.ca/" target="_blank">safosecurity.ca</a>
-        <a href="mailto:alexksafo@gmail.com" class="nav-btn">Contact</a>
+        <a href="#mini-check" class="nav-btn">Free Mini-Check</a>
       </div>
     </div>
   </nav>
@@ -474,36 +574,41 @@
   <header class="hero">
     <div class="container hero-grid">
       <div class="reveal">
-        <div class="kicker">Cybersecurity • Risk • Evidence</div>
-        <h1>Find risks. <span>Fix what matters.</span></h1>
+        <div class="kicker">Client Trust • Security • Revenue Protection</div>
+        <h1>Turn your online presence into a <span>safer client-conversion system.</span></h1>
         <p class="hero-copy">
-          I help small businesses find online security risks before they cost them customers,
-          accounts, money, or trust. You receive a plain-English report showing what looks risky,
-          what matters most, and what should be fixed first.
+          Safo Security helps clinics and real estate teams find the website, email, contact form,
+          social, and security trust gaps that make potential clients hesitate before booking.
         </p>
         <div class="hero-actions">
-          <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank" class="btn gold">Request Security Review</a>
-          <a href="#proof" class="btn dark">View Completed Projects</a>
+          <a href="#mini-check" class="btn gold">Request Free Mini-Check</a>
+          <a href="#review" class="btn dark">See What We Review</a>
+        </div>
+        <div class="trust-strip">
+          <span class="trust-pill">No passwords</span>
+          <span class="trust-pill">No admin access</span>
+          <span class="trust-pill">Clear findings</span>
+          <span class="trust-pill">Business-focused fixes</span>
         </div>
         <div class="stats">
-          <div class="stat reveal delay-1"><h3>8</h3><p>Completed cybersecurity portfolio projects</p></div>
-          <div class="stat reveal delay-2"><h3>VP</h3><p>Marketing leader for the University of Ottawa Computer Science Club</p></div>
-          <div class="stat reveal delay-3"><h3>AI + AWS</h3><p>AI security, cloud threat detection, SOC, and GRC proof of work</p></div>
+          <div class="stat reveal delay-1"><h3>$1.5K+</h3><p>Starting point for full Website Trust & Security Reviews</p></div>
+          <div class="stat reveal delay-2"><h3>$5K+</h3><p>Trust Conversion Rebuilds for businesses that want implementation</p></div>
+          <div class="stat reveal delay-3"><h3>$1K/mo</h3><p>Monthly Trust Monitoring for ongoing visibility and protection</p></div>
         </div>
       </div>
 
       <div class="hero-card reveal delay-2">
-        <p class="card-label">Primary Offer</p>
-        <h2>Small Business Security Risk Review</h2>
+        <p class="card-label">Revenue-Focused Problem</p>
+        <h2>What could be costing you clients before they contact you?</h2>
         <ul>
-          <li>Website trust and visible security review</li>
-          <li>Phishing and email risk review</li>
-          <li>Account and login security checklist</li>
-          <li>Vulnerability-style risk scoring</li>
-          <li>Cloud account and AWS-style risk review</li>
-          <li>AI chatbot and prompt injection risk review</li>
-          <li>Basic alert monitoring setup option</li>
-          <li>Plain-English PDF report with priority fixes</li>
+          <li>Outdated website pages that lower first-impression trust</li>
+          <li>Contact forms that feel unsafe to submit</li>
+          <li>Weak email/domain credibility and spoofing exposure</li>
+          <li>Missing privacy and security reassurance</li>
+          <li>Broken links, suspicious redirects, or unclear CTAs</li>
+          <li>Weak testimonials, social proof, or Google consistency</li>
+          <li>Booking flows that create hesitation instead of confidence</li>
+          <li>Online presence that looks less premium than competitors</li>
         </ul>
       </div>
     </div>
@@ -512,21 +617,109 @@
   <section class="section">
     <div class="container">
       <div class="section-header reveal">
-        <p class="eyebrow">Positioning</p>
-        <h2>Built for business owners. Clean enough for recruiters.</h2>
+        <p class="eyebrow">Client Trust Comes Before The Call</p>
+        <h2>Your website is being judged before you ever speak to the client.</h2>
         <p>
-          Clients see simple business risk, clear pricing, and practical fixes. Recruiters see hands-on security projects with detection logic, severity scoring, logs, JSON/CSV reporting, alert escalation, AI input analysis, and analyst-style documentation.
+          Before a patient books an appointment or a buyer contacts an agent, they check your online presence.
+          They look at your website, contact page, reviews, social links, email professionalism, and whether
+          your business feels safe enough to trust. If your online presence feels outdated, unclear, unsafe,
+          or unprofessional, potential clients may leave before you ever know they were interested.
         </p>
         <div class="gold-line"></div>
       </div>
-      <div class="grid-2">
-        <div class="card reveal delay-1">
-          <h3>For Businesses</h3>
-          <p>I explain what looks risky, why it matters, and what to fix first. No passwords needed. No hacking. No unauthorized access.</p>
+
+      <div class="impact-grid">
+        <div class="impact reveal delay-1"><h3>More Booking Confidence</h3><p>Reduce hesitation around booking pages, contact forms, and first impressions.</p></div>
+        <div class="impact reveal delay-2"><h3>Revenue Protection</h3><p>Find trust gaps before they quietly cost leads, appointments, or high-value client inquiries.</p></div>
+        <div class="impact reveal delay-3"><h3>Safer Brand Perception</h3><p>Strengthen the public signals that make your business look credible, secure, and premium.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="review" class="section dark-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="eyebrow">What We Review</p>
+        <h2>We review the trust signals that affect whether clients feel safe enough to book.</h2>
+        <p>
+          This is not a cheap automated scan. Safo Security reviews the visible online experience from the
+          perspective of a potential client, business owner, and security-aware analyst.
+        </p>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="grid-3">
+        <div class="service-tile reveal delay-1">
+          <span class="mini">Website Trust Signals</span>
+          <h3>First impression and credibility</h3>
+          <p>Homepage, service pages, calls-to-action, layout, mobile experience, testimonials, credibility signals, and overall professionalism.</p>
         </div>
-        <div class="card reveal delay-2">
-          <h3>For Recruiters</h3>
-          <p>My work shows SOC fundamentals: phishing triage, Windows event detection, vulnerability management, network analysis, cloud monitoring, AI security, log correlation, alert escalation, and report writing. Also serving as VP of Marketing for the Computer Science Club at the University of Ottawa, building leadership, outreach, and technical communication experience.</p>
+        <div class="service-tile reveal delay-2">
+          <span class="mini">Security Signals</span>
+          <h3>Visible safety indicators</h3>
+          <p>SSL, security headers, suspicious redirects, broken links, exposed public risks, and other signals that may reduce trust.</p>
+        </div>
+        <div class="service-tile reveal delay-3">
+          <span class="mini">Contact & Booking Flow</span>
+          <h3>Can clients submit safely?</h3>
+          <p>Whether a patient, buyer, seller, or client would feel safe submitting information, booking a call, or contacting your business.</p>
+        </div>
+        <div class="service-tile reveal delay-4">
+          <span class="mini">Email & Domain Credibility</span>
+          <h3>Communication trust</h3>
+          <p>SPF, DKIM, DMARC, domain professionalism, spoofing risk, business email trust, and signals that affect credibility.</p>
+        </div>
+        <div class="service-tile reveal delay-5">
+          <span class="mini">Google & Social Presence</span>
+          <h3>Reputation consistency</h3>
+          <p>Google Business Profile, Instagram, LinkedIn, social links, brand consistency, reputation gaps, and public-facing trust signals.</p>
+        </div>
+        <div class="service-tile reveal delay-5">
+          <span class="mini">Client Hesitation Points</span>
+          <h3>Where trust breaks down</h3>
+          <p>What could make a client pause, doubt, delay, or choose a competitor before contacting you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="markets" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="eyebrow">Built For High-Trust Businesses</p>
+        <h2>For clinics and real estate teams where trust directly affects revenue.</h2>
+        <p>
+          The strongest buyers are businesses where one lost lead, patient, buyer, or seller can cost thousands.
+          That is where security, credibility, and client confidence become business assets.
+        </p>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="grid-2">
+        <div class="market-card reveal delay-1">
+          <h3>Clinics</h3>
+          <p>For dental clinics, chiropractors, med spas, wellness clinics, private practices, and healthcare service businesses.</p>
+          <ul>
+            <li>Weak booking page trust</li>
+            <li>Missing privacy reassurance</li>
+            <li>Outdated service pages</li>
+            <li>Low-quality testimonials</li>
+            <li>Poor contact form confidence</li>
+            <li>Inconsistent Google/social presence</li>
+          </ul>
+        </div>
+
+        <div class="market-card reveal delay-2">
+          <h3>Real Estate Teams</h3>
+          <p>For real estate agents, teams, brokerages, and mortgage professionals.</p>
+          <ul>
+            <li>Weak seller/buyer landing pages</li>
+            <li>Poor social proof placement</li>
+            <li>Outdated agent website</li>
+            <li>Confusing contact flow</li>
+            <li>Weak email/domain credibility</li>
+            <li>Missing authority signals</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -536,144 +729,184 @@
     <div class="container">
       <div class="section-header reveal">
         <p class="eyebrow">Services and Pricing</p>
-        <h2>Clear security reviews with simple scope.</h2>
-        <p>Each package explains what is reviewed, what you receive, and what the price example is based on. Final pricing depends on scope, timeline, and how much evidence needs to be reviewed.</p>
+        <h2>High-trust reviews and rebuilds built to protect revenue.</h2>
+        <p>
+          Every offer connects security, credibility, and client confidence. The goal is simple:
+          find what may be making potential clients hesitate, then create a clear roadmap to fix it.
+        </p>
         <div class="gold-line"></div>
       </div>
 
       <div class="grid-3">
         <div class="price-card reveal delay-1">
-          <span class="badge">Starter</span>
-          <h3>Security Snapshot</h3>
-          <div class="price">Custom Quote</div>
-          <p>A focused first look for small businesses that want to understand the most visible risks before booking a deeper review.</p>
+          <span class="badge">Door Opener</span>
+          <h3>Free Mini-Check</h3>
+          <div class="price">Free</div>
+          <p>A short review showing 3–5 visible trust or security issues that may be hurting client confidence.</p>
           <ul>
-            <li>Website trust and visible security review</li>
-            <li>Basic phishing and email risk notes</li>
-            <li>Top visible issues ranked by priority</li>
-            <li>Plain-English summary</li>
-            <li>Simple fix recommendations</li>
+            <li>3–5 visible findings</li>
+            <li>Short written or video breakdown</li>
+            <li>Priority issue summary</li>
+            <li>No passwords required</li>
+            <li>No admin access required</li>
           </ul>
-          <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank" class="btn dark">Request Snapshot</a>
+          <a href="#mini-check" class="btn dark">Request Free Mini-Check</a>
         </div>
 
         <div class="price-card featured reveal delay-2">
-          <span class="badge">Example: $1,000</span>
-          <h3>Small Business Security Risk Review</h3>
-          <div class="price">$1K Example</div>
-          <p>The main package for owners who want a serious security review without enterprise complexity.</p>
+          <span class="badge">Core Offer</span>
+          <h3>Website Trust & Security Review</h3>
+          <div class="price">From $1,500</div>
+          <p>A full business-facing audit of your website, email/domain credibility, contact flow, social presence, security signals, and client hesitation points.</p>
           <ul>
-            <li>Website trust and visible security review</li>
-            <li>Phishing and email risk review</li>
-            <li>Account and login security checklist</li>
-            <li>Vulnerability-style risk scoring</li>
-            <li>Network risk awareness review</li>
-            <li>Cloud security signal review</li>
-            <li>Risk score and priority fix list</li>
+            <li>Website trust review</li>
+            <li>Security signal review</li>
+            <li>Contact/booking flow review</li>
+            <li>Email/domain credibility review</li>
+            <li>Google/social presence review</li>
+            <li>Risk/trust score</li>
             <li>PDF report and walkthrough call</li>
           </ul>
-          <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank" class="btn gold">Request Main Review</a>
+          <a href="#mini-check" class="btn gold">Request Full Review</a>
         </div>
 
         <div class="price-card reveal delay-3">
-          <span class="badge">Example: $2,500</span>
-          <h3>Full Security Readiness Review</h3>
-          <div class="price">$2.5K Example</div>
-          <p>A deeper review for businesses that need stronger documentation, more evidence, and a clearer remediation roadmap.</p>
+          <span class="badge">Implementation</span>
+          <h3>Trust Conversion Rebuild</h3>
+          <div class="price">From $5,000</div>
+          <p>Implementation support to improve the highest-priority trust, security, and conversion gaps found during the review.</p>
           <ul>
-            <li>Everything in the main review</li>
-            <li>Deeper evidence collection</li>
-            <li>More detailed business impact analysis</li>
-            <li>Security readiness roadmap</li>
-            <li>Executive summary</li>
-            <li>Remediation priorities</li>
-            <li>Follow-up review call</li>
+            <li>Homepage trust improvements</li>
+            <li>Contact/booking page improvements</li>
+            <li>Trust-focused copywriting</li>
+            <li>Testimonial and social proof placement</li>
+            <li>Service page structure improvements</li>
+            <li>Improved CTA flow</li>
           </ul>
-          <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank" class="btn dark">Request Full Review</a>
+          <a href="#mini-check" class="btn dark">Request Rebuild Plan</a>
         </div>
 
         <div class="price-card reveal delay-4">
-          <span class="badge">New Service</span>
-          <h3>Security Monitoring & Alert Setup</h3>
-          <div class="price">From $750</div>
-          <p>A lightweight monitoring setup for small businesses that want alerts when suspicious website, login, or account activity appears.</p>
+          <span class="badge">Recurring</span>
+          <h3>Monthly Trust Monitoring</h3>
+          <div class="price">From $1,000/mo</div>
+          <p>Ongoing monthly review of your website trust, security signals, domain/email credibility, fake-link exposure, broken links, and client-facing risk points.</p>
           <ul>
-            <li>Basic security log monitoring workflow</li>
-            <li>Suspicious login and activity alert rules</li>
-            <li>Severity scoring for important alerts</li>
-            <li>Discord or email alert setup</li>
-            <li>Simple incident report template</li>
-            <li>Plain-English handoff documentation</li>
-            <li>Optional monthly alert review support</li>
+            <li>Monthly website trust check</li>
+            <li>Monthly security signal check</li>
+            <li>Domain/email credibility review</li>
+            <li>Broken link and suspicious link review</li>
+            <li>Google/social consistency review</li>
+            <li>Monthly report and strategy call</li>
           </ul>
-          <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank" class="btn dark">Request Monitoring Setup</a>
+          <a href="#mini-check" class="btn dark">Request Monitoring</a>
         </div>
 
         <div class="price-card reveal delay-5">
-          <span class="badge">AI Security</span>
-          <h3>AI Chatbot Security Review</h3>
-          <div class="price">From $750</div>
-          <p>A focused AI security review for businesses using chatbots, AI assistants, lead forms, support bots, or automated client intake workflows.</p>
+          <span class="badge">Premium</span>
+          <h3>Client Trust Growth System</h3>
+          <div class="price">From $15,000+</div>
+          <p>A complete trust, security, and conversion system for clinics and real estate teams that want their online presence to look safer, more premium, and more client-ready.</p>
           <ul>
-            <li>Prompt injection testing</li>
-            <li>Jailbreak and role manipulation review</li>
-            <li>System prompt extraction risk check</li>
-            <li>Unsafe response and bypass testing</li>
-            <li>Risk scoring and severity summary</li>
-            <li>Screenshots of findings</li>
+            <li>Full trust and security audit</li>
+            <li>Website trust rebuild</li>
+            <li>Landing page trust upgrade</li>
+            <li>Contact/booking flow improvement</li>
+            <li>Google/social trust cleanup</li>
+            <li>Monitoring setup and roadmap</li>
+          </ul>
+          <a href="#mini-check" class="btn dark">Apply For Premium System</a>
+        </div>
+
+        <div class="price-card reveal delay-5">
+          <span class="badge">Specialized</span>
+          <h3>AI, Email & Cloud Trust Review</h3>
+          <div class="price">From $750</div>
+          <p>Focused reviews for AI chatbots, cloud accounts, phishing exposure, domain/email setup, and digital systems that support your business operations.</p>
+          <ul>
+            <li>AI chatbot input risk review</li>
+            <li>SPF/DKIM/DMARC review</li>
+            <li>Cloud account security signals</li>
+            <li>Phishing exposure review</li>
             <li>Plain-English fix recommendations</li>
           </ul>
-          <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank" class="btn dark">Request AI Security Review</a>
-        </div>
-
-        <div class="price-card reveal delay-5">
-          <span class="badge">Cloud Security</span>
-          <h3>Cloud Account Security Review</h3>
-          <div class="price">From $750</div>
-          <p>A simple cloud security review for businesses using cloud accounts, online storage, admin logins, or cloud-based business tools.</p>
-          <ul>
-            <li>Cloud login and MFA review</li>
-            <li>Admin account and permission review</li>
-            <li>Suspicious login warning signs</li>
-            <li>Cloud storage exposure checks</li>
-            <li>Basic logging and alert visibility review</li>
-            <li>Plain-English cloud risk summary</li>
-            <li>Priority fixes for business owners</li>
-          </ul>
-          <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank" class="btn dark">Request Cloud Review</a>
-        </div>
-
-        <div class="price-card reveal delay-5">
-          <span class="badge">Risk Documentation</span>
-          <h3>Security Policy & Risk Documentation</h3>
-          <div class="price">From $500</div>
-          <p>A simple documentation package that helps small businesses understand their security risks and know what to do if something goes wrong.</p>
-          <ul>
-            <li>Basic risk register</li>
-            <li>Security policy template</li>
-            <li>Incident response plan</li>
-            <li>Vendor risk questions</li>
-            <li>Priority fix list</li>
-            <li>Plain-English business risk summary</li>
-            <li>Simple next steps for owners and staff</li>
-          </ul>
-          <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank" class="btn dark">Request Documentation Pack</a>
+          <a href="#mini-check" class="btn dark">Request Specialized Review</a>
         </div>
       </div>
 
+      <table class="pricing-table reveal delay-4">
+        <thead>
+          <tr><th>Offer</th><th>Price</th><th>Best For</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Free Mini-Check</strong></td><td>Free</td><td>Starting the conversation and showing immediate value</td></tr>
+          <tr><td><strong>Website Trust & Security Review</strong></td><td>Starting at $1,500</td><td>Full audit, report, score, and fix roadmap</td></tr>
+          <tr><td><strong>Trust Conversion Rebuild</strong></td><td>Starting at $5,000</td><td>Businesses that want implementation, not only a report</td></tr>
+          <tr><td><strong>Monthly Trust Monitoring</strong></td><td>Starting at $1,000/month</td><td>Ongoing trust, security, reputation, and visibility checks</td></tr>
+          <tr><td><strong>Client Trust Growth System</strong></td><td>Starting at $15,000+</td><td>Premium teams where one lost client can cost thousands</td></tr>
+        </tbody>
+      </table>
+
       <div class="service-note reveal delay-4">
         <h3>Scope rule</h3>
-        <p>These are passive security readiness reviews. I do not need passwords for standard reviews. I do not exploit systems, bypass access controls, or test anything outside written permission. The goal is simple: clear evidence, plain-English risk, and practical next steps.</p>
+        <p>These are passive public-facing trust and security reviews unless written scope is approved. No unauthorized testing, exploitation, access attempts, or password requests are required for standard reviews.</p>
       </div>
     </div>
   </section>
 
-  <section id="proof" class="section dark-section">
+  <section id="report" class="section">
     <div class="container">
       <div class="section-header reveal">
-        <p class="eyebrow">Completed Proof of Work</p>
-        <h2>Eight completed security projects recruiters can verify.</h2>
-        <p>Each project is built to show analyst thinking: logs, detection rules, scoring, evidence, reporting, alert escalation, AI input defense, cloud threat detection, and clear documentation.</p>
+        <p class="eyebrow">Sample Trust Review</p>
+        <h2>What a business owner receives.</h2>
+        <p>
+          Every report is built to be clear, practical, and useful. You get the issue,
+          why it matters, business impact, and what should be fixed first.
+        </p>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="report-preview reveal delay-1">
+        <div class="report-sidebar"><p class="report-label">Sample Finding</p><h3>Contact Form Trust Gap</h3><p class="severity">High Priority</p></div>
+        <div class="report-content">
+          <div><h4>Issue Found</h4><p>The contact form does not provide enough reassurance before asking for personal information.</p></div>
+          <div><h4>Why It Matters</h4><p>Patients and clients may hesitate if the form does not feel professional, private, and safe.</p></div>
+          <div><h4>Recommended Fix</h4><p>Add privacy reassurance, clearer form labels, trust badges, and a professional confirmation message.</p></div>
+          <div><h4>Business Impact</h4><p>Improves booking confidence and reduces hesitation before form submission.</p></div>
+        </div>
+      </div>
+
+      <div style="height: 28px;"></div>
+
+      <div class="report-preview reveal delay-2">
+        <div class="report-sidebar"><p class="report-label">Sample Finding</p><h3>Email & Domain Credibility</h3><p class="severity">High Priority</p></div>
+        <div class="report-content">
+          <div><h4>Issue Found</h4><p>Email/domain credibility has not been reviewed for spoofing, authentication, or trust issues.</p></div>
+          <div><h4>Why It Matters</h4><p>Weak email authentication can increase spoofing risk and reduce confidence in business communication.</p></div>
+          <div><h4>Recommended Fix</h4><p>Review SPF, DKIM, DMARC, domain usage, business email consistency, and phishing exposure.</p></div>
+          <div><h4>Business Impact</h4><p>Protects communication trust and reduces the chance of clients being confused by fake or suspicious emails.</p></div>
+        </div>
+      </div>
+
+      <div style="height: 28px;"></div>
+
+      <div class="report-preview reveal delay-3">
+        <div class="report-sidebar"><p class="report-label">Sample Finding</p><h3>Weak Website Trust Signals</h3><p class="severity">Medium Priority</p></div>
+        <div class="report-content">
+          <div><h4>Issue Found</h4><p>The page does not clearly communicate credibility, safety, testimonials, or next steps.</p></div>
+          <div><h4>Why It Matters</h4><p>Visitors may compare the business to competitors and choose the one that feels safer and more established.</p></div>
+          <div><h4>Recommended Fix</h4><p>Improve trust copy, add proof, clarify the CTA, fix broken links, and strengthen service-page structure.</p></div>
+          <div><h4>Business Impact</h4><p>Creates a stronger first impression and improves perceived professionalism.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+<section id="proof" class="section dark-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="eyebrow">Proof of Work</p>
+        <h2>Cybersecurity proof that supports the client trust offer.</h2>
+        <p>These projects show the technical foundation behind Safo Security: detection logic, evidence collection, cloud security, phishing analysis, AI security, reporting, risk scoring, and clear communication.</p>
         <div class="gold-line"></div>
       </div>
 
@@ -838,63 +1071,6 @@
     </div>
   </section>
 
-  <section id="report" class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="eyebrow">Report Preview</p>
-        <h2>What the final client report looks like.</h2>
-        <p>The report is designed to be useful for a business owner: issue, evidence, impact, priority, and fix.</p>
-        <div class="gold-line"></div>
-      </div>
-
-      <div class="report-preview reveal delay-1">
-        <div class="report-sidebar"><p class="report-label">Sample Finding</p><h3>Phishing and Email Risk</h3><p class="severity">High Severity</p></div>
-        <div class="report-content">
-          <div><h4>Business Impact</h4><p>Staff may trust a fake sender, click a suspicious link, or open a risky attachment.</p></div>
-          <div><h4>Evidence</h4><p>Sender mismatch, suspicious language, short links, or failed authentication signals.</p></div>
-          <div><h4>Recommended Fix</h4><p>Improve email authentication, staff awareness, suspicious email reporting, and verification steps.</p></div>
-          <div><h4>Priority</h4><p>Review immediately if payment, passwords, customer data, or admin accounts are involved.</p></div>
-        </div>
-      </div>
-
-      <div style="height: 28px;"></div>
-
-      <div class="report-preview reveal delay-2">
-        <div class="report-sidebar"><p class="report-label">Sample Finding</p><h3>Cloud Account Risk</h3><p class="severity">Critical Severity</p></div>
-        <div class="report-content">
-          <div><h4>Business Impact</h4><p>Cloud account compromise can expose files, customer data, admin settings, and billing resources.</p></div>
-          <div><h4>Evidence</h4><p>Failed login bursts, impossible travel, MFA disabled, admin role changes, or large downloads.</p></div>
-          <div><h4>Recommended Fix</h4><p>Enforce MFA, review admin roles, rotate keys, restrict access, and monitor suspicious sign-ins.</p></div>
-          <div><h4>Priority</h4><p>Immediate if admin accounts, customer records, API keys, or storage buckets are involved.</p></div>
-        </div>
-      </div>
-
-      <div style="height: 28px;"></div>
-
-      <div class="report-preview reveal delay-3">
-        <div class="report-sidebar"><p class="report-label">Sample Finding</p><h3>Suspicious Login Alert</h3><p class="severity">Critical Severity</p></div>
-        <div class="report-content">
-          <div><h4>Business Impact</h4><p>Repeated failed logins can mean someone is trying to guess passwords or break into an account.</p></div>
-          <div><h4>Evidence</h4><p>Multiple failed login attempts from the same source, followed by alert escalation and incident reporting.</p></div>
-          <div><h4>Recommended Fix</h4><p>Block suspicious sources, enforce MFA, review login logs, and reset exposed or targeted account passwords.</p></div>
-          <div><h4>Priority</h4><p>Immediate if admin accounts, payment systems, customer data, or employee accounts are involved.</p></div>
-        </div>
-      </div>
-
-      <div style="height: 28px;"></div>
-
-      <div class="report-preview reveal delay-4">
-        <div class="report-sidebar"><p class="report-label">Sample Finding</p><h3>AI Chatbot Manipulation Risk</h3><p class="severity">High Severity</p></div>
-        <div class="report-content">
-          <div><h4>Business Impact</h4><p>An attacker may try to manipulate a chatbot into ignoring business rules, revealing hidden instructions, or producing unsafe responses.</p></div>
-          <div><h4>Evidence</h4><p>Prompt injection attempts, jailbreak language, role manipulation, system prompt extraction attempts, or unsafe data requests.</p></div>
-          <div><h4>Recommended Fix</h4><p>Add input filtering, stronger system prompts, safer response handling, logging, and review rules for suspicious AI interactions.</p></div>
-          <div><h4>Priority</h4><p>High if the chatbot handles leads, customers, bookings, payments, support, internal documents, or sensitive business data.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="feedback" class="section dark-section">
     <div class="container">
       <div class="section-header reveal">
@@ -969,24 +1145,84 @@
     </div>
   </section>
 
+  
   <section id="process" class="section">
     <div class="container">
       <div class="section-header reveal">
         <p class="eyebrow">Process</p>
-        <h2>Simple process. Professional output.</h2>
-        <p>Every review follows scope, evidence, risk analysis, and clear reporting.</p>
+        <h2>Simple process. Clear findings. Practical next steps.</h2>
+        <p>Every review follows scope, evidence, risk analysis, and business-focused reporting.</p>
         <div class="gold-line"></div>
       </div>
       <div class="grid-4">
-        <div class="card reveal delay-1"><span class="num">01</span><h3>Scope</h3><p>Confirm what is allowed, what is not allowed, timeline, business type, and main concern.</p></div>
-        <div class="card reveal delay-2"><span class="num">02</span><h3>Review</h3><p>Check visible website, email, account, vulnerability, network, cloud, AI chatbot, or alert monitoring risk signals depending on package.</p></div>
-        <div class="card reveal delay-3"><span class="num">03</span><h3>Score</h3><p>Assign severity, explain business impact, and rank what should be fixed first.</p></div>
-        <div class="card reveal delay-4"><span class="num">04</span><h3>Report</h3><p>Deliver a clear report with evidence, explanations, priority fixes, alert setup notes, AI security notes, and a walkthrough call.</p></div>
+        <div class="card reveal delay-1"><span class="num">01</span><h3>Request Free Mini-Check</h3><p>Send your website, business type, and main concern. I review your public-facing online presence from the outside.</p></div>
+        <div class="card reveal delay-2"><span class="num">02</span><h3>Receive Trust Findings</h3><p>You get a short breakdown of visible trust, security, and credibility issues that may affect client confidence.</p></div>
+        <div class="card reveal delay-3"><span class="num">03</span><h3>Choose Review Or Rebuild</h3><p>Move into a full Website Trust & Security Review or implementation support through a Trust Conversion Rebuild.</p></div>
+        <div class="card reveal delay-4"><span class="num">04</span><h3>Improve Trust & Protect Revenue</h3><p>Fix gaps that could hurt booking confidence, client trust, reputation, and online credibility.</p></div>
       </div>
     </div>
   </section>
 
-  <section id="faq" class="section dark-section">
+  <section id="mini-check" class="section dark-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="eyebrow">Free Mini-Check</p>
+        <h2>Find out what your website may be making potential clients feel before they contact you.</h2>
+        <p>
+          Send the details below. The goal is to identify the first 3–5 trust/security issues a client may notice
+          before booking or submitting their information.
+        </p>
+        <div class="gold-line"></div>
+      </div>
+
+      <form class="mini-form reveal delay-1" action="mailto:alexksafo@gmail.com" method="post" enctype="text/plain">
+        <label>Full Name
+          <input type="text" name="Full Name" placeholder="Your name" required>
+        </label>
+        <label>Business Name
+          <input type="text" name="Business Name" placeholder="Clinic, brokerage, or company name" required>
+        </label>
+        <label>Business Type
+          <select name="Business Type" required>
+            <option value="">Choose one</option>
+            <option>Clinic / Healthcare</option>
+            <option>Dental Office</option>
+            <option>Chiropractor</option>
+            <option>Med Spa</option>
+            <option>Real Estate Agent</option>
+            <option>Real Estate Team / Brokerage</option>
+            <option>Mortgage Team</option>
+            <option>Other Service Business</option>
+          </select>
+        </label>
+        <label>Website URL
+          <input type="url" name="Website URL" placeholder="https://example.com" required>
+        </label>
+        <label>Email
+          <input type="email" name="Email" placeholder="you@business.com" required>
+        </label>
+        <label>What should be reviewed first?
+          <select name="Review Focus">
+            <option>Website trust</option>
+            <option>Contact / booking flow</option>
+            <option>Email / domain credibility</option>
+            <option>Google / social presence</option>
+            <option>Security signals</option>
+            <option>Not sure yet</option>
+          </select>
+        </label>
+        <label class="full">Main Concern
+          <textarea name="Main Concern" placeholder="What are you most worried about: lost leads, booking hesitation, email trust, website security, outdated pages, weak conversion, or something else?"></textarea>
+        </label>
+        <div class="full">
+          <button type="submit" class="btn gold">Request My Free Mini-Check</button>
+          <p class="form-note">No passwords. No admin access. No unauthorized testing. This is a public-facing trust and security review.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
     <div class="container">
       <div class="section-header reveal">
         <p class="eyebrow">FAQ</p>
@@ -994,10 +1230,10 @@
         <div class="gold-line"></div>
       </div>
       <div class="grid-2">
-        <div class="card reveal delay-1"><h3>Is this a penetration test?</h3><p>No. These are passive security readiness reviews unless a separate written scope is approved. No exploitation or unauthorized access is performed.</p></div>
-        <div class="card reveal delay-2"><h3>Do you need passwords?</h3><p>No. Most packages are designed to work without passwords. If a deeper review is needed, permission and scope must be written first.</p></div>
-        <div class="card reveal delay-3"><h3>What do I receive?</h3><p>A clear report with findings, risk ratings, business impact, screenshots/evidence where useful, recommended fixes, and optional alert setup notes.</p></div>
-        <div class="card reveal delay-4"><h3>Who is this best for?</h3><p>Small businesses, local brands, agencies, barbershops, gyms, clinics, service businesses, AI automation agencies, and founders who need security clarity without enterprise complexity.</p></div>
+        <div class="card reveal delay-1"><h3>Is this a penetration test?</h3><p>No. These are passive public-facing trust and security reviews unless a separate written scope is approved. No exploitation or unauthorized access is performed.</p></div>
+        <div class="card reveal delay-2"><h3>Do you need passwords?</h3><p>No. Standard reviews are designed to work without passwords or admin access.</p></div>
+        <div class="card reveal delay-3"><h3>What do I receive?</h3><p>A clear report with findings, risk/trust ratings, business impact, screenshots or evidence where useful, recommended fixes, and a walkthrough call depending on package.</p></div>
+        <div class="card reveal delay-4"><h3>Who is this best for?</h3><p>Clinics, dental offices, chiropractors, med spas, real estate teams, brokerages, mortgage teams, and service businesses where trust affects bookings and revenue.</p></div>
       </div>
     </div>
   </section>
@@ -1005,18 +1241,18 @@
   <section class="container final-cta reveal">
     <div>
       <p class="eyebrow">Next Step</p>
-      <h2>Want a clean security risk review?</h2>
-      <p>Send your website, business type, and main concern. I’ll tell you which package fits best and what the review would include.</p>
+      <h2>Find out what your website is making clients feel before they contact you.</h2>
+      <p>Your website, email, contact forms, and online presence are part of your first impression. If they do not build trust quickly, potential clients may hesitate, leave, or choose someone else.</p>
     </div>
     <div class="cta-actions">
-      <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank" class="btn gold">Request Review</a>
+      <a href="#mini-check" class="btn gold">Request Free Mini-Check</a>
       <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank" class="btn dark">Connect on LinkedIn</a>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p>© 2026 Safo Security | <a href="https://safosecurity.ca/" target="_blank">safosecurity.ca</a> | <a href="https://github.com/safo-star" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank">LinkedIn</a> | <a href="mailto:alexksafo@gmail.com">alexksafo@gmail.com</a></p>
+      <p>© 2026 Safo Security | Client Trust & Security Growth Systems for Clinics and Real Estate Teams | <a href="https://safosecurity.ca/" target="_blank">safosecurity.ca</a> | <a href="https://github.com/safo-star" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank">LinkedIn</a> | <a href="mailto:alexksafo@gmail.com">alexksafo@gmail.com</a></p>
     </div>
   </footer>
 </body>
