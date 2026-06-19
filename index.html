@@ -6,10 +6,10 @@
 
   <title>Safo Security | Client Trust & Security Growth Systems</title>
   <meta name="description" content="Safo Security helps clinics and real estate teams find and fix website trust, email/domain credibility, contact form, social presence, and security signal gaps that make potential clients hesitate before booking." />
-  <link rel="canonical" href="https://safosecurity.ca/" />
+  <link rel="canonical" href="https://safo-star.github.io/portfolio-website/" />
   <meta property="og:title" content="Safo Security | Client Trust & Security Growth Systems" />
   <meta property="og:description" content="Website trust, client hesitation, email/domain credibility, security signal, and booking confidence reviews for clinics and real estate teams." />
-  <meta property="og:url" content="https://safosecurity.ca/" />
+  <meta property="og:url" content="https://safo-star.github.io/portfolio-website/" />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -536,6 +536,17 @@
     }
     .impact h3 { color: var(--gold-soft); font-size: 1.1rem; margin-bottom: 8px; }
     .impact p { color: var(--muted); font-size: 0.92rem; }
+
+    .contact-guidance { margin-top: 18px; padding: 18px 20px; border-radius: 18px; border: 1px solid var(--border); background: rgba(201,154,69,0.06); color: var(--muted); }
+    .contact-guidance strong { color: var(--gold-soft); }
+    .policy-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 14px; }
+    .policy-panel { padding: 30px; border-radius: 28px; border: 1px solid var(--border-soft); background: var(--card); }
+    .policy-panel h3 { margin-bottom: 12px; font-size: 1.25rem; }
+    .policy-panel p, .policy-panel li { color: var(--muted); }
+    .policy-panel ul { padding-left: 18px; line-height: 1.85; }
+    .consent-row { display: flex !important; flex-direction: row !important; align-items: flex-start; gap: 12px !important; padding: 16px; border: 1px solid var(--border-soft); border-radius: 16px; background: rgba(255,255,255,0.025); font-weight: 600 !important; }
+    .consent-row input { width: auto !important; margin-top: 4px; flex: 0 0 auto; }
+
     @media (max-width: 980px) {
       .mini-form, .impact-grid { grid-template-columns: 1fr; }
       .pricing-table { display: block; overflow-x: auto; }
@@ -767,7 +778,7 @@
             <li>Risk/trust score</li>
             <li>PDF report and walkthrough call</li>
           </ul>
-          <a href="#mini-check" class="btn gold">Request Full Review</a>
+          <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank" class="btn gold">Request Full Review on LinkedIn</a>
         </div>
 
         <div class="price-card reveal delay-3">
@@ -783,7 +794,7 @@
             <li>Service page structure improvements</li>
             <li>Improved CTA flow</li>
           </ul>
-          <a href="#mini-check" class="btn dark">Request Rebuild Plan</a>
+          <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank" class="btn dark">Request Rebuild Plan on LinkedIn</a>
         </div>
 
         <div class="price-card reveal delay-4">
@@ -799,7 +810,7 @@
             <li>Google/social consistency review</li>
             <li>Monthly report and strategy call</li>
           </ul>
-          <a href="#mini-check" class="btn dark">Request Monitoring</a>
+          <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank" class="btn dark">Request Monitoring on LinkedIn</a>
         </div>
 
         <div class="price-card reveal delay-5">
@@ -815,7 +826,7 @@
             <li>Google/social trust cleanup</li>
             <li>Monitoring setup and roadmap</li>
           </ul>
-          <a href="#mini-check" class="btn dark">Apply For Premium System</a>
+          <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank" class="btn dark">Apply on LinkedIn</a>
         </div>
 
         <div class="price-card reveal delay-5">
@@ -830,7 +841,7 @@
             <li>Phishing exposure review</li>
             <li>Plain-English fix recommendations</li>
           </ul>
-          <a href="#mini-check" class="btn dark">Request Specialized Review</a>
+          <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank" class="btn dark">Request on LinkedIn</a>
         </div>
       </div>
 
@@ -851,6 +862,22 @@
         <h3>Scope rule</h3>
         <p>These are passive public-facing trust and security reviews unless written scope is approved. No unauthorized testing, exploitation, access attempts, or password requests are required for standard reviews.</p>
       </div>
+
+      <div class="contact-guidance reveal delay-4">
+        <strong>How to contact Safo Security:</strong>
+        Visit my LinkedIn profile, open the <strong>Services</strong> section, and send a message describing your business, website, and the service you are interested in.
+        <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank" style="color: var(--gold-soft); font-weight: 900;">Contact me on LinkedIn</a>.
+      </div>
+
+      <div class="service-note reveal delay-5">
+        <h3>Typical delivery timelines</h3>
+        <p>Free Mini-Checks are normally delivered within 2–3 business days. Website Trust & Security Reviews are normally delivered within 5–10 business days after scope and payment are confirmed. Rebuild and premium-system timelines are confirmed in writing based on scope.</p>
+      </div>
+      <div class="service-note reveal delay-5">
+        <h3>What “Monthly Trust Monitoring” means</h3>
+        <p>Monthly Trust Monitoring is a scheduled passive review of agreed public-facing assets. It is not 24/7 SOC coverage, emergency incident response, penetration testing, or continuous active surveillance. The exact websites, domains, report schedule, strategy-call length, response expectations, and exclusions are confirmed before the subscription begins.</p>
+      </div>
+
     </div>
   </section>
 
@@ -1175,7 +1202,7 @@
         <div class="gold-line"></div>
       </div>
 
-      <form class="mini-form reveal delay-1" action="mailto:alexksafo@gmail.com" method="post" enctype="text/plain">
+      <form id="miniCheckForm" class="mini-form reveal delay-1">
         <label>Full Name
           <input type="text" name="Full Name" placeholder="Your name" required>
         </label>
@@ -1214,9 +1241,15 @@
         <label class="full">Main Concern
           <textarea name="Main Concern" placeholder="What are you most worried about: lost leads, booking hesitation, email trust, website security, outdated pages, weak conversion, or something else?"></textarea>
         </label>
+
+        <label class="full consent-row">
+          <input type="checkbox" id="authorizationConsent" required>
+          <span>I confirm that I own, manage, or am authorized to request a passive public-facing review of this business, and I agree to the <a href="#privacy" style="color: var(--gold-soft);">Privacy Policy</a>, <a href="#terms" style="color: var(--gold-soft);">Terms of Service</a>, and <a href="#refunds" style="color: var(--gold-soft);">Refund & Cancellation Policy</a>.</span>
+        </label>
+
         <div class="full">
-          <button type="submit" class="btn gold">Request My Free Mini-Check</button>
-          <p class="form-note">No passwords. No admin access. No unauthorized testing. This is a public-facing trust and security review.</p>
+          <button type="submit" class="btn gold">Continue to LinkedIn</button>
+          <p class="form-note">No passwords. No admin access. No unauthorized testing. This is a public-facing trust and security review. After clicking, you will be sent to my LinkedIn profile. Open the <strong>Services</strong> section or select <strong>Message</strong> and send your business name, website URL, and main concern.</p>
         </div>
       </form>
     </div>
@@ -1238,6 +1271,34 @@
     </div>
   </section>
 
+
+  <section id="policies" class="section dark-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="eyebrow">Policies & Authorization</p>
+        <h2>Clear rules before any review begins.</h2>
+        <p>These policies explain how information is handled, what the service includes, and how payments and cancellations work.</p>
+        <div class="gold-line"></div>
+      </div>
+      <div class="grid-3">
+        <div id="privacy" class="policy-panel reveal delay-1">
+          <h3>Privacy Policy</h3>
+          <p>Safo Security may collect information you voluntarily provide, including your name, business name, email address, website URL, business type, and review concerns.</p>
+          <ul><li>Information is used to evaluate the request, communicate with you, define scope, and deliver services.</li><li>Information is not sold to advertisers.</li><li>Payment information is processed by Stripe and is not stored directly by Safo Security.</li><li>You may request correction or deletion of submitted information by contacting Safo Security through LinkedIn or at alexksafo@gmail.com.</li></ul>
+        </div>
+        <div id="terms" class="policy-panel reveal delay-2">
+          <h3>Terms of Service</h3>
+          <ul><li>You confirm that you own, manage, or are authorized to request a review of the submitted business or website.</li><li>Standard work is passive and public-facing unless a separate written scope explicitly permits additional activity.</li><li>No guarantee is made that every vulnerability, business risk, lost lead, or future incident will be identified or prevented.</li><li>Deliverables, timelines, assets covered, revisions, and client responsibilities are confirmed before paid work begins.</li><li>Recommendations are advisory; implementation decisions remain the client’s responsibility unless implementation is separately included.</li></ul>
+        </div>
+        <div id="refunds" class="policy-panel reveal delay-3">
+          <h3>Refund & Cancellation Policy</h3>
+          <ul><li>Because reviews involve reserved time and professional analysis, payments become non-refundable once work has started.</li><li>Before work starts, cancellation requests are reviewed case by case, less any non-refundable payment-processing fees where applicable.</li><li>Monthly services may be cancelled before the next billing date; work already delivered or underway is not refundable.</li><li>Custom rebuilds and premium systems follow the written proposal, milestone, and cancellation terms agreed with the client.</li></ul>
+        </div>
+      </div>
+      <div class="contact-guidance reveal delay-4"><strong>Primary contact:</strong> Contact Safo Security through the <strong>Services</strong> section or <strong>Message</strong> button on <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank" style="color: var(--gold-soft); font-weight: 900;">LinkedIn</a>. Business email: alexksafo@gmail.com.</div>
+    </div>
+  </section>
+
   <section class="container final-cta reveal">
     <div>
       <p class="eyebrow">Next Step</p>
@@ -1252,8 +1313,20 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 Safo Security | Client Trust & Security Growth Systems for Clinics and Real Estate Teams | <a href="https://safosecurity.ca/" target="_blank">safosecurity.ca</a> | <a href="https://github.com/safo-star" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank">LinkedIn</a> | <a href="mailto:alexksafo@gmail.com">alexksafo@gmail.com</a></p>
+      <p>© 2026 Safo Security | Client Trust & Security Growth Systems for Clinics and Real Estate Teams | <a href="https://www.linkedin.com/in/a-safo-7154b33a0/" target="_blank">Contact through LinkedIn Services</a> | <a href="https://github.com/safo-star" target="_blank">GitHub</a> | alexksafo@gmail.com</p>
+      <div class="policy-links"><a href="#privacy">Privacy Policy</a><a href="#terms">Terms of Service</a><a href="#refunds">Refund & Cancellation</a></div>
     </div>
   </footer>
+
+  <script>
+    document.getElementById("miniCheckForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const consent = document.getElementById("authorizationConsent");
+      if (!consent.checked) { alert("Please confirm authorization and accept the policies before continuing."); return; }
+      alert("You will now be sent to LinkedIn. Open the Services section or select Message, then send your business name, website URL, and main concern.");
+      window.open("https://www.linkedin.com/in/a-safo-7154b33a0/", "_blank", "noopener,noreferrer");
+    });
+  </script>
+
 </body>
 </html>
