@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Safo Security | Website Risk, Email Security & Client Trust</title>
+  <title>Safo Security | Cyber Resilience & Secure Business Systems</title>
   <meta name="description" content="Safo Security helps clinics and real estate teams identify public-facing website risk, email impersonation exposure, form-handling gaps, and account-access weaknesses before they become fraud, downtime, data exposure, or lost client trust." />
   <link rel="canonical" href="https://safo-star.github.io/portfolio-website/" />
   <meta property="og:title" content="Safo Security | Website Risk, Email Security & Client Trust" />
@@ -538,6 +538,17 @@
     .impact p { color: var(--muted); font-size: 0.92rem; }
 
     .contact-guidance { margin-top: 18px; padding: 18px 20px; border-radius: 18px; border: 1px solid var(--border); background: rgba(201,154,69,0.06); color: var(--muted); }
+    .systems-chain { display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap; margin:30px 0 34px; }
+    .systems-chain span { padding:11px 15px; border:1px solid var(--border); border-radius:999px; color:var(--gold-soft); background:rgba(201,154,69,.06); font-size:.75rem; font-weight:900; letter-spacing:.08em; }
+    .systems-chain b { color:var(--gold); }
+    .systems-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .system-card { padding:28px; border:1px solid var(--border-soft); border-radius:26px; background:var(--card); transition:.25s ease; }
+    .system-card:hover { transform:translateY(-5px); border-color:var(--border); background:var(--card-strong); }
+    .system-card .mini { display:block; margin-bottom:11px; color:var(--gold-soft); font-size:.7rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
+    .system-card h3 { font-size:1.22rem; margin-bottom:10px; }
+    .system-card p { color:var(--muted); font-size:.94rem; }
+    .social-row { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:18px; }
+    .social-row a { padding:9px 13px; border:1px solid var(--border); border-radius:999px; }
     .contact-guidance strong { color: var(--gold-soft); }
     .policy-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 14px; }
     .policy-panel { padding: 30px; border-radius: 28px; border: 1px solid var(--border-soft); background: var(--card); }
@@ -548,7 +559,7 @@
     .consent-row input { width: auto !important; margin-top: 4px; flex: 0 0 auto; }
 
     @media (max-width: 980px) {
-      .mini-form, .impact-grid { grid-template-columns: 1fr; }
+      .mini-form, .impact-grid, .systems-grid { grid-template-columns: 1fr; }
       .pricing-table { display: block; overflow-x: auto; }
     }
 
@@ -574,6 +585,7 @@
       <div class="nav-links">
         <a href="#review">What We Review</a>
         <a href="#markets">Who We Help</a>
+        <a href="#systems">Business Systems</a>
         <a href="#services">Services</a>
         <a href="#proof">Proof</a>
         <a href="#process">Process</a>
@@ -585,22 +597,22 @@
   <header class="hero">
     <div class="container hero-grid">
       <div class="reveal">
-        <div class="kicker">Website Risk • Email Security • Client Confidence</div>
-        <h1>Find the weaknesses that can cost you <span>trust, clients, and control.</span></h1>
+        <div class="kicker">Cyber Resilience • Secure Systems • Executive Clarity</div>
+        <h1>Protect the systems your business <span>depends on to operate and grow.</span></h1>
         <p class="hero-copy">
-          Safo Security helps clinics and real estate teams identify public-facing security gaps,
-          email impersonation exposure, risky form handling, and account-access weaknesses before
-          they become fraud, downtime, data exposure, or lost client trust.
+          Safo Security helps Canadian businesses secure Microsoft 365, cloud identities, email,
+          endpoints, backups, vendors, employee access, AI use, and the workflows that move critical
+          information—then translates the risk into clear decisions for owners and executives.
         </p>
         <div class="hero-actions">
           <a href="#mini-check" class="btn gold">Request Free Risk Snapshot</a>
-          <a href="#review" class="btn dark">See What We Review</a>
+          <a href="#systems" class="btn dark">See How We Improve Systems</a>
         </div>
         <div class="trust-strip">
-          <span class="trust-pill">No passwords</span>
-          <span class="trust-pill">No admin access</span>
-          <span class="trust-pill">Clear findings</span>
-          <span class="trust-pill">Business-focused fixes</span>
+          <span class="trust-pill">Identity-first</span>
+          <span class="trust-pill">Business-led</span>
+          <span class="trust-pill">Measurable controls</span>
+          <span class="trust-pill">Executive-ready reporting</span>
         </div>
         <div class="stats">
           <div class="stat reveal delay-1"><h3>01</h3><p>Public-facing website and form risk reviewed in plain business language</p></div>
@@ -780,7 +792,42 @@
     </div>
   </section>
 
-  <section id="services" class="section dark-section">
+  <section id="systems" class="section dark-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="eyebrow">Secure Business Systems</p>
+        <h2>Better operations. Smaller attack surface.</h2>
+        <p>Security improves when the business itself is organized. Safo Security helps owners build controlled, documented systems that make access clearer, recovery faster, automation safer, and mistakes less expensive.</p>
+        <div class="gold-line"></div>
+      </div>
+
+      <div class="systems-chain">
+        <span>People</span><b>→</b><span>Identities</span><b>→</b><span>Tools</span><b>→</b><span>Data</span><b>→</b><span>Decisions</span>
+      </div>
+
+      <div class="systems-grid">
+        <div class="system-card"><span class="mini">Identity & Access</span><h3>Secure Employee Lifecycle</h3><p>Standardized onboarding, MFA, role-based permissions, administrator separation, recovery methods, and immediate offboarding.</p></div>
+        <div class="system-card"><span class="mini">Microsoft Cloud</span><h3>Microsoft 365 & Azure Security</h3><p>Secure users, groups, shared mailboxes, Conditional Access, privileged roles, email authentication, retention, and audit visibility.</p></div>
+        <div class="system-card"><span class="mini">Resilience</span><h3>Backup & Recovery Verification</h3><p>Identify critical data, validate backup ownership, confirm protected copies, test recovery, and document recovery responsibilities.</p></div>
+        <div class="system-card"><span class="mini">Endpoints</span><h3>Protection & Monitoring</h3><p>Improve device inventory, endpoint protection, patching, logging, alert escalation, and response ownership.</p></div>
+        <div class="system-card"><span class="mini">Exposure</span><h3>Vulnerability Management</h3><p>Continuously identify public exposure, prioritize weaknesses by business impact, assign owners, and verify remediation.</p></div>
+        <div class="system-card"><span class="mini">Human Risk</span><h3>Employee Security Training</h3><p>Practical phishing, impersonation, payment-change, password, data-handling, and incident-reporting exercises.</p></div>
+        <div class="system-card"><span class="mini">Incident Readiness</span><h3>Response Planning</h3><p>Build an escalation tree, incident roles, evidence checklist, breach register, communications plan, and tabletop exercise.</p></div>
+        <div class="system-card"><span class="mini">AI Governance</span><h3>Secure AI Adoption</h3><p>Create approved-tool rules, data restrictions, AI-risk assessments, vendor reviews, prompt-injection controls, and incident procedures.</p></div>
+        <div class="system-card"><span class="mini">Detection</span><h3>Automated Detection & Response</h3><p>Automate repeatable checks, suspicious-account alerts, evidence collection, risk scoring, escalation, and remediation tracking.</p></div>
+        <div class="system-card"><span class="mini">Architecture</span><h3>Security-by-Design</h3><p>Map systems, trust boundaries, critical dependencies, data flows, vendors, failure points, and safe future-state architecture.</p></div>
+        <div class="system-card"><span class="mini">Governance</span><h3>Risk, Vendor & Compliance Readiness</h3><p>Maintain risk registers, vendor inventories, policy ownership, control evidence, action plans, and readiness documentation.</p></div>
+        <div class="system-card"><span class="mini">Leadership</span><h3>Quarterly Executive Reporting</h3><p>Translate technical risk into financial impact, priorities, control status, ownership, timelines, and decisions leadership can act on.</p></div>
+      </div>
+
+      <div class="service-note reveal delay-4">
+        <h3>The owner receives a security operating system—not another unread report.</h3>
+        <p>Discover the business, harden the priority systems, prove the controls work, and maintain visibility through recurring reviews and executive reporting.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
     <div class="container">
       <div class="section-header reveal">
         <p class="eyebrow">What We Provide</p>
@@ -1119,7 +1166,7 @@
     </div>
   </section>
 
-  <section id="feedback" class="section dark-section">
+  <section id="feedback" class="section dark-section" style="display:none" aria-hidden="true">
     <div class="container">
       <div class="section-header reveal">
         <p class="eyebrow">Recommendations</p>
@@ -1334,7 +1381,8 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 Safo Security | Website Risk, Email Security & Client Trust for Clinics and Real Estate Teams | <a href="https://www.linkedin.com/in/alexandre-safo-7154b33a0/" target="_blank">LinkedIn</a> | <a href="https://github.com/safo-star" target="_blank">GitHub</a> | safosecurityadvisory@gmail.com</p>
+      <p>© 2026 Safo Security | Cyber Resilience & Secure Business Systems</p>
+      <div class="social-row"><a href="mailto:safosecurityadvisory@gmail.com">Email</a><a href="https://www.instagram.com/safosecurityconsultant/" target="_blank">Instagram</a><a href="https://www.linkedin.com/in/alexandre-safo-7154b33a0/" target="_blank">LinkedIn</a><a href="https://github.com/safo-star" target="_blank">GitHub</a><a href="https://meetings-na3.hubspot.com/alex-safo" target="_blank">Book a 20-Minute Call</a></div>
       <div class="policy-links"><a href="#privacy">Privacy Policy</a><a href="#terms">Terms of Service</a><a href="#refunds">Refund & Cancellation</a></div>
     </div>
   </footer>
