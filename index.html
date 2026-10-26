@@ -1,1453 +1,492 @@
- 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080d15">
-  <meta name="description" content="Safo Security helps growing businesses protect critical systems, improve cybersecurity and prepare for disruptions.">
-  <title>Safo Security | Protect What Keeps Your Business Running</title>
-
-  <!-- Google Ads Tag - Safo Security -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18538775171"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'AW-18538775171');
-  </script>
-
-  <style>
-    :root {
-      --bg: #080d15;
-      --panel: #101a29;
-      --blue: #407fff;
-      --white: #f8fafc;
-      --muted: #a3b4ca;
-      --line: #273344;
-      --light: #f7f9fc;
-      --ink: #091320;
-    }
-
-    * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 75px;
-    }
-
-    body {
-      margin: 0;
-      font-family: Inter, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--white);
-      line-height: 1.6;
-    }
-
-    a { text-decoration: none; color: inherit; }
-    button, input, select, textarea { font: inherit; }
-    button { cursor: pointer; }
-
-    .container {
-      width: min(1120px, 92%);
-      margin: auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: #080d15ed;
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(15px);
-    }
-
-    .nav {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: -.8px;
-    }
-
-    .logo span { color: var(--blue); }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      font-size: 14px;
-    }
-
-    nav a:hover { color: var(--blue); }
-
-    .menu-btn {
-      display: none;
-      background: none;
-      border: 0;
-      color: white;
-      font-size: 28px;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 23px;
-      border-radius: 35px;
-      border: 1px solid var(--line);
-      font-weight: 700;
-      font-size: 14px;
-      transition: .25s;
-    }
-
-    .btn:hover { transform: translateY(-3px); }
-
-    .primary {
-      background: var(--blue);
-      border-color: var(--blue);
-      color: white;
-    }
-
-    .secondary {
-      background: transparent;
-      color: white;
-    }
-
-    .dark-btn {
-      background: var(--ink);
-      color: white;
-    }
-
-    section { padding: 100px 0; }
-
-    .eyebrow {
-      color: var(--blue);
-      font-size: 12px;
-      letter-spacing: 3px;
-      font-weight: 800;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    h1, h2, h3, p { margin-top: 0; }
-
-    h1 {
-      font-size: clamp(43px, 6.7vw, 83px);
-      line-height: 1.06;
-      letter-spacing: -3px;
-      max-width: 1050px;
-    }
-
-    h2 {
-      font-size: clamp(34px, 4.8vw, 60px);
-      line-height: 1.13;
-      letter-spacing: -2px;
-      max-width: 900px;
-    }
-
-    h3 {
-      font-size: 21px;
-      line-height: 1.3;
-    }
-
-    .lead {
-      font-size: 19px;
-      color: var(--muted);
-      max-width: 680px;
-    }
-
-    .blue { color: var(--blue); }
-
-    .hero {
-      padding: 110px 0 80px;
-      background: radial-gradient(
-        ellipse at 80% 30%,
-        #14274c 0%,
-        transparent 60%
-      );
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 35px 0;
-    }
-
-    .hero-notes {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .dashboard {
-      margin-top: 70px;
-      background: #0d1624;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 30px;
-      box-shadow: 0 30px 80px #0004;
-    }
-
-    .dash-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 25px;
-    }
-
-    .dash-item {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 17px;
-      border: 1px solid var(--line);
-      border-radius: 15px;
-      margin: 10px 0;
-    }
-
-    .dash-item span:last-child {
-      color: var(--blue);
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      text-align: center;
-      border-top: 1px solid var(--line);
-      margin-top: 28px;
-      padding-top: 25px;
-    }
-
-    .stats strong {
-      display: block;
-      font-size: 25px;
-    }
-
-    .stats small { color: var(--muted); }
-
-    .light {
-      background: var(--light);
-      color: var(--ink);
-    }
-
-    .light .lead { color: #506078; }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      margin-top: 55px;
-    }
-
-    .card {
-      border: 1px solid var(--line);
-      border-radius: 25px;
-      padding: 32px;
-      background: #0c121d;
-      transition: .25s;
-    }
-
-    .card:hover {
-      border-color: var(--blue);
-      transform: translateY(-4px);
-    }
-
-    .light .card {
-      background: transparent;
-      border-color: #d9e0e9;
-    }
-
-    .card p {
-      color: var(--muted);
-      margin-bottom: 0;
-    }
-
-    .light .card p { color: #53657c; }
-
-    .icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--blue);
-      font-size: 25px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      width: 50px;
-      height: 50px;
-      margin-bottom: 25px;
-    }
-
-    .pricing {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      margin-top: 55px;
-    }
-
-    .price-card {
-      padding: 32px;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 25px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .price-card.featured {
-      border: 2px solid var(--blue);
-      background: #0b1930;
-    }
-
-    .price-card small {
-      color: var(--muted);
-      letter-spacing: 1px;
-    }
-
-    .price {
-      font-size: 45px;
-      font-weight: 800;
-      letter-spacing: -2px;
-      margin: 15px 0;
-    }
-
-    .price span {
-      font-size: 14px;
-      font-weight: 400;
-      color: var(--muted);
-      letter-spacing: 0;
-    }
-
-    .price-card p { color: var(--muted); }
-
-    .price-card ul {
-      padding: 20px 0 20px 20px;
-      flex: 1;
-    }
-
-    .price-card li { padding: 7px 0; }
-
-    .price-card li::marker { color: var(--blue); }
-
-    .price-card .btn { width: 100%; }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
-      margin-top: 60px;
-    }
-
-    .step {
-      border-top: 1px solid var(--line);
-      padding-top: 22px;
-    }
-
-    .step-number {
-      font-size: 55px;
-      font-weight: 800;
-      color: #254171;
-    }
-
-    .step p { color: var(--muted); }
-
-    .industry {
-      display: flex;
-      gap: 16px;
-      align-items: start;
-    }
-
-    .industry .icon {
-      flex-shrink: 0;
-      margin: 0;
-    }
-
-    .founder {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .portrait {
-      min-height: 380px;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      background: linear-gradient(135deg, #162d55, #080d15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--blue);
-      font-size: 95px;
-      font-weight: 800;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid #dbe2eb;
-    }
-
-    .faq-item summary {
-      list-style: none;
-      cursor: pointer;
-      padding: 23px 0;
-      font-weight: 700;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .faq-item summary:after {
-      content: "+";
-      color: var(--blue);
-    }
-
-    .faq-item[open] summary:after {
-      content: "−";
-    }
-
-    .faq-item p {
-      color: #52647b;
-      max-width: 780px;
-      padding-bottom: 15px;
-    }
-
-    .booking {
-      background: radial-gradient(
-        ellipse at 70% 20%,
-        #132548,
-        transparent 60%
-      );
-    }
-
-    .booking-box {
-      background: #fff;
-      color: var(--ink);
-      border-radius: 25px;
-      padding: 35px;
-      margin-top: 40px;
-    }
-
-    .booking-box p { color: #56677e; }
-
-    .booking-placeholder {
-      padding: 40px 20px;
-      text-align: center;
-      background: #f4f7fc;
-      border: 1px dashed #a7b7cc;
-      border-radius: 18px;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #d1dbe7;
-      border-radius: 12px;
-      background: white;
-      color: var(--ink);
-    }
-
-    textarea {
-      min-height: 115px;
-      resize: vertical;
-    }
-
-    .full { grid-column: 1/-1; }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 40px 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(25px);
-      transition: opacity .65s, transform .65s;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    @media(max-width:800px) {
-      nav {
-        display: none;
-        position: absolute;
-        top: 72px;
-        left: 0;
-        right: 0;
-        background: var(--bg);
-        padding: 24px;
-        flex-direction: column;
-        align-items: start;
-        border-bottom: 1px solid var(--line);
-      }
-
-      nav.open { display: flex; }
-      .menu-btn { display: block; }
-      section { padding: 75px 0; }
-      h1 { letter-spacing: -2px; }
-
-      .grid, .pricing, .founder {
-        grid-template-columns: 1fr;
-      }
-
-      .steps {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .dashboard { padding: 18px; }
-      .dash-item { font-size: 13px; }
-    }
-
-    @media(max-width:480px) {
-      .steps, .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stats strong { font-size: 18px; }
-      .card, .price-card { padding: 24px; }
-      .hero { padding-top: 75px; }
-    }
-
-    @media(prefers-reduced-motion:reduce) {
-      *, *:before, *:after {
-        scroll-behavior: auto !important;
-        animation: none !important;
-        transition: none !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080d15">
+<meta name="description" content="Safo Security helps growing businesses protect critical systems, strengthen cybersecurity and improve business continuity. Based in Ottawa, Ontario.">
+<title>Safo Security | Protect What Keeps Your Business Running</title>
+
+<!-- GOOGLE ADS BASE TAG: DO NOT DUPLICATE -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18538775171"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-18538775171');
+</script>
+
+<style>
+:root{
+  --bg:#080d15;
+  --panel:#101a29;
+  --blue:#407fff;
+  --white:#f8fafc;
+  --muted:#a3b4ca;
+  --line:#273344;
+  --light:#f7f9fc;
+  --ink:#091320;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:75px}
+body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--white);line-height:1.6}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:#080d15ed;border-bottom:1px solid var(--line);backdrop-filter:blur(15px)}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:22px;font-weight:800;letter-spacing:-.8px}
+.logo span{color:var(--blue)}
+nav{display:flex;align-items:center;gap:25px;font-size:14px}
+nav a:hover{color:var(--blue)}
+.menu-btn{display:none;background:none;border:0;color:white;font-size:28px}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:10px;padding:14px 23px;border-radius:35px;border:1px solid var(--line);font-weight:700;font-size:14px;transition:.25s}
+.btn:hover{transform:translateY(-3px)}
+.primary{background:var(--blue);border-color:var(--blue);color:white}
+.secondary{background:transparent;color:white}
+.dark-btn{background:var(--ink);color:white}
+section{padding:100px 0}
+.eyebrow{color:var(--blue);font-size:12px;letter-spacing:3px;font-weight:800;text-transform:uppercase;margin-bottom:20px}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(43px,6.7vw,83px);line-height:1.06;letter-spacing:-3px;max-width:1050px}
+h2{font-size:clamp(34px,4.8vw,60px);line-height:1.13;letter-spacing:-2px;max-width:900px}
+h3{font-size:21px;line-height:1.3}
+.lead{font-size:19px;color:var(--muted);max-width:680px}
+.blue{color:var(--blue)}
+.hero{padding:110px 0 80px;background:radial-gradient(ellipse at 80% 30%,#14274c 0%,transparent 60%)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin:35px 0}
+.hero-notes{display:flex;flex-wrap:wrap;gap:20px;color:var(--muted);font-size:13px}
+.dashboard{margin-top:70px;background:#0d1624;border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:0 30px 80px #0004}
+.dash-top{display:flex;justify-content:space-between;gap:12px;margin-bottom:25px}
+.dash-item{display:flex;justify-content:space-between;gap:12px;padding:17px;border:1px solid var(--line);border-radius:15px;margin:10px 0}
+.dash-item span:last-child{color:var(--blue)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);text-align:center;border-top:1px solid var(--line);margin-top:28px;padding-top:25px}
+.stats strong{display:block;font-size:30px}
+.stats small{color:var(--muted)}
+.light{background:var(--light);color:var(--ink)}
+.light .lead{color:#506078}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:55px}
+.card{border:1px solid var(--line);border-radius:25px;padding:32px;background:#0c121d;transition:.25s}
+.card:hover{border-color:var(--blue);transform:translateY(-4px)}
+.light .card{background:transparent;border-color:#d9e0e9}
+.card p{color:var(--muted);margin-bottom:0}
+.light .card p{color:#53657c}
+.icon{display:inline-flex;align-items:center;justify-content:center;color:var(--blue);font-size:25px;border:1px solid var(--line);border-radius:14px;width:50px;height:50px;margin-bottom:25px}
+.pricing{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:55px}
+.price-card{padding:32px;background:var(--panel);border:1px solid var(--line);border-radius:25px;display:flex;flex-direction:column}
+.price-card.featured{border:2px solid var(--blue);background:#0b1930}
+.price-card small{color:var(--muted);letter-spacing:1px}
+.price{font-size:45px;font-weight:800;letter-spacing:-2px;margin:15px 0}
+.price span{font-size:14px;font-weight:400;color:var(--muted);letter-spacing:0}
+.price-card p{color:var(--muted)}
+.price-card ul{padding:20px 0 20px 20px;flex:1}
+.price-card li{padding:7px 0}
+.price-card li::marker{color:var(--blue)}
+.price-card .btn{width:100%}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;margin-top:60px}
+.step{border-top:1px solid var(--line);padding-top:22px}
+.step-number{font-size:55px;font-weight:800;color:#254171}
+.step p{color:var(--muted)}
+.industry{display:flex;gap:16px;align-items:start}
+.industry .icon{flex-shrink:0;margin:0}
+.founder{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:center}
+.portrait{min-height:380px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,#162d55,#080d15);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:95px;font-weight:800}
+.faq-item{border-bottom:1px solid #dbe2eb}
+.faq-item summary{list-style:none;cursor:pointer;padding:23px 0;font-weight:700;display:flex;justify-content:space-between}
+.faq-item summary:after{content:"+";color:var(--blue)}
+.faq-item[open] summary:after{content:"−"}
+.faq-item p{color:#52647b;max-width:780px;padding-bottom:15px}
+.booking{background:radial-gradient(ellipse at 70% 20%,#132548,transparent 60%)}
+.booking-box{background:#fff;color:var(--ink);border-radius:25px;padding:35px;margin-top:40px}
+.booking-box p{color:#56677e}
+.booking-placeholder{padding:40px 20px;text-align:center;background:#f4f7fc;border:1px dashed #a7b7cc;border-radius:18px}
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+input,select,textarea{width:100%;padding:14px;border:1px solid #d1dbe7;border-radius:12px;background:white;color:var(--ink)}
+textarea{min-height:115px;resize:vertical}
+.full{grid-column:1/-1}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-size:14px}
+.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .65s,transform .65s}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:800px){
+  nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--bg);padding:24px;flex-direction:column;align-items:start;border-bottom:1px solid var(--line)}
+  nav.open{display:flex}
+  .menu-btn{display:block}
+  section{padding:75px 0}
+  h1{letter-spacing:-2px}
+  .grid,.pricing,.founder{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .dashboard{padding:18px}
+  .dash-item{font-size:13px}
+}
+@media(max-width:480px){
+  .steps,.form-grid{grid-template-columns:1fr}
+  .stats strong{font-size:23px}
+  .card,.price-card{padding:24px}
+  .hero{padding-top:75px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
 </head>
 
 <body>
-
-  <!-- HEADER -->
-  <header>
-    <div class="container nav">
-      <a href="#home" class="logo">
-        <span>⬡</span> Safo Security
-      </a>
-
-      <button
-        class="menu-btn"
-        aria-label="Toggle navigation"
-        aria-expanded="false"
-        onclick="toggleMenu()"
-      >☰</button>
-
-      <nav id="navigation">
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#process">How It Works</a>
-        <a href="#about">About</a>
-        <a href="#faq">FAQ</a>
-        <a href="https://meetings-na3.hubspot.com/alex-safo"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="btn primary">Book a Call</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="eyebrow">
-          Cybersecurity for Growing Businesses
-        </div>
-
-        <h1>
-          Your Business Runs on Technology.
-          <span class="blue">Make Sure It's Protected.</span>
-        </h1>
-
-        <p class="lead">
-          We help growing businesses protect critical systems,
-          strengthen cybersecurity, and prepare for costly disruptions.
-        </p>
-
-        <div class="actions">
-          <a
-            href="https://meetings-na3.hubspot.com/alex-safo"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn primary"
-          >Book a Free Consultation →</a>
-
-          <a href="#services" class="btn secondary">
-            See Our Services
-          </a>
-        </div>
-
-        <div class="hero-notes">
-          <span>✓ Protect Critical Systems</span>
-          <span>✓ Reduce Security Risks</span>
-          <span>✓ Strengthen Business Continuity</span>
-        </div>
-
-        <div class="dashboard reveal">
-          <div class="dash-top">
-            <div>
-              <strong>⬡ Security Overview</strong>
-              <br>
-              <small style="color:var(--muted)">
-                Illustrative example — not client data
-              </small>
-            </div>
-            <span style="color:var(--blue)">● Example</span>
-          </div>
-
-          <div class="dash-item">
-            <span>Multi-factor authentication</span>
-            <span>✓ Enforced</span>
-          </div>
-
-          <div class="dash-item">
-            <span>Email authentication</span>
-            <span>✓ Reviewed</span>
-          </div>
-
-          <div class="dash-item">
-            <span>Backup recovery test</span>
-            <span>✓ Verified</span>
-          </div>
-
-          <div class="dash-item">
-            <span>Website & booking links</span>
-            <span>✓ Monitored</span>
-          </div>
-
-          <div class="stats">
-            <div>
-              <strong>Identity</strong>
-              <small>Account protection</small>
-            </div>
-            <div>
-              <strong>Email</strong>
-              <small>Authentication</small>
-            </div>
-            <div>
-              <strong>Recovery</strong>
-              <small>Continuity</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY SECURITY MATTERS -->
-    <section class="light" id="problems">
-      <div class="container">
-        <div class="eyebrow">Why Security Matters</div>
-
-        <h2>
-          One Security Problem Can Disrupt Your Entire Business.
-        </h2>
-
-        <p class="lead">
-          Your business depends on secure accounts, reliable systems,
-          and access to important information.
-        </p>
-
-        <div class="grid">
-          <div class="card reveal">
-            <div class="icon">♙</div>
-            <h3>Compromised Accounts</h3>
-            <p>
-              Unauthorized access can put business information
-              and operations at risk.
-            </p>
-          </div>
-
-          <div class="card reveal">
-            <div class="icon">▤</div>
-            <h3>Lost Data</h3>
-            <p>
-              Without reliable backups, recovering important
-              information can become difficult.
-            </p>
-          </div>
-
-          <div class="card reveal">
-            <div class="icon">⌁</div>
-            <h3>System Downtime</h3>
-            <p>
-              Website and booking problems can interrupt
-              customer inquiries and appointments.
-            </p>
-          </div>
-
-          <div class="card reveal">
-            <div class="icon">⚑</div>
-            <h3>Unprepared Teams</h3>
-            <p>
-              Without a response plan, security incidents
-              become harder to manage.
-            </p>
-          </div>
-        </div>
-
-        <div class="actions">
-          <a
-            href="https://meetings-na3.hubspot.com/alex-safo"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn dark-btn"
-          >Discuss Your Security →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services">
-      <div class="container">
-        <div class="eyebrow">Our Services</div>
-
-        <h2>
-          Practical Protection for the Systems That Matter.
-        </h2>
-
-        <div class="grid">
-          <div class="card reveal">
-            <div class="icon">✉</div>
-            <h3>Email & Identity Security</h3>
-            <p>
-              Protect business accounts with MFA, access controls,
-              and Microsoft 365 security improvements.
-            </p>
-          </div>
-
-          <div class="card reveal">
-            <div class="icon">▣</div>
-            <h3>Endpoint Security</h3>
-            <p>
-              Strengthen protection for company computers
-              and connected devices.
-            </p>
-          </div>
-
-          <div class="card reveal">
-            <div class="icon">▤</div>
-            <h3>Backup & Recovery</h3>
-            <p>
-              Improve backup reliability and prepare
-              for data recovery.
-            </p>
-          </div>
-
-          <div class="card reveal">
-            <div class="icon">⌁</div>
-            <h3>Website & Business Monitoring</h3>
-            <p>
-              Monitor critical websites, booking links,
-              and customer-facing systems.
-            </p>
-          </div>
-
-          <div class="card reveal">
-            <div class="icon">◎</div>
-            <h3>Security Assessments</h3>
-            <p>
-              Identify vulnerabilities and prioritize
-              meaningful security improvements.
-            </p>
-          </div>
-
-          <div class="card reveal">
-            <div class="icon">⬡</div>
-            <h3>Managed Cybersecurity</h3>
-            <p>
-              Ongoing security oversight, monitoring coordination,
-              reporting, and planning.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRICING -->
-    <section id="pricing" style="background:#0a1422">
-      <div class="container">
-        <div class="eyebrow">Our Solutions</div>
-
-        <h2>Clear Pricing. Practical Security.</h2>
-
-        <p class="lead">
-          Start with a focused security review or choose ongoing
-          protection as your business grows.
-        </p>
-
-        <div class="pricing">
-
-          <div class="price-card reveal">
-            <small>ONE-TIME ENGAGEMENT</small>
-            <h3>Security Snapshot</h3>
-            <div class="price">
-              $500 <span>CAD / starting at</span>
-            </div>
-            <p>
-              Understand your most important visible security risks
-              and where to improve.
-            </p>
-            <ul>
-              <li>Website and domain security review</li>
-              <li>Public email authentication checks</li>
-              <li>Initial risk summary</li>
-              <li>Prioritized recommendations</li>
-              <li>Short findings consultation</li>
-            </ul>
-            <a href="https://meetings-na3.hubspot.com/alex-safo"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="btn secondary">
-              Request a Security Snapshot
-            </a>
-          </div>
-
-          <div class="price-card reveal">
-            <small>ONE-TIME PROJECT</small>
-            <h3>Security Improvements</h3>
-            <div class="price">
-              $1,000 <span>CAD / starting at</span>
-            </div>
-            <p>
-              Strengthen specific systems and address identified
-              security weaknesses.
-            </p>
-            <ul>
-              <li>MFA implementation</li>
-              <li>Business email security improvements</li>
-              <li>Access-control improvements</li>
-              <li>Basic system hardening</li>
-              <li>Implementation summary</li>
-            </ul>
-            <a href="https://meetings-na3.hubspot.com/alex-safo"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="btn secondary">
-              Discuss Improvements
-            </a>
-          </div>
-
-          <div class="price-card reveal">
-            <small>ONE-TIME PROJECT</small>
-            <h3>Business Security Assessment</h3>
-            <div class="price">
-              $1,500 <span>CAD / starting at</span>
-            </div>
-            <p>
-              Get a clearer picture of your cybersecurity posture
-              and operational risks.
-            </p>
-            <ul>
-              <li>Identity and access review</li>
-              <li>Email security review</li>
-              <li>Endpoint protection review</li>
-              <li>Backup and recovery review</li>
-              <li>Risk-prioritized assessment report</li>
-            </ul>
-            <a href="https://meetings-na3.hubspot.com/alex-safo"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="btn secondary">
-              Request an Assessment
-            </a>
-          </div>
-
-          <div class="price-card featured reveal">
-            <small style="color:var(--blue)">
-              ONGOING PROTECTION · FLAGSHIP SERVICE
-            </small>
-            <h3>Managed Security & Continuity</h3>
-            <div class="price">
-              $3,000 <span>CAD / month · starting at</span>
-            </div>
-            <p>
-              Ongoing cybersecurity oversight and business continuity
-              support for growing businesses.
-            </p>
-            <ul>
-              <li>Identity and email security oversight</li>
-              <li>Endpoint protection coordination</li>
-              <li>Critical-system monitoring</li>
-              <li>Backup verification</li>
-              <li>Security reviews</li>
-              <li>Monthly reporting</li>
-              <li>Incident-response planning</li>
-            </ul>
-            <a href="https://meetings-na3.hubspot.com/alex-safo"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="btn primary">
-              Book a Strategy Call →
-            </a>
-          </div>
-
-        </div>
-
-        <p style="color:var(--muted);font-size:13px;margin-top:25px">
-          All prices are starting prices in CAD. Final scope,
-          software licensing, implementation fees, and ongoing
-          responsibilities are confirmed in a written proposal.
-        </p>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section id="process">
-      <div class="container">
-        <div class="eyebrow">Our Process</div>
-
-        <h2>Stronger Security in Four Simple Steps.</h2>
-
-        <div class="steps">
-          <div class="step reveal">
-            <div class="step-number">01</div>
-            <h3>Discover</h3>
-            <p>
-              We learn about your business, systems,
-              and concerns.
-            </p>
-          </div>
-
-          <div class="step reveal">
-            <div class="step-number">02</div>
-            <h3>Assess</h3>
-            <p>
-              We identify relevant risks and opportunities
-              for improvement.
-            </p>
-          </div>
-
-          <div class="step reveal">
-            <div class="step-number">03</div>
-            <h3>Implement</h3>
-            <p>
-              We agree on a plan and put approved
-              protections in place.
-            </p>
-          </div>
-
-          <div class="step reveal">
-            <div class="step-number">04</div>
-            <h3>Maintain</h3>
-            <p>
-              For ongoing clients, we review agreed systems
-              and report on security progress.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INDUSTRIES -->
-    <section class="light" id="industries">
-      <div class="container">
-        <div class="eyebrow">Who We Help</div>
-
-        <h2>
-          Built for Businesses That Depend on Reliable Technology.
-        </h2>
-
-        <div class="grid">
-          <div class="card industry reveal">
-            <div class="icon">✚</div>
-            <div>
-              <h3>Healthcare Clinics</h3>
-              <p>
-                Protect patient information and critical
-                booking systems.
-              </p>
-            </div>
-          </div>
-
-          <div class="card industry reveal">
-            <div class="icon">▦</div>
-            <div>
-              <h3>Accounting Firms</h3>
-              <p>
-                Protect financial records and business email.
-              </p>
-            </div>
-          </div>
-
-          <div class="card industry reveal">
-            <div class="icon">⚖</div>
-            <div>
-              <h3>Legal Practices</h3>
-              <p>
-                Strengthen confidential client-file security.
-              </p>
-            </div>
-          </div>
-
-          <div class="card industry reveal">
-            <div class="icon">▥</div>
-            <div>
-              <h3>Real Estate Businesses</h3>
-              <p>
-                Reduce risks involving payments and email impersonation.
-              </p>
-            </div>
-          </div>
-
-          <div class="card industry reveal">
-            <div class="icon">◇</div>
-            <div>
-              <h3>Professional Services</h3>
-              <p>
-                Protect customer trust and business communications.
-              </p>
-            </div>
-          </div>
-
-          <div class="card industry reveal">
-            <div class="icon">↗</div>
-            <div>
-              <h3>Growing Companies</h3>
-              <p>
-                Strengthen account access as your team expands.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="actions">
-          <a href="https://meetings-na3.hubspot.com/alex-safo"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="btn dark-btn">
-            See If We're a Fit →
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="container founder">
-        <div class="portrait" aria-label="Founder initials">
-          AS
-        </div>
-
-        <div>
-          <div class="eyebrow">Meet the Founder</div>
-
-          <h2>
-            Cybersecurity Built Around Real Business Needs.
-          </h2>
-
-          <p class="lead">
-            I'm Alexandre, founder of Safo Security.
-          </p>
-
-          <p class="lead">
-            I started this business to help companies understand
-            cybersecurity risks and take practical steps to protect
-            the systems they rely on.
-          </p>
-
-          <p class="lead">
-            My focus is clear communication, responsible implementation,
-            and solutions that make sense for each business.
-          </p>
-
-          <p>
-            <strong>Alexandre Safo</strong>
-            · Founder · Ottawa, Ontario
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="light" id="faq">
-      <div class="container">
-        <div class="eyebrow">Frequently Asked Questions</div>
-
-        <h2>Questions, Answered Clearly.</h2>
-
-        <details class="faq-item">
-          <summary>How much does Safo Security cost?</summary>
-          <p>
-            Our services start at $500 for a Security Snapshot.
-            Security Improvements start at $1,000, Business Security
-            Assessments at $1,500, and Managed Security at
-            $3,000 per month.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Do I need cybersecurity if I already have IT support?</summary>
-          <p>
-            Your IT provider may already cover some or all cybersecurity
-            needs. We can help identify meaningful gaps in your
-            existing coverage.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Can you guarantee we won't get hacked?</summary>
-          <p>
-            No provider can guarantee complete protection.
-            Our goal is to reduce risks and improve security
-            and recovery readiness.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Will you replace our existing IT company?</summary>
-          <p>
-            Not necessarily. We can coordinate with existing providers
-            when responsibilities are clearly defined.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What businesses do you work with?</summary>
-          <p>
-            We focus on small and growing businesses, including
-            clinics, accounting firms, legal practices,
-            and professional services.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What happens during the free consultation?</summary>
-          <p>
-            We discuss your business, current systems, security concerns,
-            and whether our services could be appropriate.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>How long does implementation take?</summary>
-          <p>
-            Timelines depend on the size of your business
-            and the agreed project scope.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Do you provide ongoing cybersecurity management?</summary>
-          <p>
-            Our managed security offering starts at $3,000 per month,
-            with specific responsibilities defined in the agreement.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Do you offer 24/7 protection?</summary>
-          <p>
-            Monitoring hours, alert handling, and response commitments
-            depend on the agreed scope. Around-the-clock response
-            is not included unless expressly contracted and supported.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Are software licenses included?</summary>
-          <p>
-            Licensing and third-party costs are specified
-            in each proposal.
-          </p>
-        </details>
-
-        <details class="faq-item">
-          <summary>Is there a long-term contract?</summary>
-          <p>
-            Contract length and cancellation terms are provided
-            before any agreement is signed.
-          </p>
-        </details>
-      </div>
-    </section>
-
-    <!-- BOOKING -->
-    <section class="booking" id="booking">
-      <div class="container">
-        <div class="eyebrow">Book Your Consultation</div>
-
-        <h2>Let's Make Your Business More Secure.</h2>
-
-        <p class="lead">
-          Schedule a free conversation to discuss your cybersecurity
-          concerns and identify practical next steps.
-        </p>
-
-        <div class="hero-notes">
-          <span>▣ Online Appointment</span>
-          <span>◎ Ottawa / Eastern Time</span>
-          <span>✓ Free Consultation</span>
-        </div>
-
-        <div class="booking-box">
-          <h3>Schedule Your Free Consultation</h3>
-
-          <p>
-            Choose an available appointment using our
-            HubSpot meeting scheduler.
-          </p>
-
-          <div class="booking-placeholder">
-            <p>
-              Click below to view available appointment times.
-            </p>
-
-            <a
-              href="https://meetings-na3.hubspot.com/alex-safo"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn primary"
-            >
-              View Available Times →
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="light" id="contact">
-      <div class="container">
-        <div class="eyebrow">Contact Us</div>
-
-        <h2>Not Ready to Book? Send Us a Message.</h2>
-
-        <p class="lead">
-          Tell us a little about your business and what
-          you'd like help with.
-        </p>
-
-        <div class="booking-box" style="border:1px solid #dce4ef">
-
-          <form id="contact-form">
-            <div class="form-grid">
-
-              <input
-                name="name"
-                placeholder="Full name"
-                aria-label="Full name"
-                required
-              >
-
-              <input
-                name="business"
-                placeholder="Business name"
-                aria-label="Business name"
-                required
-              >
-
-              <input
-                type="email"
-                name="email"
-                placeholder="Work email"
-                aria-label="Work email"
-                required
-              >
-
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Phone number (optional)"
-                aria-label="Phone number"
-              >
-
-              <select
-                name="service"
-                class="full"
-                aria-label="Service interested in"
-                required
-              >
-                <option value="">Select a service</option>
-                <option>Security Snapshot — from $500</option>
-                <option>Security Improvements — from $1,000</option>
-                <option>Business Security Assessment — from $1,500</option>
-                <option>Managed Security — from $3,000/month</option>
-                <option>Not Sure Yet</option>
-              </select>
-
-              <textarea
-                name="message"
-                class="full"
-                placeholder="Tell us about your business and security concerns"
-                aria-label="Your message"
-                required
-              ></textarea>
-
-              <label class="full" style="font-size:13px">
-                <input
-                  type="checkbox"
-                  required
-                  style="width:auto"
-                >
-                I agree to be contacted regarding my inquiry.
-              </label>
-
-              <button type="submit" class="btn primary full">
-                Prepare Email Inquiry →
-              </button>
-
-            </div>
-          </form>
-
-          <p style="font-size:12px;margin-top:15px">
-            Submitting opens your email application.
-            Please press Send in your email application
-            to deliver the message.
-          </p>
-
-          <p style="font-size:14px">
-            Or email us directly:
-            <a
-              href="mailto:safosecurityadvisory@gmail.com"
-              style="color:#2869e9;font-weight:700"
-            >safosecurityadvisory@gmail.com</a>
-          </p>
-
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container footer-row">
-      <div>
-        <strong style="color:white">
-          ⬡ Safo Security
-        </strong>
-        <br>
-        Protecting What Keeps Your Business Running.
-        <br>
-        <a href="mailto:safosecurityadvisory@gmail.com">
-          safosecurityadvisory@gmail.com
-        </a>
-      </div>
-
-      <div>
-        Ottawa, Ontario · Canada
-        <br>
-        © <span id="year"></span> Safo Security
-      </div>
-    </div>
-  </footer>
-
-  <!-- JAVASCRIPT -->
-  <script>
-    const CONFIG = {
-      bookingUrl: "https://meetings-na3.hubspot.com/alex-safo",
-      contactEmail: "safosecurityadvisory@gmail.com",
-      googleAdsId: "AW-18538775171"
-    };
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-
-    function toggleMenu() {
-      const nav = document.getElementById("navigation");
-      const btn = document.querySelector(".menu-btn");
-      const open = nav.classList.toggle("open");
-
-      btn.setAttribute("aria-expanded", String(open));
-    }
-
-    document.querySelectorAll("nav a").forEach(link => {
-      link.addEventListener("click", () => {
-        document.getElementById("navigation")
-          .classList.remove("open");
-
-        document.querySelector(".menu-btn")
-          .setAttribute("aria-expanded", "false");
-      });
+<header>
+<div class="container nav">
+<a href="#home" class="logo"><span>⬡</span> Safo Security</a>
+<button class="menu-btn" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleMenu()">☰</button>
+<nav id="navigation">
+<a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
+<a href="#process">How It Works</a>
+<a href="#about">About</a>
+<a href="#faq">FAQ</a>
+<a href="#booking" class="btn primary">Book a Call</a>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="container">
+<div class="eyebrow">Cybersecurity for Growing Businesses</div>
+<h1>Your Business Runs on Technology. <span class="blue">Make Sure It's Protected.</span></h1>
+<p class="lead">We help growing businesses protect critical systems, strengthen cybersecurity, and prepare for costly disruptions.</p>
+<div class="actions">
+<a href="#booking" class="btn primary">Book a Free Consultation →</a>
+<a href="#services" class="btn secondary">See Our Services</a>
+</div>
+<div class="hero-notes">
+<span>✓ Protect Critical Systems</span>
+<span>✓ Reduce Security Risks</span>
+<span>✓ Strengthen Business Continuity</span>
+</div>
+
+<div class="dashboard reveal">
+<div class="dash-top">
+<div><strong>⬡ Security Overview</strong><br><small style="color:var(--muted)">Illustrative example — not client data</small></div>
+<span style="color:var(--blue)">● Example</span>
+</div>
+<div class="dash-item"><span>Multi-factor authentication</span><span>✓ Enforced</span></div>
+<div class="dash-item"><span>Email authentication</span><span>✓ Reviewed</span></div>
+<div class="dash-item"><span>Backup recovery test</span><span>✓ Verified</span></div>
+<div class="dash-item"><span>Website & booking links</span><span>✓ Monitored</span></div>
+<div class="stats">
+<div><strong>Identity</strong><small>Account protection</small></div>
+<div><strong>Email</strong><small>Authentication</small></div>
+<div><strong>Recovery</strong><small>Continuity</small></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="light" id="problems">
+<div class="container">
+<div class="eyebrow">Why Security Matters</div>
+<h2>One Security Problem Can Disrupt Your Entire Business.</h2>
+<p class="lead">Your business depends on secure accounts, reliable systems, and access to important information.</p>
+<div class="grid">
+<div class="card reveal"><div class="icon">♙</div><h3>Compromised Accounts</h3><p>Unauthorized access can put business information and operations at risk.</p></div>
+<div class="card reveal"><div class="icon">▤</div><h3>Lost Data</h3><p>Without reliable backups, recovering important information can become difficult.</p></div>
+<div class="card reveal"><div class="icon">⌁</div><h3>System Downtime</h3><p>Website and booking problems can interrupt customer inquiries and appointments.</p></div>
+<div class="card reveal"><div class="icon">⚑</div><h3>Unprepared Teams</h3><p>Without a response plan, security incidents become harder to manage.</p></div>
+</div>
+<div class="actions"><a href="#booking" class="btn dark-btn">Discuss Your Security →</a></div>
+</div>
+</section>
+
+<section id="services">
+<div class="container">
+<div class="eyebrow">Our Services</div>
+<h2>Practical Protection for the Systems That Matter.</h2>
+<div class="grid">
+<div class="card reveal"><div class="icon">✉</div><h3>Email & Identity Security</h3><p>Protect business accounts with MFA, access controls, and Microsoft 365 security improvements.</p></div>
+<div class="card reveal"><div class="icon">▣</div><h3>Endpoint Security</h3><p>Strengthen protection for company computers and connected devices.</p></div>
+<div class="card reveal"><div class="icon">▤</div><h3>Backup & Recovery</h3><p>Improve backup reliability and prepare for data recovery.</p></div>
+<div class="card reveal"><div class="icon">⌁</div><h3>Website & Business Monitoring</h3><p>Monitor critical websites, booking links, and customer-facing systems.</p></div>
+<div class="card reveal"><div class="icon">◎</div><h3>Security Assessments</h3><p>Identify vulnerabilities and prioritize meaningful security improvements.</p></div>
+<div class="card reveal"><div class="icon">⬡</div><h3>Managed Cybersecurity</h3><p>Ongoing security oversight, monitoring coordination, reporting, and planning.</p></div>
+</div>
+</div>
+</section>
+
+<section id="pricing" style="background:#0a1422">
+<div class="container">
+<div class="eyebrow">Our Solutions</div>
+<h2>Clear Pricing. Practical Security.</h2>
+<p class="lead">Start with a focused security review or choose ongoing protection as your business grows.</p>
+<div class="pricing">
+
+<div class="price-card reveal">
+<small>ONE-TIME ENGAGEMENT</small>
+<h3>Security Snapshot</h3>
+<div class="price">$500 <span>CAD / starting at</span></div>
+<p>Understand your most important visible security risks and where to improve.</p>
+<ul>
+<li>Website and domain security review</li>
+<li>Public email authentication checks</li>
+<li>Initial risk summary</li>
+<li>Prioritized recommendations</li>
+<li>Short findings consultation</li>
+</ul>
+<a href="#booking" class="btn secondary">Request a Security Snapshot</a>
+</div>
+
+<div class="price-card reveal">
+<small>ONE-TIME PROJECT</small>
+<h3>Security Improvements</h3>
+<div class="price">$1,000 <span>CAD / starting at</span></div>
+<p>Strengthen specific systems and address identified security weaknesses.</p>
+<ul>
+<li>MFA implementation</li>
+<li>Business email security improvements</li>
+<li>Access-control improvements</li>
+<li>Basic system hardening</li>
+<li>Implementation summary</li>
+</ul>
+<a href="#booking" class="btn secondary">Discuss Improvements</a>
+</div>
+
+<div class="price-card reveal">
+<small>ONE-TIME PROJECT</small>
+<h3>Business Security Assessment</h3>
+<div class="price">$1,500 <span>CAD / starting at</span></div>
+<p>Get a clearer picture of your cybersecurity posture and operational risks.</p>
+<ul>
+<li>Identity and access review</li>
+<li>Email security review</li>
+<li>Endpoint protection review</li>
+<li>Backup and recovery review</li>
+<li>Risk-prioritized assessment report</li>
+</ul>
+<a href="#booking" class="btn secondary">Request an Assessment</a>
+</div>
+
+<div class="price-card featured reveal">
+<small style="color:var(--blue)">ONGOING PROTECTION · FLAGSHIP SERVICE</small>
+<h3>Managed Security & Continuity</h3>
+<div class="price">$3,000 <span>CAD / month · starting at</span></div>
+<p>Ongoing cybersecurity oversight and business continuity support for growing businesses.</p>
+<ul>
+<li>Identity and email security oversight</li>
+<li>Endpoint protection coordination</li>
+<li>Critical-system monitoring</li>
+<li>Backup verification</li>
+<li>Security reviews</li>
+<li>Monthly reporting</li>
+<li>Incident-response planning</li>
+</ul>
+<a href="#booking" class="btn primary">Book a Strategy Call →</a>
+</div>
+
+</div>
+<p style="color:var(--muted);font-size:13px;margin-top:25px">All prices are starting prices in CAD. Final scope, software licensing, implementation fees, and ongoing responsibilities are confirmed in a written proposal.</p>
+</div>
+</section>
+
+<section id="process">
+<div class="container">
+<div class="eyebrow">Our Process</div>
+<h2>Stronger Security in Four Simple Steps.</h2>
+<div class="steps">
+<div class="step reveal"><div class="step-number">01</div><h3>Discover</h3><p>We learn about your business, systems, and concerns.</p></div>
+<div class="step reveal"><div class="step-number">02</div><h3>Assess</h3><p>We identify relevant risks and opportunities for improvement.</p></div>
+<div class="step reveal"><div class="step-number">03</div><h3>Implement</h3><p>We agree on a plan and put approved protections in place.</p></div>
+<div class="step reveal"><div class="step-number">04</div><h3>Maintain</h3><p>For ongoing clients, we review agreed systems and report on security progress.</p></div>
+</div>
+</div>
+</section>
+
+<section class="light" id="industries">
+<div class="container">
+<div class="eyebrow">Who We Help</div>
+<h2>Built for Businesses That Depend on Reliable Technology.</h2>
+<div class="grid">
+<div class="card industry reveal"><div class="icon">✚</div><div><h3>Healthcare Clinics</h3><p>Protect patient information and critical booking systems.</p></div></div>
+<div class="card industry reveal"><div class="icon">▦</div><div><h3>Accounting Firms</h3><p>Protect financial records and business email.</p></div></div>
+<div class="card industry reveal"><div class="icon">⚖</div><div><h3>Legal Practices</h3><p>Strengthen confidential client-file security.</p></div></div>
+<div class="card industry reveal"><div class="icon">▥</div><div><h3>Real Estate Businesses</h3><p>Reduce risks involving payments and email impersonation.</p></div></div>
+<div class="card industry reveal"><div class="icon">◇</div><div><h3>Professional Services</h3><p>Protect customer trust and business communications.</p></div></div>
+<div class="card industry reveal"><div class="icon">↗</div><div><h3>Growing Companies</h3><p>Strengthen account access as your team expands.</p></div></div>
+</div>
+<div class="actions"><a href="#booking" class="btn dark-btn">See If We're a Fit →</a></div>
+</div>
+</section>
+
+<section id="about">
+<div class="container founder">
+<div class="portrait" aria-label="Founder initials">AS</div>
+<div>
+<div class="eyebrow">Meet the Founder</div>
+<h2>Cybersecurity Built Around Real Business Needs.</h2>
+<p class="lead">I'm Alexandre, founder of Safo Security.</p>
+<p class="lead">I started this business to help companies understand cybersecurity risks and take practical steps to protect the systems they rely on.</p>
+<p class="lead">My focus is clear communication, responsible implementation, and solutions that make sense for each business.</p>
+<p><strong>Alexandre Safo</strong> · Founder · Ottawa, Ontario</p>
+</div>
+</div>
+</section>
+
+<section class="light" id="faq">
+<div class="container">
+<div class="eyebrow">Frequently Asked Questions</div>
+<h2>Questions, Answered Clearly.</h2>
+<details class="faq-item"><summary>How much does Safo Security cost?</summary><p>Our services start at $500 for a Security Snapshot. Security Improvements start at $1,000, Business Security Assessments at $1,500, and Managed Security at $3,000 per month.</p></details>
+<details class="faq-item"><summary>Do I need cybersecurity if I already have IT support?</summary><p>Your IT provider may already cover some or all cybersecurity needs. We can help identify meaningful gaps in your existing coverage.</p></details>
+<details class="faq-item"><summary>Can you guarantee we won't get hacked?</summary><p>No provider can guarantee complete protection. Our goal is to reduce risks and improve security and recovery readiness.</p></details>
+<details class="faq-item"><summary>Will you replace our existing IT company?</summary><p>Not necessarily. We can coordinate with existing providers when responsibilities are clearly defined.</p></details>
+<details class="faq-item"><summary>What businesses do you work with?</summary><p>We focus on small and growing businesses, including clinics, accounting firms, legal practices, and professional services.</p></details>
+<details class="faq-item"><summary>What happens during the free consultation?</summary><p>We discuss your business, current systems, security concerns, and whether our services could be appropriate.</p></details>
+<details class="faq-item"><summary>How long does implementation take?</summary><p>Timelines depend on the size of your business and the agreed project scope.</p></details>
+<details class="faq-item"><summary>Do you provide ongoing cybersecurity management?</summary><p>Our managed security offering starts at $3,000 per month, with specific responsibilities defined in the agreement.</p></details>
+<details class="faq-item"><summary>Do you offer 24/7 protection?</summary><p>Monitoring hours, alert handling, and response commitments depend on the agreed scope. Around-the-clock response is not included unless expressly contracted and supported.</p></details>
+<details class="faq-item"><summary>Are software licenses included?</summary><p>Licensing and third-party costs are specified in each proposal.</p></details>
+<details class="faq-item"><summary>Is there a long-term contract?</summary><p>Contract length and cancellation terms are provided before any agreement is signed.</p></details>
+</div>
+</section>
+
+<section class="booking" id="booking">
+<div class="container">
+<div class="eyebrow">Book Your Consultation</div>
+<h2>Let's Make Your Business More Secure.</h2>
+<p class="lead">Schedule a free conversation to discuss your cybersecurity concerns and identify practical next steps.</p>
+<div class="hero-notes">
+<span>◷ Free consultation</span>
+<span>▣ Online meeting</span>
+<span>◎ Available times shown in HubSpot</span>
+</div>
+<div class="booking-box">
+<h3>Schedule Your Free Consultation</h3>
+<p>Choose an available time through our HubSpot booking page.</p>
+<div class="booking-placeholder">
+<p id="booking-message">Select an available appointment time.</p>
+<a id="booking-link"
+   class="btn primary"
+   href="https://meetings-na3.hubspot.com/alex-safo"
+   target="_blank"
+   rel="noopener noreferrer">
+View Available Times →
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="light" id="contact">
+<div class="container">
+<div class="eyebrow">Contact Us</div>
+<h2>Not Ready to Book? Send Us a Message.</h2>
+<p class="lead">Tell us a little about your business and what you'd like help with.</p>
+<p><strong>Email:</strong> <a href="mailto:safosecurityadvisory@gmail.com">safosecurityadvisory@gmail.com</a></p>
+<div class="booking-box" style="border:1px solid #dce4ef">
+<form id="contact-form">
+<div class="form-grid">
+<input name="name" placeholder="Full name" aria-label="Full name" required>
+<input name="business" placeholder="Business name" aria-label="Business name" required>
+<input type="email" name="email" placeholder="Work email" aria-label="Work email" required>
+<input type="tel" name="phone" placeholder="Phone number (optional)" aria-label="Phone number">
+<select name="service" class="full" aria-label="Service interested in" required>
+<option value="">Select a service</option>
+<option>Security Snapshot — from $500</option>
+<option>Security Improvements — from $1,000</option>
+<option>Business Security Assessment — from $1,500</option>
+<option>Managed Security — from $3,000/month</option>
+<option>Not Sure Yet</option>
+</select>
+<textarea name="message" class="full" placeholder="Tell us about your business and security concerns" aria-label="Your message" required></textarea>
+<label class="full" style="font-size:13px">
+<input type="checkbox" required style="width:auto">
+I agree to be contacted regarding my inquiry.
+</label>
+<button type="submit" class="btn primary full">Prepare Email Inquiry →</button>
+</div>
+</form>
+<p style="font-size:12px;margin-top:15px">Submitting opens your email application. You must send the prepared email yourself. This form does not transmit information directly to a server.</p>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer-row">
+<div>
+<strong style="color:white">⬡ Safo Security</strong>
+<br>Protecting What Keeps Your Business Running.
+<br><a href="mailto:safosecurityadvisory@gmail.com">safosecurityadvisory@gmail.com</a>
+</div>
+<div>Ottawa, Ontario · Canada<br>© <span id="year"></span> Safo Security</div>
+</div>
+</footer>
+
+<script>
+const CONFIG = {
+  bookingUrl: "https://meetings-na3.hubspot.com/alex-safo",
+  contactEmail: "safosecurityadvisory@gmail.com"
+};
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+function toggleMenu(){
+  const nav = document.getElementById("navigation");
+  const btn = document.querySelector(".menu-btn");
+  const open = nav.classList.toggle("open");
+  btn.setAttribute("aria-expanded", String(open));
+}
+
+document.querySelectorAll("nav a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    document.getElementById("navigation").classList.remove("open");
+    document.querySelector(".menu-btn").setAttribute("aria-expanded","false");
+  });
+});
+
+const bookingLink = document.getElementById("booking-link");
+bookingLink.href = CONFIG.bookingUrl;
+bookingLink.target = "_blank";
+bookingLink.rel = "noopener noreferrer";
+
+document.getElementById("contact-form").addEventListener("submit",function(e){
+  e.preventDefault();
+
+  const data = new FormData(this);
+  const subject = "Safo Security Inquiry — " + data.get("service");
+
+  const body = [
+    "Name: " + data.get("name"),
+    "Business: " + data.get("business"),
+    "Email: " + data.get("email"),
+    "Phone: " + data.get("phone"),
+    "Service: " + data.get("service"),
+    "",
+    "Message:",
+    data.get("message")
+  ].join("\n");
+
+  window.location.href =
+    "mailto:" + CONFIG.contactEmail +
+    "?subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(body);
+});
+
+if("IntersectionObserver" in window){
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
     });
+  },{threshold:.08});
 
-    // CONTACT FORM
-    document.getElementById("contact-form")
-      .addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        const data = new FormData(this);
-
-        const subject =
-          "Safo Security Inquiry — " + data.get("service");
-
-        const body = [
-          "Name: " + data.get("name"),
-          "Business: " + data.get("business"),
-          "Email: " + data.get("email"),
-          "Phone: " + (data.get("phone") || "Not provided"),
-          "Service: " + data.get("service"),
-          "",
-          "Message:",
-          data.get("message")
-        ].join("\n");
-
-        const mailtoUrl =
-          "mailto:" + CONFIG.contactEmail +
-          "?subject=" + encodeURIComponent(subject) +
-          "&body=" + encodeURIComponent(body);
-
-        window.location.href = mailtoUrl;
-      });
-
-    // SCROLL ANIMATIONS
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.08
-      });
-
-      document.querySelectorAll(".reveal").forEach(el => {
-        observer.observe(el);
-      });
-    } else {
-      document.querySelectorAll(".reveal").forEach(el => {
-        el.classList.add("visible");
-      });
-    }
-  </script>
-
+  document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+}else{
+  document.querySelectorAll(".reveal").forEach(el=>el.classList.add("visible"));
+}
+</script>
 </body>
 </html>
